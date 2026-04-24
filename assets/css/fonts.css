@@ -1,0 +1,159 @@
+/* #Fonts
+================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root {
+    --font-primary: 'Kumbh Sans', sans-serif;
+    --fw-extrabold: 800;
+    --fw-bold: 600;
+    --fw-regular: 400;
+}
+
+.head-1 {
+    font-family: var(--font-primary);
+    font-weight: var(--fw-extrabold);
+    font-size: 40px;
+    line-height: 50px;
+    letter-spacing: 0;
+}
+
+.head-2 {
+    font-family: var(--font-primary);
+    font-weight: var(--fw-extrabold);
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: 0;
+}
+
+.head-3 {
+    font-family: var(--font-primary);
+    font-weight: var(--fw-extrabold);
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: 0;
+}
+
+.head-4 {
+    font-family: var(--font-primary);
+    font-weight: var(--fw-extrabold);
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0;
+}
+
+.head-5 {
+    font-family: var(--font-primary);
+    font-weight: var(--fw-extrabold);
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0;
+}
+.text-xl {
+    font-family: var(--font-primary);
+    font-weight: var(--fw-regular);
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0;
+}
+
+.text-l {
+    font-family: var(--font-primary);
+    font-weight: var(--fw-regular);
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0;
+}
+
+.text-m {
+    font-family: var(--font-primary);
+    font-weight: var(--fw-regular);
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0;
+}
+
+.text-s {
+    font-family: var(--font-primary);
+    font-weight: var(--fw-regular);
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0;
+}
+.text-xs {
+    font-family: var(--font-primary);
+    font-weight: var(--fw-regular);
+    font-size: 10px;
+    line-height: 100%;
+    letter-spacing: 0;
+}
+.lh-40{
+    line-height: 40px;
+}
+.lh-20{
+    line-height: 20px;
+}
+.lh-22{
+    line-height: 22px;
+}
+.lh-21{
+    line-height: 21px;
+}
+.line-h-18{
+    line-height: 18px;
+}
+.line-height-50{
+    line-height: 50px;
+}
+@media(max-width: 768px) {
+    .head-3m {
+        font-family: var(--font-primary);
+        font-weight: var(--fw-extrabold);
+        font-size: 24px;
+        line-height: 30px;
+        letter-spacing: 0;
+    }
+    .head-4m {
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .head-5m {
+        font-weight: 800;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 0;
+    }
+    .text-lm{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .text-mm{
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+    }
+    .text-sm {
+        font-family: var(--font-primary);
+        font-weight: var(--fw-regular);
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0;
+    }
+    .text-xsm {
+        font-weight: var(--fw-regular);
+        font-size: 9px;
+        line-height: 11px;
+    }
+    .line-height-22m{
+        line-height: 22px;
+    }
+    .lh-30m{
+        line-height: 30px;
+    }
+}
+.font-b {
+    font-weight: var(--fw-bold);
+}

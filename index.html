@@ -1,382 +1,1219 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cileo - Próximamente</title>
-    <meta
-      name="description"
-      content="Cileo: Plataforma avanzada para la gestión de contratos, facturación y propiedades."
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cileo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Google Fonts: Kumbh Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Styles -->
+    <link href="assets/css/fonts.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+    <link href="assets/css/media-query.css" rel="stylesheet">
 
-    <style>
-      :root {
-        /* Elipse Light Theme Colors */
-        --background: #f7fefc;
-        --foreground: #080b09; /* 158 29% 5% */
-        --muted: #f1f5f9;
-        --muted-foreground: #080b09;
-        --border: #d1d1ce;
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-        /* Elipse Accents */
-        --primary-bg-color: #edff8c;
-        --secondary-bg-color: #fbffe4;
-        --label-color: #1c1b1f;
-        --text-color: #000000;
-        --primary-text-color: #0a120f;
-        --active-color: #3688cc;
-        --success-color: #b7e25a;
-        --pending-collection: #00add8;
+    <!-- Favicon -->
+    <link href="assets/img/main/favicon.png" rel="icon" type="image/png">
+</head>
+<body>
+    <header class="start-style">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container custom-container">
+                <a class="navbar-brand me-0 p-0" href="index.html">
+                    <svg viewBox="0 0 66 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.7006 7.55103H15.644V24.6181H20.7006V7.55103Z"/>
+                        <path d="M27.6205 0.260376H22.564V24.6181H27.6205V0.260376Z"/>
+                        <path d="M18.1705 0C16.5927 0 15.314 1.29149 15.314 2.88502C15.314 4.47854 16.5927 5.77003 18.1705 5.77003C19.7483 5.77003 21.0271 4.47854 21.0271 2.88502C21.0271 1.29149 19.7483 0 18.1705 0Z"/>
+                        <path d="M55.3813 7.35663C50.8266 7.35663 47.1348 10.6062 47.1348 16.0846C47.1348 21.563 50.8266 24.8125 55.3813 24.8125C59.936 24.8125 63.6279 21.563 63.6279 16.0846C63.6279 10.6062 59.936 7.35663 55.3813 7.35663ZM55.3813 21.2401C53.4598 21.2401 51.906 19.4765 51.906 16.0881C51.906 12.6996 53.4632 10.936 55.3813 10.936C57.2995 10.936 58.8566 12.6962 58.8566 16.0846C58.8566 19.473 57.2995 21.2401 55.3813 21.2401Z"/>
+                        <path d="M64.3773 21.9275C63.5866 21.9275 62.9473 22.5732 62.9473 23.3717C62.9473 24.1702 63.5866 24.816 64.3773 24.816C65.1679 24.816 65.8073 24.1702 65.8073 23.3717C65.8073 22.5732 65.1679 21.9275 64.3773 21.9275Z"/>
+                        <path d="M9.59062 21.2401C7.34594 21.2401 4.77125 19.4764 4.77125 16.088C4.77125 12.6996 7.34594 10.936 9.59062 10.936C12.2031 10.936 13.7775 12.6684 13.7775 12.6684V8.71057C13.7775 8.71057 12.1241 7.36354 8.73469 7.36354C4.18 7.35659 0 10.2763 0 16.0845C0 21.563 3.85687 24.8125 8.73469 24.8125C12.0003 24.8125 13.7775 23.4655 13.7775 23.4655V19.4417C12.7428 20.9276 11.165 21.2401 9.59062 21.2401Z"/>
+                        <path d="M38.9468 21.2401C36.7468 21.2401 34.6705 19.9695 34.1893 17.751H45.4883C46.1724 12.4913 43.4637 7.35663 37.6062 7.35663C33.0515 7.35663 29.2358 10.6062 29.2358 16.0846C29.2358 21.563 33.0102 24.8125 38.2146 24.8125C43.1818 24.8125 44.9968 21.806 44.9968 21.806V18.9418C44.3883 20.6221 41.7587 21.2401 38.9468 21.2401ZM37.6096 10.9325C39.1565 10.9325 40.5487 11.9567 41.0299 14.1751H34.1927C34.674 11.9567 36.0627 10.9325 37.6096 10.9325Z"/>
+                    </svg>
+                </a>
+                <div class="d-flex ms-auto me-4 d-md-none d-block">
+                    <a href="#contact" class="text-sm btn-custom-gral btn-color"><span class="text-sm transition-gral">Solicita información</span></a>
+                </div>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainMenu" aria-controls="navbarMainMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"><span></span></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end me-md-4" id="navbarMainMenu">
+                    <ul class="navbar-nav mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-l hover-underline-desk" href="#benefits">Beneficios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-l hover-underline-desk" href="#functions">Funciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-l hover-underline-desk" href="#integrations">Integraciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-l hover-underline-desk" href="#portfolios">Portafolios</a>
+                        </li>
+                    </ul>
+                    <div class="menu-footer">
+                        <a href="#" class="text-sm btn-custom-gral outline-black"><span class="text-sm transition-gral">Iniciar sesión</span></a>
+                        <a href="tel:+529994159540" class="text-sm text-bm underline-bottom">Contacto</a>
+                    </div>
+                    <hr class="d-block d-md-none">
+                    <div class="menu-copy">
+                        <p class="text-xsm text-end">©Cileo, 2026. | Diseñado por <a class="text-xsm font-b" target="_blank" href="https://remedia.mx/">Remedia</a></p>
+                    </div>
+                </div>
+                <div class="ms-md-auto d-md-flex d-none justify-content-center align-items-cnter gap-3">
+                    <a href="#" class="text-m btn-custom-gral outline-w"><span class="text-m transition-gral">Iniciar sesión</span></a>
+                    <a href="#contact" class="text-m btn-custom-gral btn-color"><span class="text-m transition-gral">Solicitar información</span></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="banner-home bg-b">
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h1 class="head-2 head-3m text-color mb-8">La forma más eficiente de administrar tu arrendamiento inmobiliario</h1>
+                        <p class="text-xl text-mm mb-md-3 mb-2 text-w">Centraliza contratos, cobranza, facturación y cumplimiento PLD en una sola plataforma, con información completa y trazable.</p>
 
-        /* Local UI Colors */
-        --accent-glow: rgba(54, 136, 204, 0.4);
-        --btn-email-bg: #121212;
-        --btn-email-text: #ffffff;
-        --card-bg: rgba(255, 255, 255, 0.9);
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body,
-      html {
-        height: 100%;
-        margin: 0;
-        font-family:
-          "Kumbh Sans",
-          system-ui,
-          -apple-system,
-          sans-serif;
-        background-color: var(--background);
-        color: var(--foreground);
-        overflow-x: hidden;
-      }
-
-      /* Background gradient shapes */
-      .bg-shapes {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: -1;
-        overflow: hidden;
-        pointer-events: none;
-      }
-
-      .shape {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(100px);
-        opacity: 0.15;
-        animation: floatAura 12s infinite alternate ease-in-out;
-      }
-
-      .shape-1 {
-        top: -15%;
-        left: -10%;
-        width: 600px;
-        height: 600px;
-        background: var(--pending-collection); /* Blue/Cyan */
-      }
-
-      .shape-2 {
-        bottom: -20%;
-        right: -10%;
-        width: 700px;
-        height: 700px;
-        background: var(--success-color); /* Elipse Green */
-        animation-delay: -6s;
-      }
-
-      .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        padding: 2rem;
-        text-align: center;
-        position: relative;
-        z-index: 1;
-      }
-
-      /* Logo animation */
-      .logo-wrapper {
-        margin-bottom: 2.5rem;
-        animation: slideDownFade 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        opacity: 0;
-      }
-
-      .logo {
-        max-width: 260px;
-        width: 100%;
-        height: auto;
-        transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-      }
-
-      .logo:hover {
-        transform: scale(1.04) translateY(-4px);
-      }
-
-      /* Content Area */
-      .content {
-        max-width: 640px;
-        animation: slideUpFade 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      /* Status Badge */
-      .status-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.5rem 1.25rem;
-        background: var(--muted);
-        border: 1px solid var(--border);
-        color: var(--primary-text-color);
-        border-radius: 9999px;
-        font-weight: 600;
-        font-size: 0.875rem;
-        margin-bottom: 1.5rem;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
-      }
-
-      .pulse-dot {
-        width: 8px;
-        height: 8px;
-        background-color: var(--active-color);
-        border-radius: 50%;
-        box-shadow: 0 0 0 0 var(--accent-glow);
-        animation: pulse 2s infinite;
-      }
-
-      h1 {
-        font-size: clamp(2.5rem, 6vw, 4rem);
-        font-weight: 700;
-        margin: 0 0 1.25rem 0;
-        line-height: 1.1;
-        letter-spacing: -0.02em;
-        color: var(--primary-text-color);
-      }
-
-      p {
-        font-size: clamp(1.125rem, 2.5vw, 1.25rem);
-        color: var(--muted-foreground);
-        line-height: 1.6;
-        margin: 0 0 2rem 0;
-        font-weight: 300;
-      }
-
-      /* Divider line */
-      .divider {
-        width: 60px;
-        height: 4px;
-        background: linear-gradient(
-          90deg,
-          var(--pending-collection),
-          var(--success-color)
-        );
-        border-radius: 2px;
-        margin: 0 auto 2rem auto;
-      }
-
-      .cta-container {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-        margin-top: 1rem;
-        align-items: center;
-        width: 100%;
-        max-width: 360px;
-        margin-left: auto;
-        margin-right: auto;
-        animation: slideUpFade 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        padding: 0.875rem 2rem;
-        border-radius: 12px;
-        font-size: 1.125rem;
-        font-weight: 500;
-        text-decoration: none;
-        transition:
-          transform 0.2s ease,
-          background-color 0.2s ease,
-          opacity 0.2s ease;
-        gap: 0.5rem;
-      }
-
-      .btn:hover {
-        transform: translateY(-2px);
-      }
-
-      .btn:active {
-        transform: translateY(0);
-        opacity: 0.9;
-      }
-
-      .btn-whatsapp {
-        background-color: var(--primary-bg-color);
-        color: #000000;
-        font-weight: 600;
-      }
-
-      .btn-email {
-        background-color: var(--btn-email-bg);
-        color: var(--btn-email-text);
-        border: none;
-        font-weight: 600;
-      }
-
-      .footer {
-        margin-top: 3rem;
-        color: var(--muted-foreground);
-        font-size: 0.875rem;
-        animation: fade 1s ease 0.6s forwards;
-        opacity: 0;
-      }
-
-      /* Keyframes */
-      @keyframes slideDownFade {
-        from {
-          opacity: 0;
-          transform: translateY(-30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes slideUpFade {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes fade {
-        to {
-          opacity: 1;
-        }
-      }
-
-      @keyframes floatAura {
-        0% {
-          transform: translate(0, 0) scale(1);
-        }
-        100% {
-          transform: translate(20px, -30px) scale(1.1);
-        }
-      }
-
-      @keyframes pulse {
-        0% {
-          transform: scale(0.95);
-          box-shadow: 0 0 0 0 var(--accent-glow);
-        }
-        70% {
-          transform: scale(1);
-          box-shadow: 0 0 0 10px rgba(54, 136, 204, 0);
-        }
-        100% {
-          transform: scale(0.95);
-          box-shadow: 0 0 0 0 rgba(54, 136, 204, 0);
-        }
-      }
-
-      @media (max-width: 640px) {
-        .shape-1,
-        .shape-2 {
-          width: 400px;
-          height: 400px;
-        }
-        .logo {
-          max-width: 200px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Background elements -->
-    <div class="bg-shapes">
-      <div class="shape shape-1"></div>
-      <div class="shape shape-2"></div>
-    </div>
-
-    <div class="container">
-      <div class="logo-wrapper">
-        <img src="logo.png" alt="Cileo Logo" class="logo" />
-      </div>
-
-      <div class="content">
-        <div class="status-badge">
-          <div class="pulse-dot"></div>
-          Sitio en Construcción
+                        <div class="d-flex justify-content-center gap-24">
+                            <a href="#contact" class="text-m btn-custom-gral btn-color"><span class="text-m text-sm transition-gral">Hablar con un especialista</span></a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12 mt-md-5 mt-4 position-relative">
+                        <picture>
+                            <source media="(max-width: 767px)" srcset="assets/img/home/banner-hero-movil.png">
+                            <img class="w-100" src="assets/img/home/hero-banner-01.webp" alt="Cileo">
+                        </picture>
+                        <div class="hero-img-item hero-item-1">
+                            <img class="w-100" src="assets/img/home/hero-banner-02.webp" alt="">
+                        </div>
+                        <div class="hero-img-item hero-item-2">
+                            <img class="w-100" src="assets/img/home/hero-banner-03.webp" alt="">
+                        </div>
+                        <div class="hero-img-item hero-item-3">
+                            <img class="w-100" src="assets/img/home/hero-banner-04.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="benefits pad-80 pad-40m bg-w" id="benefits">
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="head-2 head-3m text-b">Trazabilidad total en cada flujo operativo</h2>
+                        <p class="text-l text-mm mt-2 text-b">Optimiza procesos críticos, reduce riesgos operativos y toma decisiones con métricas claras.</p>
+                    </div>
+                </div>
+                <div class="row mt-40 mt-24m">
+                    <div class="col-12 col-md-6 order-2 order-md-1 mt-24m mt-md-0">
+                        <picture>
+                            <source media="(max-width: 767px)" srcset="assets/img/home/bloque-trazabilidad-total-movil.webp">
+                            <img class="w-100" src="assets/img/home/bloque-trazabilidad-total.webp" alt="Cileo - Trazabilidad total">
+                        </picture>
+                    </div>
+                    <div class="col-12 col-md-6 order-1 order-md-2">
+                        <div class="benefits-grid slide-in-left-row">
+                            <div class="benefit-card">
+                                <div class="d-flex align-items-center justify-content-between gap-2 mb-2">
+                                    <img src="assets/img/main/icon-circle-dollar-sign.svg" alt="Cobranza">
+                                </div>
+                                <h3 class="head-4 head-5m mb-2">Cobranza bajo control</h3>
+                                <p class="text-m text-sm">Pagos claros, estatus actualizado y seguimiento continuo.</p>
+                            </div>
+                            <div class="benefit-card">
+                                <div class="d-flex align-items-center justify-content-between gap-2 mb-2">
+                                    <img src="assets/img/main/icon-file-check.svg" alt="Control">
+                                </div>
+                                <h3 class="head-4 head-5m mb-2">Control centralizado</h3>
+                                <p class="text-m text-sm">Contratos, documentos y movimientos en un solo sistema.</p>
+                            </div>
+                            <div class="benefit-card">
+                                <div class="d-flex align-items-center justify-content-between gap-2 mb-2">
+                                    <img src="assets/img/main/icon-settings.svg" alt="Operativa">
+                                </div>
+                                <h3 class="head-4 head-5m mb-2">Menor carga operativa</h3>
+                                <p class="text-m text-sm">Automatización de vencimientos, avisos y tareas recurrentes.</p>
+                            </div>
+                            <div class="benefit-card">
+                                <div class="d-flex align-items-center justify-content-between gap-2 mb-2">
+                                    <img src="assets/img/main/icon-layout-dashboard.svg" alt="Visibilidad">
+                                </div>
+                                <h3 class="head-4 head-5m mb-2">Visibilidad completa</h3>
+                                <p class="text-m text-sm">Ingresos, ocupación y estatus en una sola vista.</p>
+                            </div>
+                            <div class="benefit-card">
+                                <div class="d-flex align-items-center justify-content-between gap-2 mb-2">
+                                    <img src="assets/img/main/icon-circle-check-big.svg" alt="IA">
+                                    <span class="badge-soon">Proximamente</span>
+                                </div>
+                                <h3 class="head-4 head-5m mb-2">IA aplicada <br class="visible-991"> a la operación</h3>
+                                <p class="text-m text-sm">Automatiza consultas y lectura de información operativa compleja.</p>
+                            </div>
+                            <div class="benefit-card">
+                                <div class="d-flex align-items-center justify-content-between gap-2 mb-2">
+                                    <img src="assets/img/main/icon-database.svg" alt="Datos">
+                                </div>
+                                <h3 class="head-4 head-5m mb-2">Lectura inteligente de datos</h3>
+                                <p class="text-m text-sm">Identifica patrones, alertas entre contratos, cobros en una sola vista.</p>
+                            </div>
+                        </div>
 
-        <h1>Algo increíble está en camino</h1>
-
-        <div class="divider"></div>
-
-        <p>
-          Estamos trabajando arduamente en el desarrollo de la plataforma más
-          completa y moderna para la gestión inteligente de contratos,
-          facturación y propiedades.
-        </p>
-
-        <div class="cta-container">
-          <!-- WhatsApp Button -->
-          <a
-            href="https://wa.me/+525662976298"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-whatsapp"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"
-              />
-            </svg>
-            Escribir por WhatsApp
-          </a>
-
-          <!-- Email Button -->
-          <a href="mailto:jose@cileo.io" class="btn btn-email">
-            Escribir a jose@cileo.io
-          </a>
+                        <div class="mt-40 d-none d-md-flex">
+                            <a href="#portfolios" class="text-m btn-custom-gral outline-black"><span class="text-m text-sm transition-gral">Explorar modelos de administración</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-24 d-block d-md-none mt-4">
+                    <div class="col-12 text-center">
+                        <a href="#portfolios" class="text-m btn-custom-gral outline-black"><span class="text-m text-sm transition-gral">Explorar modelos de administración</span></a>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="footer">
-          &copy;
-          <script>
-            document.write(new Date().getFullYear());
-          </script>
-          Cileo. Todos los derechos reservados.
+        <div class="fringe bg-y pad-40">
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="head-2 head-3m text-b lh-40 lh-30m">Procesos claros, datos confiables y mejores decisiones.</h2>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </body>
+        <div class="automatiza pad-60 pad-40m" id="functions">
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="head-2 head-3m mb-8m">Automatiza más de 100 procesos críticos al mes</h2>
+                        <p class="text-l text-mm">Explora las herramientas que estructuran, automatizan y escalan la administración de <br class="d-block d-md-none"> cualquier portafolio.</p>
+                    </div>
+                </div>
+                <div class="row d-none d-md-flex mt-40">
+                    <div class="col-12 col-md-5 pe-1">
+                        <div class="nav flex-column nav-pills automatiza-tabs" id="v-pills-automatiza-tab" role="tablist" aria-orientation="vertical">
+                            <button class="nav-link active d-flex align-items-center justify-content-between text-start w-100 bg-transparent shadow-none px-0 border-0" id="v-pills-cobranza-tab" data-bs-toggle="pill" data-bs-target="#v-pills-cobranza" type="button" role="tab" aria-controls="v-pills-cobranza" aria-selected="true">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="img-automatiza">
+                                        <img src="assets/img/main/icon-cobranza.png" alt="Cobranza automatizada">
+                                    </div>
+                                    <span class="head-3 fw-bold transition-gral">Cobranza automatizada</span>
+                                </div>
+                                <div class="icon-arrow-automatiza"></div>
+                            </button>
+                            <button class="nav-link d-flex align-items-center justify-content-between text-start w-100 bg-transparent shadow-none px-0 border-0" id="v-pills-contratos-tab" data-bs-toggle="pill" data-bs-target="#v-pills-contratos" type="button" role="tab" aria-controls="v-pills-contratos" aria-selected="false">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="img-automatiza">
+                                        <img src="assets/img/main/icon-contratos.png" alt="Contratos centralizados">
+                                    </div>
+                                    <span class="head-3 fw-bold transition-gral">Contratos centralizados</span>
+                                </div>
+                                <div class="icon-arrow-automatiza"></div>
+                            </button>
+                            <button class="nav-link d-flex align-items-center justify-content-between text-start w-100 bg-transparent shadow-none px-0 border-0" id="v-pills-facturacion-tab" data-bs-toggle="pill" data-bs-target="#v-pills-facturacion" type="button" role="tab" aria-controls="v-pills-facturacion" aria-selected="false">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="img-automatiza">
+                                        <img src="assets/img/main/icon-facturas.png" alt="Facturación inteligente">
+                                    </div>
+                                    <span class="head-3 fw-bold transition-gral">Facturación inteligente</span>
+                                </div>
+                                <div class="icon-arrow-automatiza"></div>
+                            </button>
+                            <button class="nav-link d-flex align-items-center justify-content-between text-start w-100 bg-transparent shadow-none px-0 border-0" id="v-pills-pld-tab" data-bs-toggle="pill" data-bs-target="#v-pills-pld" type="button" role="tab" aria-controls="v-pills-pld" aria-selected="false">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="img-automatiza">
+                                        <img src="assets/img/main/icon-cumplimiento.png" alt="Cumplimiento PLD">
+                                    </div>
+                                    <span class="head-3 fw-bold transition-gral">Cumplimiento PLD</span>
+                                </div>
+                                <div class="icon-arrow-automatiza"></div>
+                            </button>
+                            <button class="nav-link d-flex align-items-center justify-content-between text-start w-100 bg-transparent shadow-none px-0 border-0" id="v-pills-dashboard-tab" data-bs-toggle="pill" data-bs-target="#v-pills-dashboard" type="button" role="tab" aria-controls="v-pills-dashboard" aria-selected="false">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="img-automatiza">
+                                        <img src="assets/img/main/icon-dashboard.png" alt="Dashboard con KPIs">
+                                    </div>
+                                    <span class="head-3 fw-bold transition-gral">Dashboard con KPIs</span>
+                                </div>
+                                <div class="icon-arrow-automatiza"></div>
+                            </button>
+                            <button class="nav-link d-flex align-items-center justify-content-between text-start w-100 bg-transparent shadow-none px-0 border-0" id="v-pills-reportes-tab" data-bs-toggle="pill" data-bs-target="#v-pills-reportes" type="button" role="tab" aria-controls="v-pills-reportes" aria-selected="false">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="img-automatiza">
+                                        <img src="assets/img/main/icon-reportes.png" alt="Reportes claros">
+                                    </div>
+                                    <span class="head-3 fw-bold transition-gral">Reportes claros</span>
+                                </div>
+                                <div class="icon-arrow-automatiza"></div>
+                            </button>
+                            <button class="nav-link d-flex align-items-center justify-content-between text-start w-100 bg-transparent shadow-none px-0 border-0" id="v-pills-mantenimiento-tab" data-bs-toggle="pill" data-bs-target="#v-pills-mantenimiento" type="button" role="tab" aria-controls="v-pills-mantenimiento" aria-selected="false">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="img-automatiza">
+                                        <img src="assets/img/main/icon-mantenimiento.png" alt="Mantenimiento y gastos">
+                                    </div>
+                                    <span class="head-3 fw-bold transition-gral">Mantenimiento y gastos</span>
+                                </div>
+                                <div class="icon-arrow-automatiza"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 offset-md-1">
+                        <div class="tab-content h-100" id="v-pills-automatiza-tabContent">
+                            <div class="tab-pane fade show active h-100" id="v-pills-cobranza" role="tabpanel" aria-labelledby="v-pills-cobranza-tab" tabindex="0">
+                                <div class="row h-100">
+                                    <div class="col-12">
+                                        <img src="assets/img/home/automatiza/bloque-automatiza-mas-01.webp" class="img-fluid" alt="Cobranza automatizada">
+                                    </div>
+                                    <div class="col-12 mt-16">
+                                        <h4 class="head-4 mb-12">Recibe, controla y administra pagos sin recordatorios manuales</h4>
+                                        <ul class="list-automatiza">
+                                            <li class="text-m">Recordatorios automáticos de pago.</li>
+                                            <li class="text-m">Control de atrasos y adeudos.</li>
+                                            <li class="text-m">Línea de tiempo por inquilino.</li>
+                                            <li class="text-m">Conciliación simple con estatus de cobro.</li>
+                                            <li class="text-m">Alertas de movimientos importantes.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade h-100" id="v-pills-contratos" role="tabpanel" aria-labelledby="v-pills-contratos-tab" tabindex="0">
+                                <div class="row h-100">
+                                    <div class="col-12">
+                                        <img src="assets/img/home/automatiza/bloque-automatiza-mas-02.webp" class="img-fluid" alt="Contratos centralizados">
+                                    </div>
+                                    <div class="col-12 mt-16">
+                                        <h4 class="head-4 mb-12">Gestiona altas, renovaciones y vencimientos</h4>
+                                        <ul class="list-automatiza">
+                                            <li class="text-m">Crea y actualiza contratos en minutos.</li>
+                                            <li class="text-m">Notificaciones automáticas de vencimientos.</li>
+                                            <li class="text-m">Historial completo de cambios y renovaciones.</li>
+                                            <li class="text-m">Adjunta documentos y condiciones específicas.</li>
+                                            <li class="text-m">Mantén contratos conectados a pagos, facturación y contactos.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade h-100" id="v-pills-facturacion" role="tabpanel" aria-labelledby="v-pills-facturacion-tab" tabindex="0">
+                                <div class="row h-100">
+                                    <div class="col-12">
+                                        <img src="assets/img/home/automatiza/bloque-automatiza-mas-03.webp" class="img-fluid" alt="Facturación inteligente">
+                                    </div>
+                                    <div class="col-12 mt-16">
+                                        <h4 class="head-4 mb-12">Emite facturas de forma automática</h4>
+                                        <ul class="list-automatiza">
+                                            <li class="text-m">Generación automática por ciclo o periodo.</li>
+                                            <li class="text-m">Facturas sincronizadas con contratos activos.</li>
+                                            <li class="text-m">Aplicación de descuentos y ajustes.</li>
+                                            <li class="text-m">Historial fiscal por propiedad o inquilino.</li>
+                                            <li class="text-m">Exportación simple para contabilidad.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade h-100" id="v-pills-pld" role="tabpanel" aria-labelledby="v-pills-pld-tab" tabindex="0">
+                                <div class="row h-100">
+                                    <div class="col-12">
+                                        <img src="assets/img/home/automatiza/bloque-automatiza-mas-04.webp" class="img-fluid" alt="Cumplimiento PLD">
+                                    </div>
+                                    <div class="col-12 mt-16">
+                                        <h4 class="head-4 mb-12">Gestiona avisos y obligaciones legales</h4>
+                                        <ul class="list-automatiza">
+                                            <li class="text-m">Identificación de operaciones vulnerables.</li>
+                                            <li class="text-m">Generación de avisos en plataforma.</li>
+                                            <li class="text-m">Registro de documentación obligatoria.</li>
+                                            <li class="text-m">Trazabilidad completa de cada caso.</li>
+                                            <li class="text-m">Minimiza riesgos y cumple con la ley.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade h-100" id="v-pills-dashboard" role="tabpanel" aria-labelledby="v-pills-dashboard-tab" tabindex="0">
+                                <div class="row h-100">
+                                    <div class="col-12">
+                                        <img src="assets/img/home/automatiza/bloque-automatiza-mas-05.webp" class="img-fluid" alt="Dashboard con KPIs">
+                                    </div>
+                                    <div class="col-12 mt-16">
+                                        <h4 class="head-4 mb-12">Analiza ingresos, ocupación, vencimientos y desempeño</h4>
+                                        <ul class="list-automatiza">
+                                            <li class="text-m">KPIs financieros y operativos.</li>
+                                            <li class="text-m">Panel de ocupación e ingresos.</li>
+                                            <li class="text-m">Alertas de próximos vencimientos.</li>
+                                            <li class="text-m">Rendimiento por propiedad o portafolio.</li>
+                                            <li class="text-m">Insights clave para tomar decisiones.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade h-100" id="v-pills-reportes" role="tabpanel" aria-labelledby="v-pills-reportes-tab" tabindex="0">
+                                <div class="row h-100">
+                                    <div class="col-12">
+                                        <img src="assets/img/home/automatiza/bloque-automatiza-mas-06.webp" class="img-fluid" alt="Reportes claros">
+                                    </div>
+                                    <div class="col-12 mt-16">
+                                        <h4 class="head-4 mb-12">Finanzas, desempeño y contratos listos para descargar</h4>
+                                        <ul class="list-automatiza">
+                                            <li class="text-m">Reportes fiscales y financieros.</li>
+                                            <li class="text-m">Exportación en PDF o Excel.</li>
+                                            <li class="text-m">Filtros por propiedad, periodo o inquilino.</li>
+                                            <li class="text-m">Reportes operativos y de seguimiento.</li>
+                                            <li class="text-m">Información lista para contabilidad o auditorías.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade h-100" id="v-pills-mantenimiento" role="tabpanel" aria-labelledby="v-pills-mantenimiento-tab" tabindex="0">
+                                <div class="row h-100">
+                                    <div class="col-12">
+                                        <img src="assets/img/home/automatiza/bloque-automatiza-mas-07.webp" class="img-fluid" alt="Mantenimiento y gastos">
+                                    </div>
+                                    <div class="col-12 mt-16">
+                                        <h4 class="head-4 mb-12">Centraliza incidencias, gastos e impuestos de tu portafolio</h4>
+                                        <ul class="list-automatiza">
+                                            <li class="text-m">Registro y control de incidencias.</li>
+                                            <li class="text-m">Documenta pagos, cargos, servicios y movimientos clave para mantener claridad financiera.</li>
+                                            <li class="text-m">Registra ISR, IVA u otros cargos asociados al portafolio.</li>
+                                            <li class="text-m">Visualiza cómo cada gasto impacta en la rentabilidad y flujo de cada propiedad.</li>
+                                            <li class="text-m">Información lista para contabilidad o auditorías.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion automatiza-accordion d-block d-md-none mt-24 accordion-custom-automatiza" id="accordionAutomatiza">
+                    <div class="accordion-item bg-transparent border-top-0 border-start-0 border-end-0 rounded-0">
+                        <h2 class="accordion-header" id="headingCobranza">
+                            <button class="accordion-button bg-transparent shadow-none px-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCobranza" aria-expanded="false" aria-controls="collapseCobranza">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="d-flex align-items-center justify-content-center icon-automatiza">
+                                        <img src="assets/img/main/icon-cobranza.svg" alt="Cobranza automatizada">
+                                    </div>
+                                    <span class="head-4m">Cobranza automatizada</span>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapseCobranza" class="accordion-collapse collapse" aria-labelledby="headingCobranza" data-bs-parent="#accordionAutomatiza">
+                            <div class="accordion-body pb-0">
+                                <h4 class="head-5m mb-2">Recibe, controla y administra pagos sin recordatorios manuales</h4>
+                                <ul class="list-automatiza mb-2">
+                                    <li class="text-sm">Recordatorios automáticos de pago.</li>
+                                    <li class="text-sm">Control de atrasos y adeudos.</li>
+                                    <li class="text-sm">Línea de tiempo por inquilino.</li>
+                                    <li class="text-sm">Conciliación simple con estatus de cobro.</li>
+                                    <li class="text-sm">Alertas de movimientos importantes.</li>
+                                </ul>
+                                <img src="assets/img/home/automatiza/bloque-automatiza-mas-01.webp" class="img-fluid w-100" alt="Cobranza automatizada">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item bg-transparent border-top-0 border-start-0 border-end-0 rounded-0">
+                        <h2 class="accordion-header" id="headingContratos">
+                            <button class="accordion-button collapsed bg-transparent shadow-none px-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseContratos" aria-expanded="false" aria-controls="collapseContratos">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="d-flex align-items-center justify-content-center icon-automatiza">
+                                        <img src="assets/img/main/icon-contratos.png" alt="Contratos centralizados">
+                                    </div>
+                                    <span class="head-4m">Contratos centralizados</span>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapseContratos" class="accordion-collapse collapse" aria-labelledby="headingContratos" data-bs-parent="#accordionAutomatiza">
+                            <div class="accordion-body pb-35">
+                                <h4 class="head-5m mb-2">Gestiona altas, renovaciones y vencimientos</h4>
+                                <ul class="list-automatiza mb-2">
+                                    <li class="text-sm">Crea y actualiza contratos en minutos.</li>
+                                    <li class="text-sm">Notificaciones automáticas de vencimientos.</li>
+                                    <li class="text-sm">Historial completo de cambios y renovaciones.</li>
+                                    <li class="text-sm">Adjunta documentos y condiciones específicas.</li>
+                                    <li class="text-sm">Mantén contratos conectados a pagos, facturación y contactos.</li>
+                                </ul>
+                                <img src="assets/img/home/automatiza/bloque-automatiza-mas-02.webp" class="img-fluid w-100" alt="Contratos centralizados">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item bg-transparent border-top-0 border-start-0 border-end-0 rounded-0">
+                        <h2 class="accordion-header" id="headingFacturacion">
+                            <button class="accordion-button collapsed bg-transparent shadow-none px-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFacturacion" aria-expanded="false" aria-controls="collapseFacturacion">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="d-flex align-items-center justify-content-center icon-automatiza">
+                                        <img src="assets/img/main/icon-facturas.png" alt="Facturación inteligente">
+                                    </div>
+                                    <span class="head-4m">Facturación inteligente</span>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapseFacturacion" class="accordion-collapse collapse" aria-labelledby="headingFacturacion" data-bs-parent="#accordionAutomatiza">
+                            <div class="accordion-body pb-39">
+                                <h4 class="head-5m mb-2">Emite facturas de forma automática</h4>
+                                <ul class="list-automatiza mb-2">
+                                    <li class="text-sm">Generación automática por ciclo o periodo.</li>
+                                    <li class="text-sm">Facturas sincronizadas con contratos activos.</li>
+                                    <li class="text-sm">Aplicación de descuentos y ajustes.</li>
+                                    <li class="text-sm">Historial fiscal por propiedad o inquilino.</li>
+                                    <li class="text-sm">Exportación simple para contabilidad.</li>
+                                </ul>
+                                <img src="assets/img/home/automatiza/bloque-automatiza-mas-03.webp" class="img-fluid w-100" alt="Facturación inteligente">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item bg-transparent border-top-0 border-start-0 border-end-0 rounded-0">
+                        <h2 class="accordion-header" id="headingPld">
+                            <button class="accordion-button collapsed bg-transparent shadow-none px-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePld" aria-expanded="false" aria-controls="collapsePld">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="d-flex align-items-center justify-content-center icon-automatiza">
+                                        <img src="assets/img/main/icon-cumplimiento.png" alt="Cumplimiento PLD">
+                                    </div>
+                                    <span class="head-4m">Cumplimiento PLD</span>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapsePld" class="accordion-collapse collapse" aria-labelledby="headingPld" data-bs-parent="#accordionAutomatiza">
+                            <div class="accordion-body pb-32">
+                                <h4 class="head-5m mb-2">Gestiona avisos y obligaciones legales</h4>
+                                <ul class="list-automatiza mb-2">
+                                    <li class="text-sm">Identificación de operaciones vulnerables.</li>
+                                    <li class="text-sm">Generación de avisos en plataforma.</li>
+                                    <li class="text-sm">Registro de documentación obligatoria.</li>
+                                    <li class="text-sm">Trazabilidad completa de cada caso.</li>
+                                    <li class="text-sm">Minimiza riesgos y cumple con la ley.</li>
+                                </ul>
+                                <img src="assets/img/home/automatiza/bloque-automatiza-mas-04.webp" class="img-fluid w-100" alt="Cumplimiento PLD">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item bg-transparent border-top-0 border-start-0 border-end-0 rounded-0">
+                        <h2 class="accordion-header" id="headingDashboard">
+                            <button class="accordion-button collapsed bg-transparent shadow-none px-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDashboard" aria-expanded="false" aria-controls="collapseDashboard">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="d-flex align-items-center justify-content-center icon-automatiza">
+                                        <img src="assets/img/main/icon-dashboard.png" alt="Dashboard con KPIs">
+                                    </div>
+                                    <span class="head-4m">Dashboard con KPIs</span>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapseDashboard" class="accordion-collapse collapse" aria-labelledby="headingDashboard" data-bs-parent="#accordionAutomatiza">
+                            <div class="accordion-body pb-0">
+                                <h4 class="head-5m mb-2">Analiza ingresos, ocupación, vencimientos y desempeño</h4>
+                                <ul class="list-automatiza mb-2">
+                                    <li class="text-sm">KPIs financieros y operativos.</li>
+                                    <li class="text-sm">Panel de ocupación e ingresos.</li>
+                                    <li class="text-sm">Alertas de próximos vencimientos.</li>
+                                    <li class="text-sm">Rendimiento por propiedad o portafolio.</li>
+                                    <li class="text-sm">Insights clave para tomar decisiones.</li>
+                                </ul>
+                                <img src="assets/img/home/automatiza/bloque-automatiza-mas-05.webp" class="img-fluid w-100" alt="Dashboard con KPIs">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item bg-transparent border-top-0 border-start-0 border-end-0 rounded-0">
+                        <h2 class="accordion-header" id="headingReportes">
+                            <button class="accordion-button collapsed bg-transparent shadow-none px-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseReportes" aria-expanded="false" aria-controls="collapseReportes">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="d-flex align-items-center justify-content-center icon-automatiza">
+                                        <img src="assets/img/main/icon-reportes.png" alt="Reportes claros">
+                                    </div>
+                                    <span class="head-4m">Reportes claros</span>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapseReportes" class="accordion-collapse collapse" aria-labelledby="headingReportes" data-bs-parent="#accordionAutomatiza">
+                            <div class="accordion-body pb-0">
+                                <h4 class="head-5m mb-2">Finanzas, desempeño y contratos listos para descargar</h4>
+                                <ul class="list-automatiza mb-2">
+                                    <li class="text-sm">Reportes fiscales y financieros.</li>
+                                    <li class="text-sm">Exportación en PDF o Excel.</li>
+                                    <li class="text-sm">Filtros por propiedad, periodo o inquilino.</li>
+                                    <li class="text-sm">Reportes operativos y de seguimiento.</li>
+                                    <li class="text-sm">Información lista para contabilidad o auditorías.</li>
+                                </ul>
+                                <img src="assets/img/home/automatiza/bloque-automatiza-mas-06.webp" class="img-fluid w-100" alt="Reportes claros">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item bg-transparent border-top-0 border-start-0 border-end-0 rounded-0">
+                        <h2 class="accordion-header" id="headingMantenimiento">
+                            <button class="accordion-button collapsed bg-transparent shadow-none px-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMantenimiento" aria-expanded="false" aria-controls="collapseMantenimiento">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="d-flex align-items-center justify-content-center icon-automatiza">
+                                        <img src="assets/img/main/icon-mantenimiento.png" alt="Mantenimiento y gastos">
+                                    </div>
+                                    <span class="head-4m">Mantenimiento y gastos</span>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapseMantenimiento" class="accordion-collapse collapse" aria-labelledby="headingMantenimiento" data-bs-parent="#accordionAutomatiza">
+                            <div class="accordion-body pb-17">
+                                <h4 class="head-5m mb-2">Centraliza incidencias, gastos e impuestos de tu portafolio</h4>
+                                <ul class="list-automatiza mb-2">
+                                    <li class="text-sm">Registro y control de incidencias.</li>
+                                    <li class="text-sm">Documenta pagos, cargos, servicios y movimientos clave para mantener claridad financiera.</li>
+                                    <li class="text-sm">Registra ISR, IVA u otros cargos asociados al portafolio.</li>
+                                    <li class="text-sm">Visualiza cómo cada gasto impacta en la rentabilidad y flujo de cada propiedad.</li>
+                                    <li class="text-sm">Información lista para contabilidad o auditorías.</li>
+                                </ul>
+                                <img src="assets/img/home/automatiza/bloque-automatiza-mas-07.webp" class="img-fluid w-100" alt="Mantenimiento y gastos">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="compliance pt-62 pb-62 pad-40m">
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="head-2 head-3m mb-8m text-w">Cumplimiento PLD integrado a tu operación inmobiliaria</h2>
+                        <p class="text-l text-mm text-w">Gestiona obligaciones legales sin sistemas externos ni procesos adicionales.</p>
+                    </div>
+                </div>
+                <div class="row mt-40 mt-24m d-flex justify-content-between">
+                    <div class="col-12 col-md-6">
+                        <div class="compliance-grid slide-in-left-row">
+                            <div class="compliance-card">
+                                <div class="compliance-card-icon">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 4V20M8 20C5.79086 20 4 21.7909 4 24C4 26.2091 5.79086 28 8 28C10.2091 28 12 26.2091 12 24M8 20C10.2091 20 12 21.7909 12 24M24 12C26.2091 12 28 10.2091 28 8C28 5.79086 26.2091 4 24 4C21.7909 4 20 5.79086 20 8C20 10.2091 21.7909 12 24 12ZM24 12C24 15.1826 22.7357 18.2348 20.4853 20.4853C18.2348 22.7357 15.1826 24 12 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <h4 class="head-4 head-5m">Trazabilidad completa por operación</h4>
+                                <p class="text-m text-sm">Cada contrato, pago y aviso cuenta con registro y respaldo centralizado.</p>
+                            </div>
+                            <div class="compliance-card">
+                                <div class="compliance-card-icon">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.9997 15.9999L14.6663 18.6666L19.9997 13.3333M26.6663 17.3333C26.6663 23.9999 21.9997 27.3333 16.453 29.2666C16.1626 29.365 15.8471 29.3603 15.5597 29.2533C9.99967 27.3333 5.33301 23.9999 5.33301 17.3333V7.99995C5.33301 7.64633 5.47348 7.30719 5.72353 7.05714C5.97358 6.80709 6.31272 6.66662 6.66634 6.66662C9.33301 6.66662 12.6663 5.06662 14.9863 3.03995C15.2688 2.79861 15.6281 2.66602 15.9997 2.66602C16.3712 2.66602 16.7305 2.79861 17.013 3.03995C19.3463 5.07995 22.6663 6.66662 25.333 6.66662C25.6866 6.66662 26.0258 6.80709 26.2758 7.05714C26.5259 7.30719 26.6663 7.64633 26.6663 7.99995V17.3333Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <h4 class="head-4 head-5m">PLD dentro del flujo operativo</h4>
+                                <p class="text-m text-sm">Sin sistemas aislados ni cargas manuales, todo vive en la operación.</p>
+                            </div>
+                            <div class="compliance-card">
+                                <div class="compliance-card-icon">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M21.333 5.33341H23.9997C24.7069 5.33341 25.3852 5.61437 25.8853 6.11446C26.3854 6.61456 26.6663 7.29284 26.6663 8.00008V26.6667C26.6663 27.374 26.3854 28.0523 25.8853 28.5524C25.3852 29.0525 24.7069 29.3334 23.9997 29.3334H7.99967C7.29243 29.3334 6.61415 29.0525 6.11406 28.5524C5.61396 28.0523 5.33301 27.374 5.33301 26.6667V8.00008C5.33301 7.29284 5.61396 6.61456 6.11406 6.11446C6.61415 5.61437 7.29243 5.33341 7.99967 5.33341H10.6663M11.9997 18.6667L14.6663 21.3334L19.9997 16.0001M11.9997 2.66675H19.9997C20.7361 2.66675 21.333 3.2637 21.333 4.00008V6.66675C21.333 7.40313 20.7361 8.00008 19.9997 8.00008H11.9997C11.2633 8.00008 10.6663 7.40313 10.6663 6.66675V4.00008C10.6663 3.2637 11.2633 2.66675 11.9997 2.66675Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <h4 class="head-4 head-5m">Preparado para auditoría y supervisión</h4>
+                                <p class="text-m text-sm">Información ordenada, verificable y disponible cuando se requiere.</p>
+                            </div>
+                            <div class="compliance-card">
+                                <div class="compliance-card-icon">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.0003 17.3333L14.667 20L20.0003 14.6667M26.667 26.6667C27.3742 26.6667 28.0525 26.3857 28.5526 25.8856C29.0527 25.3855 29.3337 24.7072 29.3337 24V10.6667C29.3337 9.95942 29.0527 9.28115 28.5526 8.78105C28.0525 8.28095 27.3742 8 26.667 8H16.1337C15.6877 8.00437 15.2477 7.89682 14.8541 7.68717C14.4604 7.47753 14.1256 7.1725 13.8803 6.8L12.8003 5.2C12.5575 4.83129 12.227 4.52864 11.8383 4.3192C11.4497 4.10975 11.0151 4.00007 10.5737 4H5.33366C4.62641 4 3.94814 4.28095 3.44804 4.78105C2.94794 5.28115 2.66699 5.95942 2.66699 6.66667V24C2.66699 24.7072 2.94794 25.3855 3.44804 25.8856C3.94814 26.3857 4.62641 26.6667 5.33366 26.6667H26.667Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <h4 class="head-4 head-5m">Genera avisos y resguarda documentación</h4>
+                                <p class="text-m text-sm">Desde una sola plataforma, sin intermediarios.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-5 mt-24m mt-md-0">
+                        <picture>
+                            <source media="(min-width: 992px)" srcset="assets/img/home/bloque-cumplimiento-PLD.webp">
+                            <img src="assets/img/home/bloque-cumplimiento-PLD.png" class="w-100" alt="Cumplimiento PLD">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="how-it-works pad-80 pad-40m bg-w" id="how-it-works"> -->
+        <!--     <div class="container custom-container"> -->
+        <!--         <div class="row align-items-center justify-content-between"> -->
+        <!--             <div class="col-12 col-md-6 slide-in-left"> -->
+        <!--                 <h2 class="head-2 head-3m text-b mb-2 lh-30m">Descubre cómo <br class="d-block d-md-none"> funciona Cileo</h2> -->
+        <!--                 <p class="text-l text-mm text-b">Haz tu administración inmobiliaria más clara, <br class="d-block d-md-none"> rápida <br class="d-none d-md-block"> y eficiente hoy mismo.</p> -->
+        <!--                 <div class="mt-4"> -->
+        <!--                     <a href="#contact" class="text-m text-sm btn-custom-gral btn-color border-btn hover-black"><span class="text-m text-sm transition-gral">Solicitar asesoría personalizada</span></a> -->
+        <!--                 </div> -->
+        <!--             </div> -->
+        <!--             <div class="col-12 col-md-6 mt-24m slide-in-left"> -->
+        <!--                 <div class="video-placeholder"> -->
+        <!--                     <img src="assets/img/home/video-placeholder.png" class="w-100" alt="Video placeholder"> -->
+        <!--                     <!-- Reemplazar con: <video src="assets/video/demo.mp4" ...></video> --> -->
+        <!--                 </div> -->
+        <!--             </div> -->
+        <!--         </div> -->
+        <!--     </div> -->
+        <!-- </div> -->
+        <!-- <div class="fringe bg-y pad-40"> -->
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="head-2 head-3m text-b lh-40 lh-30m">Desde carteras en crecimiento hasta <br class="visible-sm"> portafolios de gran escala.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="integrations pt-80 pb-78 bg-w pad-40m" id="integrations">
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="head-2 head-3m mb-8m text-b">Integraciones que fortalecen tu operación inmobiliaria</h2>
+                        <p class="text-l text-mm text-b">Cileo se conecta con plataformas clave para operar con mayor alcance, trazabilidad y eficiencia.</p>
+                    </div>
+                </div>
+                <div class="row mt-40 mt-24m mb-24m">
+                    <div class="col-12 logos-container d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center gap-md-4 gap-3">
+                            <div class="integration-logo position-relative" onclick="swiperIntegrations.slideTo(0)">
+                                <img src="assets/img/main/factura.png" alt="Factura">
+                            </div>
+                            <div class="integration-logo position-relative" onclick="swiperIntegrations.slideTo(1)">
+                                <img src="assets/img/main/conekta.png" alt="Conekta">
+                                <span class="badge-soon">Proximamente</span>
+                            </div>
+                            <div class="integration-logo position-relative" onclick="swiperIntegrations.slideTo(2)">
+                                <img src="assets/img/main/easy-broker.png" alt="Easy Broker">
+                                <span class="badge-soon">Proximamente</span>
+                            </div>
+                        </div>
+                        <div class="swiper-arrows d-none d-md-flex align-items-center gap-2">
+                            <div class="swiper-button-prev swiper-button-prev-integrations position-relative mt-0 custom-arrow">
+                                <img src="assets/img/main/icon-slide-left.svg" alt="Left">
+                            </div>
+                            <div class="swiper-button-next swiper-button-next-integrations position-relative mt-0 custom-arrow">
+                                <img src="assets/img/main/icon-slide-right.svg" alt="Right">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper swiperIntegrations h-100 swiper-dots-black mt-md-4">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide content-integration">
+                            <div class="row mx-0">
+                                <div class="col-12 px-0">
+                                    <div class="row mx-0 mb-3">
+                                        <div class="col-12 justify-content-between p-0 logos-container">
+                                            <div class="d-flex align-items-center justify-content-center integration-logo">
+                                                <img src="assets/img/main/factura.png" alt="Factura.com">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row m-0 d-flex justify-content-between">
+                                        <div class="col-12 col-md-6 ps-0 pe-md-3 order-2 order-md-1 mt-16m pr-0m">
+                                            <picture>
+                                                <source media="(min-width: 992px)" srcset="assets/img/home/integraciones/bloque-integraciones-factura.webp">
+                                                <img src="assets/img/home/integraciones/bloque-integraciones-factura-movil.webp" class="w-100" alt="Factura.com">
+                                            </picture>
+                                        </div>
+                                        <div class="col-12 col-md p-0 order-1 order-md-2">
+                                            <h4 class="head-4 head-5m text-b">Facturación alineada <br class="visible-sm"> a tu operación</h4>
+                                            <p class="text-l text-sm text-b">Emite facturas de forma precisa y sincronizada con contratos, cobros y periodos definidos.</p>
+                                            <ul class="list-automatiza mt-md-4 mt-3">
+                                                <li class="text-l text-sm">Generación de facturas ligada a contratos y periodos de renta.</li>
+                                                <li class="text-l text-sm">Emisión automática según pagos, ajustes o descuentos.</li>
+                                                <li class="text-l text-sm">Reducción de errores fiscales por capturas duplicadas.</li>
+                                                <li class="text-l text-sm">Preparación más clara para reportes y revisiones contables.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide content-integration">
+                            <div class="row mx-0">
+                                <div class="col-12 px-0">
+                                    <div class="row mx-0 mb-3">
+                                        <div class="col-12 justify-content-between p-0 logos-container">
+                                            <div class="d-flex align-items-center justify-content-center integration-logo">
+                                                <img src="assets/img/main/conekta.png" alt="Conekta">
+                                            </div>
+                                            <span class="badge-soon">Proximamente</span>
+                                        </div>
+                                    </div>
+                                    <div class="row mx-0 d-flex justify-content-between">
+                                        <div class="col-12 col-md-6 ps-0 pe-md-3 pr-0m order-2 order-md-1 mt-16m">
+                                            <picture>
+                                                <source media="(min-width: 992px)" srcset="assets/img/home/integraciones/bloque-integraciones-conekta.webp">
+                                                <img src="assets/img/home/integraciones/bloque-integraciones-conekta-movil.webp" class="w-100" alt="Cileo">
+                                            </picture>
+                                        </div>
+                                        <div class="col-12 col-md p-0 order-1 order-md-2">
+                                            <h4 class="head-4 head-5m text-b">Cobranza flexible, accesible y controlada</h4>
+                                            <p class="text-l text-sm text-b">Recibe pagos de renta y conceptos asociados con múltiples métodos, sin fricción para el inquilino.</p>
+                                            <ul class="list-automatiza mt-md-4 mt-3">
+                                                <li class="text-l text-sm">Pagos en efectivo a través de OXXO, 7-Eleven, Farmacias y tiendas afiliadas.</li>
+                                                <li class="text-l text-sm">Pagos con tarjeta y transferencias, centralizados.</li>
+                                                <li class="text-l text-sm">Registro automático de pagos y conciliación directa en la plataforma.</li>
+                                                <li class="text-l text-sm">Trazabilidad completa por contrato, inmueble o portafolio.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide content-integration">
+                            <div class="row mx-0">
+                                <div class="col-12 px-0">
+                                    <div class="row mx-0 mb-3">
+                                        <div class="col-12 justify-content-between p-0 logos-container">
+                                            <div class="d-flex align-items-center justify-content-center integration-logo">
+                                                <img src="assets/img/main/easy-broker.png" alt="EasyBroker">
+                                            </div>
+                                            <span class="badge-soon">Proximamente</span>
+                                        </div>
+                                    </div>
+                                    <div class="row m-0 d-flex justify-content-between mt-16m">
+                                        <div class="col-12 col-md-6 ps-0 pe-md-3 order-2 order-md-1 pr-0m mt-16m">
+                                            <picture>
+                                                <source media="(min-width: 992px)" srcset="assets/img/home/integraciones/bloque-integraciones-easybroker.webp">
+                                                <img src="assets/img/home/integraciones/bloque-integraciones-easybroker-movil.webp" class="w-100" alt="EasyBroker">
+                                            </picture>
+                                        </div>
+                                        <div class="col-12 col-md p-0 order-1 order-md-2">
+                                            <h4 class="head-4 head-5m text-b">Información comercial conectada con la administración</h4>
+                                            <p class="text-l text-sm text-b">Une la colocación de inmuebles con la operación administrativa.</p>
+                                            <ul class="list-automatiza mt-md-4 mt-3">
+                                                <li class="text-l text-sm">Sincronización de propiedades disponibles y ocupadas.</li>
+                                                <li class="text-l text-sm">Mayor visibilidad del estatus de cada inmueble.</li>
+                                                <li class="text-l text-sm">Información consistente entre equipos comerciales y administrativos.</li>
+                                                <li class="text-l text-sm">Operación más fluida desde la colocación hasta la gestión activa.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="row mt-4 mt-24m">
+                    <div class="col-12 text-center">
+                        <h5 class="head-5 head-4m text-b">¿Necesitas integraciones adicionales o flujos específicos para tu operación?</h5>
+                        <p class="text-m text-mm text-b mt-2 mb-3">Cileo se adapta a estructuras más complejas mediante integraciones personalizadas y conexiones vía API.</p>
+                        <a href="#contact" class="text-m text-sm btn-custom-gral btn-color border-btn hover-black"><span class="text-m text-sm transition-gral">Evaluar integraciones personalizadas</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fringe bg-y pad-40">
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="head-2 head-3m text-b lh-40 lh-30m">La gestión inmobiliaria como siempre debió ser: <br class="d-block d-md-none"> simple y precisa.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="solution-section pt-80 pb-60 pad-40m bg-gray-light p-swiper" id="portfolios">
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="head-2 head-3m mb-2 text-b">Una solución que se adapta al nivel de tu operación</h2>
+                        <p class="text-l text-mm text-b">Cileo se adapta al nivel de complejidad, volumen y control que requiere cada portafolio.</p>
+                    </div>
+                </div>
+                <div class="swiper swiperSolutions mt-40 mb-40 mb-24m mt-18m swiper-dots-black slide-in-left-seq-desk">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="content-solution">
+                                <div class="header-solution mb-3">
+                                    <picture>
+                                        <source media="(min-width: 992px)" srcset="assets/img/home/soluciones/bloque-una-solucion-01.webp">
+                                        <img class="w-100" src="assets/img/home/soluciones/bloque-una-solucion-01-movil.webp" alt="Cileo">
+                                    </picture>
+                                </div>
+                                <div class="body-solution">
+                                    <h4 class="head-4 head-5m text-b mb-2">En crecimiento</h4>
+                                    <p class="text-m text-mm text-b mb-3">1 a 50 inmuebles</p>
+                                    <p class="text-m text-mm text-b">Para quienes están dejando atrás la <br class="d-none d-md-block"> administración informal y necesitan orden desde el inicio.</p>
+                                    <ul class="list-automatiza mt-md-3 mt-3">
+                                        <li class="text-m text-sm">Contratos, cobranza y facturación en un solo flujo.</li>
+                                        <li class="text-m text-sm">Visibilidad clara de ingresos, vencimientos y obligaciones.</li>
+                                    </ul>
+                                </div>
+                                <div class="footer-solution mt-3 text-center">
+                                    <h5 class="head-5 head-6m text-b">Habitacional · Locales · <br class="d-none d-md-block"> Carteras pequeñas</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="content-solution">
+                                <div class="header-solution mb-3">
+                                    <picture>
+                                        <source media="(min-width: 992px)" srcset="assets/img/home/soluciones/bloque-una-solucion-02.webp">
+                                        <img class="w-100" src="assets/img/home/soluciones/bloque-una-solucion-02-movil.webp" alt="Cileo">
+                                    </picture>
+                                </div>
+                                <div class="body-solution">
+                                    <h4 class="head-4 head-5m text-b mb-2">Profesional</h4>
+                                    <p class="text-m text-mm text-b mb-3">51 a 500 inmuebles</p>
+                                    <p class="text-m text-mm text-b">Para equipos que requieren control, estandarización y visibilidad real del portafolio. <br class="d-none d-md-block">&nbsp;</p>
+                                    <ul class="list-automatiza mt-md-3 mt-3">
+                                        <li class="text-m text-sm">Flujos automatizados de contratos, cobranza y facturación.</li>
+                                        <li class="text-m text-sm">KPIs financieros y operativos en tiempo real. <br class="d-none d-md-block">&nbsp;</li>
+                                    </ul>
+                                </div>
+                                <div class="footer-solution mt-3 text-center">
+                                    <h5 class="head-5 head-6m text-b">Edificios · Retail · Uso mixto · <br class="d-none d-md-block"> Administración profesional</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="content-solution">
+                                <div class="header-solution mb-3">
+                                    <picture>
+                                        <source media="(min-width: 992px)" srcset="assets/img/home/soluciones/bloque-una-solucion-03.webp">
+                                        <img class="w-100" src="assets/img/home/soluciones/bloque-una-solucion-03-movil.webp" alt="Cileo">
+                                    </picture>
+                                </div>
+                                <div class="body-solution">
+                                    <h4 class="head-4 head-5m text-b mb-2">Corporativa</h4>
+                                    <p class="text-m text-mm text-b mb-3">500 a +10,000 inmuebles</p>
+                                    <p class="text-m text-mm text-b">Para portafolios complejos que exigen trazabilidad, reportes ejecutivos y control multi-nivel.</p>
+                                    <ul class="list-automatiza mt-md-3 mt-3">
+                                        <li class="text-m text-sm">Gestión por portafolio, cliente o estructura corporativa.</li>
+                                        <li class="text-m text-sm">Reportes ejecutivos listos para dirección e inversionistas.</li>
+                                    </ul>
+                                </div>
+                                <div class="footer-solution mt-3 text-center">
+                                    <h5 class="head-5 head-6m text-b">Fondos · Corporativos · <br class="d-none d-md-block"> Portafolios multi-ciudad</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination pt-md-4 pt-3"></div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p class="text-m text-mm text-b mb-3">Centraliza procesos clave y administra portafolios con precisión en cada etapa.</p>
+                        <a href="#contact" class="text-m text-sm btn-custom-gral btn-color border-btn hover-black"><span class="text-m text-sm transition-gral">Hablar sobre mi operación</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pad-80 pad-40m alliance p-swiper bg-w d-none">
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="head-2 head-3m mb-2 text-b">Equipos que operan mejor <br class="d-block d-md-none"> con información clara y procesos sólidos</h2>
+                    </div>
+                </div>
+                <div class="swiper swiperAlliance mt-4 mb-40 mb-00m swiper-dots-black">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="content-alliance">
+                                <div class="header-alliance">
+                                    <img src="assets/img/main/icon-quote.svg" alt="Cileo">
+                                </div>
+                                <div class="body-alliance">
+                                    <p class="text-s text-sm text-b">Antes trabajábamos con varios sistemas y demasiados procesos manuales. Con Cileo logramos ordenar contratos, cobranza y reportes en un solo flujo. Hoy tenemos visibilidad real del portafolio</p>
+                                </div>
+                                <div class="footer-alliance d-flex gap-2 align-items-center align-items-start">
+                                    <div class="content-img-alliance">
+                                        <img class="w-100" src="assets/img/home/alidos/bloque-equipos-01.webp" alt="Cileo">
+                                    </div>
+                                    <div class="content-text-alliance">
+                                        <span class="text-s text-sm text-b">Carlos A.</span>
+                                        <p class="text-s text-sm text-b">Director de Operaciones <br> Grupo Patrimonial del Centro</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="content-alliance">
+                                <div class="header-alliance">
+                                    <img src="assets/img/main/icon-quote.svg" alt="Cileo">
+                                </div>
+                                <div class="body-alliance">
+                                    <p class="text-s text-sm text-b">La parte de cobranza y facturación nos ahorra muchísimo tiempo. Hoy los flujos están claros y los reportes salen listos para tomar decisiones.</p>
+                                </div>
+                                <div class="footer-alliance d-flex gap-2 align-items-center align-items-start">
+                                    <div class="content-img-alliance">
+                                        <img class="w-100" src="assets/img/home/alidos/bloque-equipos-02.webp" alt="Cileo">
+                                    </div>
+                                    <div class="content-text-alliance">
+                                        <span class="text-s text-sm text-b">Andrea M.</span>
+                                        <p class="text-s text-sm text-b">Gerente Financiera <br>Grupo Comercial Atlas</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="content-alliance">
+                                <div class="header-alliance">
+                                    <img src="assets/img/main/icon-quote.svg" alt="Cileo">
+                                </div>
+                                <div class="body-alliance">
+                                    <p class="text-s text-sm text-b">Lo que más valoro es la trazabilidad. Cada contrato, ajuste o pago queda documentado. Eso nos da mucha más confianza frente a propietarios e inversionistas.</p>
+                                </div>
+                                <div class="footer-alliance d-flex gap-2 align-items-center align-items-start">
+                                    <div class="content-img-alliance">
+                                        <img class="w-100" src="assets/img/home/alidos/bloque-equipos-03.webp" alt="Cileo">
+                                    </div>
+                                    <div class="content-text-alliance">
+                                        <span class="text-s text-sm text-b">Mariano R.</span>
+                                        <p class="text-s text-sm text-b">Administradora Inmobiliaria <br>Despacho Urbano</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="content-alliance">
+                                <div class="header-alliance">
+                                    <img src="assets/img/main/icon-quote.svg" alt="Cileo">
+                                </div>
+                                <div class="body-alliance">
+                                    <p class="text-s text-sm text-b">Administramos más de 40 propiedades y necesitábamos dejar Excel. Cileo nos permitió profesionalizar la operación sin cambiar nuestra forma de trabajar.</p>
+                                </div>
+                                <div class="footer-alliance d-flex gap-2 align-items-center align-items-start">
+                                    <div class="content-img-alliance">
+                                        <img class="w-100" src="assets/img/home/alidos/bloque-equipos-04.webp" alt="Cileo">
+                                    </div>
+                                    <div class="content-text-alliance">
+                                        <span class="text-s text-sm text-b">Luis G.</span>
+                                        <p class="text-s text-sm text-b">Socio <br> Portafolio Residencial Norte</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="content-alliance">
+                                <div class="header-alliance">
+                                    <img src="assets/img/main/icon-quote.svg" alt="Cileo">
+                                </div>
+                                <div class="body-alliance">
+                                    <p class="text-s text-sm text-b">Evaluamos varias plataformas. Cileo destacó por su enfoque operativo y cumplimiento normativo. Es una base sólida para escalar una operación inmobiliaria.</p>
+                                </div>
+                                <div class="footer-alliance d-flex gap-2 align-items-center align-items-start">
+                                    <div class="content-img-alliance">
+                                        <img class="w-100" src="assets/img/home/alidos/bloque-equipos-05.webp" alt="Cileo">
+                                    </div>
+                                    <div class="content-text-alliance">
+                                        <span class="text-s text-sm text-b">Jorge P.</span>
+                                        <p class="text-s text-sm text-b">Asset Manager <br> Fondo Inmobiliario MX</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="content-alliance">
+                                <div class="header-alliance">
+                                    <img src="assets/img/main/icon-quote.svg" alt="Cileo">
+                                </div>
+                                <div class="body-alliance">
+                                    <p class="text-s text-sm text-b">Pasamos de una administración reactiva a una operación ordenada. Alertas, vencimientos y contratos siempre visibles. Eso cambió por completo la dinámica diaria.</p>
+                                </div>
+                                <div class="footer-alliance d-flex gap-2 align-items-center align-items-start">
+                                    <div class="content-img-alliance">
+                                        <img class="w-100" src="assets/img/home/alidos/bloque-equipos-06.webp" alt="Cileo">
+                                    </div>
+                                    <div class="content-text-alliance">
+                                        <span class="text-s text-sm text-b">Fernando L.</span>
+                                        <p class="text-s text-sm text-b">Administrador <br> Edificio Reforma 360</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination pt-md-4 pt-3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="admin pt-80 pt-40m">
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="head-2 head-3m text-w">Administración inmobiliaria, llevada a su mejor versión</h2>
+                        <p class="text-l text-mm mt-2 text-w">Centraliza tu operación, reduce el trabajo manual y mantén control absoluto desde cualquier lugar.</p>
+                        <div class="mt-2">
+                            <a href="#contact" class="text-m text-sm btn-custom-gral btn-color"><span class="text-m text-sm transition-gral">Solicitar asesoría especializada</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="admin-images-wrapper">
+                    <div class="admin-float admin-float--left scale-in-center delay-2">
+                        <picture>
+                            <source media="(min-width: 768px)" srcset="assets/img/home/admin/bloque-administracion-inmobiliaria-02.webp">
+                            <img src="assets/img/home/admin/bloque-administracion-inmobiliaria-02-movil.webp" alt="Cileo">
+                        </picture>
+                    </div>
+                    <div class="admin-float admin-float--right scale-in-center delay-3">
+                        <picture>
+                            <source media="(min-width: 768px)" srcset="assets/img/home/admin/bloque-administracion-inmobiliaria-03.webp">
+                            <img src="assets/img/home/admin/bloque-administracion-inmobiliaria-03-movil.webp" alt="Cileo">
+                        </picture>
+                    </div>
+                    <div class="row justify-content-center mt-65">
+                        <div class="col-8 col-md-8 scale-in-center delay-1">
+                            <picture>
+                                <source media="(min-width: 768px)" srcset="assets/img/home/admin/bloque-administracion-inmobiliaria-01.webp">
+                                <img class="w-100" src="assets/img/home/admin/bloque-administracion-inmobiliaria-01-movil.webp" alt="Cileo">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact pad-60 pad-40m bg-w" id="contact">
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="row mx-0">
+                            <div class="col-12 col-md-10 px-md-0 px-0">
+                                <h2 class="head-2 head-3m lh-30m">Descubre cómo Cileo puede simplificar tu operación <br class="d-none d-md-block"> desde el primer día.</h2>
+                            </div>
+                        </div>
+                        <div class="mt-16 d-none d-md-block">
+                            <img class="w-100" src="assets/img/home/formulario.webp" alt="Cileo">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 mt-24m">
+                        <form class="form-contact custom--form" id="form-contact" action="#">
+                            <div class="d-none">
+                                <label for="check-bot">Campo informativo</label>
+                                <input type="text" id="check-bot" name="check_bot_field" value="">
+                            </div>
+                            <div class="mb-24">
+                                <label class="text-s" for="name">Nombre completo</label>
+                                <input type="text" class="form-control" id="name" name="firstname" placeholder="¿Cómo te llamas?" required>
+                            </div>
+                            <div class="row mx-0 mb-24 gap-20">
+                                <div class="col-12 col-md p-0">
+                                    <label class="text-s" for="email">Correo electrónico</label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="¿A qué correo te escribimos?" required>
+                                    <p class="text-s mt-8 text-red d-none info-error">Introduce una cuenta de correo válida</p>
+                                </div>
+                                <div class="col-12 col-md p-0">
+                                    <label class="text-s" for="phone">Celular</label>
+                                    <input type="number" class="form-control input-digits-only" id="phone" name="phone" placeholder="¿Cuál es tu número?" required inputmode="numeric" pattern="[0-9]*" maxlength="10">
+                                    <p class="text-s mt-8 text-red d-none info-error">Introduce un número de 10 dígitos</p>
+                                </div>
+                            </div>
+                            <div class="mb-24">
+                                <label class="text-s" for="contact_method">Medio de contacto de preferencia</label>
+                                <select class="form-select d-none" id="contact_method" name="contact_method">
+                                    <option value="0" selected>Selecciona una opción</option>
+                                    <option value="Correo electrónico">Correo electrónico</option>
+                                    <option value="WhatsApp">WhatsApp</option>
+                                    <option value="Llamada telefónica">Llamada telefónica</option>
+                                </select>
+                                <div class="custom-select-container" id="custom-contact-method">
+                                    <div class="custom-select-trigger">Selecciona una opción</div>
+                                    <div class="custom-options">
+                                        <div class="custom-option text-s" data-value="Correo electrónico">Correo electrónico</div>
+                                        <div class="custom-option text-s" data-value="WhatsApp">WhatsApp</div>
+                                        <div class="custom-option text-s" data-value="Llamada telefónica">Llamada telefónica</div>
+                                    </div>
+                                </div>
+                                <p class="text-s mt-8 text-red d-none info-error">Selecciona una opción</p>
+                            </div>
+                            <div class="row mx-0 mb-24 gap-20">
+                                <div class="col-12 col-md p-0">
+                                    <label class="text-s" for="company">Empresa (opcional)</label>
+                                    <input type="text" class="form-control" id="company" name="company" placeholder="¿A qué empresa perteneces?">
+                                </div>
+                                <div class="col-12 col-md p-0">
+                                    <label class="text-s" for="company_role">Rol de la empresa</label>
+                                    <input type="text" class="form-control" id="company_role" name="company_role" placeholder="Ej. Portafolio habitacional, oficinas, etc...">
+                                </div>
+                            </div>
+                            <div class="row mx-0 mb-24 gap-20">
+                                <div class="col-12 col-md p-0">
+                                    <label class="text-s" for="properties">¿Cuántas propiedades gestionas?</label>
+                                        <select class="form-select d-none" id="properties" name="properties">
+                                            <option value="0" selected>Selecciona el rango</option>
+                                            <option value="1-50">1-50</option>
+                                            <option value="51-200">51-200</option>
+                                            <option value="201-500">201-500</option>
+                                            <option value="+500">+500</option>
+                                        </select>
+                                        <div class="custom-select-container" id="custom-properties">
+                                            <div class="custom-select-trigger">Selecciona el rango</div>
+                                            <div class="custom-options">
+                                                <div class="custom-option text-s" data-value="1-50">1-50</div>
+                                                <div class="custom-option text-s" data-value="51-200">51-200</div>
+                                                <div class="custom-option text-s" data-value="201-500">201-500</div>
+                                                <div class="custom-option text-s" data-value="+500">+500</div>
+                                            </div>
+                                        </div>
+                                        <p class="text-s mt-8 text-red d-none info-error">Selecciona una opción</p>
+                                    </div>
+                                <div class="col-12 col-md p-0">
+                                    <label class="text-s" for="admin_method">¿Cómo administras actualmente?</label>
+                                        <select class="form-select d-none" id="admin_method" name="admin_method">
+                                            <option value="0" selected>Selecciona una opción</option>
+                                            <option value="Excel / Google Sheets">Excel / Google Sheets</option>
+                                            <option value="Software de administración">Software de administración</option>
+                                            <option value="Sistema propio / ERP">Sistema propio / ERP</option>
+                                            <option value="Mixto (Manual y digital)">Mixto (Manual y digital)</option>
+                                            <option value="No tengo sistema">No tengo sistema</option>
+                                        </select>
+                                        <div class="custom-select-container" id="custom-admin-method">
+                                            <div class="custom-select-trigger">Selecciona una opción</div>
+                                            <div class="custom-options">
+                                                <div class="custom-option text-s" data-value="Excel / Google Sheets">Excel / Google Sheets</div>
+                                                <div class="custom-option text-s" data-value="Software de administración">Software de administración</div>
+                                                <div class="custom-option text-s" data-value="Sistema propio / ERP">Sistema propio / ERP</div>
+                                                <div class="custom-option text-s" data-value="Mixto (Manual y digital)">Mixto (Manual y digital)</div>
+                                                <div class="custom-option text-s" data-value="No tengo sistema">No tengo sistema</div>
+                                            </div>
+                                        </div>
+                                        <p class="text-s mt-8 text-red d-none info-error">Selecciona una opción</p>
+                                    </div>
+                                </div>
+                                <div class="mb-24 mt-24">
+                                    <label class="text-s" for="message">Mensaje</label>
+                                    <textarea class="form-control" id="message" name="message" rows="1" placeholder="Cuéntanos brevemente cómo operas hoy o qué te gustaría mejorar."></textarea>
+                                    <p class="text-s mt-8 text-red d-none info-error">Necesitamos un poco más de información para ayudarte</p>
+                                </div>
+                            <div class="btn-send-form disabled-btn">
+                                <a href="#contact" class="text-m text-sm btn-custom-gral btn-color border-btn hover-black"><span class="text-m text-sm transition-gral">Hablar con un especialista</span></a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-top">
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-6 col-md-7 logo-footer pl-20m">
+                        <img src="assets/img/main/logo-footer.svg" alt="Cileo">
+                    </div>
+                    <div class="col-6 col-md-5">
+                        <div class="row mx-0">
+                            <div class="col-12 col-md-7 d-flex flex-column gap-md-2 gap-3 list-footer">
+                                <a href="#benefits" class="text-s text-w hover-y transition-gral hover-underline">Beneficios</a>
+                                <a href="#functions" class="text-s text-w hover-y transition-gral hover-underline">Funciones</a>
+                                <a href="#integrations" class="text-s text-w hover-y transition-gral hover-underline">Integraciones</a>
+                                <a href="#portfolios" class="text-s text-w hover-y transition-gral hover-underline">Portafolios</a>
+                            </div>
+                            <div class="col-12 col-md d-flex flex-column gap-3 gap-md-4 align-items-md-end pe-md-2 pe-4 pt-3 pt-md-0">
+                                <a href="tel:+529994159540" class="text-s text-w hover-y transition-gral hover-underline">+52 999 415 9540</a>
+                                <a href="mailto:contacto@cileo.mx" class="text-s text-w hover-y transition-gral hover-underline">contacto@cileo.mx</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom pt-md-4">
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-12 text-md-end text-start">
+                        <p class="text-s text-w">©Cileo, 2026. | Diseñado por <a class="text-bold hover-y transition-gral font-b underline-m hover-underline" target="_blank" href="https://remedia.mx/">Remedia</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <!-- Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+</body>
 </html>
