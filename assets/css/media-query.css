@@ -375,7 +375,7 @@
     }
     .banner-home{
         padding-bottom: 17px;
-        height: calc(768px + 2rem)
+        height: 100%;
     }
     .pad-26m{
         padding: 26px 0;
@@ -569,7 +569,7 @@
 }
 @media (max-width: 530px) {
     .banner-home {
-        height: calc(768px - 6rem);
+        height: 100%;
         .position-relative {
             picture {
                 display: flex;
