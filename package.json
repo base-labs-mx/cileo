@@ -1,0 +1,24 @@
+{
+  "name": "cileo",
+  "version": "1.0.0",
+  "description": "Cileo Landing Page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/base-labs-mx/cileo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/base-labs-mx/cileo/issues"
+  },
+  "homepage": "https://github.com/base-labs-mx/cileo#readme",
+  "devDependencies": {
+    "prettier": "^3.8.4"
+  }
+}
