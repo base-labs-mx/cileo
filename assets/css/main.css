@@ -984,6 +984,7 @@ footer{
     fill: var(--primary-black);
 }
 .thankyou-page main {
+  height: calc(100vh - 320px);
   padding-top: 60px;
 }
 .list-footer a{

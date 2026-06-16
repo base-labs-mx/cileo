@@ -1,0 +1,492 @@
+/* ==================================================
+   legal.css — Legal document pages delta
+   Extends the existing CSS system (main.css, etc.)
+   Pages: Acuerdo Marco, Aviso de Privacidad,
+          Confidencialidad, Deslinde PLD/Fiscal
+   ================================================== */
+
+/* Legal-specific variables
+   Values that don't have an exact match in main.css
+   ================================================== */
+:root {
+  --lime-deep: #E5F54D;
+  --ink-soft: #0A1F15;
+  --paper: #FBFCF9;
+  --gray: #6B7270;
+  --gray-soft: #9AA09E;
+  --line: #E7EAE4;
+  --line-soft: #F0F2EC;
+  --maxw: 760px;
+}
+
+/* Body override — existing uses dark bg, legal pages need light
+   ================================================== */
+body {
+  background: var(--paper);
+  color: var(--primary-black);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Legal pages header — light background (like index scroll-on state)
+   Inherits position:absolute + box-shadow + z-index + height from main.css
+   ================================================== */
+.legal-header {
+  background: var(--second-color) !important;
+}
+
+/* Dark text for nav links (default is white for transparent header) */
+.legal-header .navbar-expand-lg .navbar-nav .nav-link {
+  color: var(--primary-black);
+}
+
+/* Dark logo */
+.legal-header .navbar-brand svg path {
+  fill: var(--primary-black);
+}
+
+/* Dark hamburger icon */
+.legal-header .navbar-toggler-icon::before,
+.legal-header .navbar-toggler-icon::after,
+.legal-header .navbar-toggler-icon > span {
+  background-color: var(--primary-black);
+}
+
+/* Shell layout — TOC sidebar + content
+   Overrides the existing <main> padding for legal pages
+   ================================================== */
+.shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+/* Hub page — single column, no TOC */
+.shell.legal-hub-shell {
+  display: block;
+  max-width: var(--maxw);
+}
+
+.shell.legal-hub-shell main {
+  max-width: none;
+}
+
+/* Table of contents sidebar
+   ================================================== */
+.toc {
+  position: sticky;
+  top: 96px;
+  padding: 40px 0;
+  max-height: calc(100vh - 96px);
+  overflow-y: auto;
+}
+
+.toc-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gray-soft);
+  margin-bottom: 14px;
+}
+
+.toc a {
+  display: block;
+  color: var(--gray);
+  text-decoration: none;
+  font-size: 13.5px;
+  line-height: 1.45;
+  padding: 6px 0 6px 14px;
+  border-left: 2px solid var(--line);
+  transition: .15s;
+}
+
+.toc a:hover {
+  color: var(--primary-black);
+  border-left-color: var(--lime-deep);
+}
+
+/* Main content area — matches index spacing, inherits margin-top from main.css
+   ================================================== */
+main {
+  padding: 60px 0 96px;   /* same top padding as index */
+  min-width: 0;
+  max-width: var(--maxw);
+}
+
+/* Breadcrumb navigation
+   ================================================== */
+.breadcrumb-legal {
+  margin-bottom: 24px;
+  font-size: 13px;
+  color: var(--gray-soft);
+}
+
+.breadcrumb-legal a {
+  color: var(--gray);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--line);
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.breadcrumb-legal a:hover {
+  color: var(--primary-black);
+  text-decoration-color: var(--primary-black);
+}
+
+.breadcrumb-sep {
+  margin: 0 10px;
+  color: var(--line);
+  font-size: 14px;
+}
+
+.breadcrumb-current {
+  color: var(--primary-black);
+  font-weight: 500;
+}
+
+/* Document header / cover
+   ================================================== */
+.doc-head {
+  padding-bottom: 32px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.kicker {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--primary-black);
+  background: var(--primary-color);
+  padding: 5px 11px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -.025em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.version {
+  font-size: 13.5px;
+  color: var(--gray);
+  font-weight: 500;
+}
+
+.version .entity {
+  color: var(--primary-black);
+  font-weight: 600;
+}
+
+/* Section headings
+   ================================================== */
+h2 {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  margin: 44px 0 16px;
+  padding-top: 8px;
+  scroll-margin-top: 96px;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.sec-num {
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--lime-deep);
+  background: var(--primary-black);
+  min-width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transform: translateY(-2px);
+}
+
+/* Text content
+   ================================================== */
+p {
+  color: #1B211F;
+}
+
+p.lead {
+  font-size: 17.5px;
+  color: var(--gray);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+strong {
+  font-weight: 600;
+  color: var(--primary-black);
+}
+
+.sub-num {
+  font-weight: 700;
+  color: var(--primary-black);
+  margin-right: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.def {
+  padding: 0 0 0 18px;
+  border-left: 2px solid var(--line-soft);
+  margin-bottom: 14px;
+}
+
+/* Lists — legal pages use custom list markers (content only)
+   scoped to .shell to avoid affecting .navbar-nav
+   ================================================== */
+.shell ul {
+  margin: 0 0 18px;
+  padding-left: 4px;
+  list-style: none;
+}
+
+.shell ul li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 10px;
+  color: #1B211F;
+}
+
+.shell ul li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 11px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--lime-deep);
+}
+
+/* Tables
+   ================================================== */
+.table-wrap {
+  margin: 8px 0 24px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14.5px;
+}
+
+th {
+  background: var(--ink-soft);
+  color: #FFFFFF;
+  text-align: left;
+  font-weight: 600;
+  padding: 13px 16px;
+  font-size: 13px;
+  letter-spacing: .01em;
+}
+
+td {
+  padding: 13px 16px;
+  border-top: 1px solid var(--line);
+  color: #1B211F;
+  vertical-align: top;
+}
+
+tr:nth-child(even) td {
+  background: var(--line-soft);
+}
+
+/* Legal notice callout
+   ================================================== */
+.legal-note {
+  background: #FFFDF0;
+  border: 1px solid #F0E9C0;
+  border-left: 3px solid var(--lime-deep);
+  border-radius: 8px;
+  padding: 16px 18px;
+  font-size: 13px;
+  color: #6B6535;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* Highlighted quote box
+   ================================================== */
+.modal-box {
+  background: var(--primary-black);
+  border-radius: 14px;
+  padding: 24px 26px;
+  margin: 28px 0;
+  color: #FFFFFF;
+}
+
+.modal-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+}
+
+.modal-text {
+  color: rgba(255, 255, 255, .9);
+  font-size: 14.5px;
+  line-height: 1.65;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Marks & fills (template placeholders)
+   ================================================== */
+mark.todo {
+  background: rgba(229, 245, 77, .32);
+  color: #5E6411;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: .93em;
+  font-style: normal;
+}
+
+.fill {
+  color: var(--gray-soft);
+  border-bottom: 1px dotted var(--gray-soft);
+  padding: 0 2px;
+  font-style: italic;
+}
+
+/* Legal hub — index page listing all documents
+   ================================================== */
+.legal-hub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.legal-hub-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--primary-black);
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.legal-hub-item:hover {
+  background-color: var(--paper);
+  border-color: var(--primary-color);
+  box-shadow: 0 2px 8px rgba(10, 18, 15, 0.06);
+}
+
+.legal-hub-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--second-color);
+  border-radius: 10px;
+  color: var(--primary-black);
+}
+
+.legal-hub-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.legal-hub-text strong {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 4px;
+  color: var(--primary-black);
+}
+
+.legal-hub-desc {
+  display: block;
+  font-size: 13px;
+  color: var(--gray);
+  line-height: 1.5;
+}
+
+.legal-hub-arrow {
+  flex-shrink: 0;
+  color: var(--gray-soft);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.legal-hub-item:hover .legal-hub-arrow {
+  transform: translateX(4px);
+  color: var(--primary-black);
+}
+
+/* Responsive — tablet & mobile
+   ================================================== */
+@media (max-width: 920px) {
+  .shell {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .toc {
+    display: none;
+  }
+
+  .shell {
+    padding: 0 20px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  main {
+    padding: 40.5px 0 64px;  /* matches index mobile top padding */
+  }
+}
+
+/* Print styles
+   ================================================== */
+@media print {
+  header,
+  .toc,
+  footer {
+    display: none;
+  }
+
+  .shell {
+    display: block;
+    padding: 0;
+  }
+
+  body {
+    background: #FFFFFF;
+    font-size: 11pt;
+  }
+
+  mark.todo {
+    background: #f3f3c8;
+  }
+}
