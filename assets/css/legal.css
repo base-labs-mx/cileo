@@ -52,13 +52,22 @@ body {
   background-color: var(--primary-black);
 }
 
-/* Iniciar sesión — hover amarillo (second-color) */
-.legal-header .d-md-flex > .btn-custom-gral.outline-black:first-child:hover {
-  background-color: var(--second-color);
+/* Iniciar sesión — outline-w (como scroll-on del index) con hover amarillo */
+.legal-header .btn-custom-gral.outline-w {
+  border-color: var(--primary-black);
   color: var(--primary-black);
-  border-color: var(--second-color);
 }
-.legal-header .d-md-flex > .btn-custom-gral.outline-black:first-child:hover span {
+.legal-header .btn-custom-gral.outline-w span {
+  color: var(--primary-black);
+}
+.legal-header .btn-custom-gral.outline-w::before {
+  background-color: var(--primary-black);
+}
+.legal-header .btn-custom-gral.outline-w:hover {
+  background-color: var(--second-color);
+  border: 1px solid var(--primary-black);
+}
+.legal-header .btn-custom-gral.outline-w:hover span {
   color: var(--primary-black);
 }
 
