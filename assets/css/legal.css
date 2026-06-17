@@ -60,8 +60,8 @@ body {
 .legal-header .btn-custom-gral.outline-w span {
   color: var(--primary-black);
 }
-.legal-header .btn-custom-gral.outline-w::before {
-  background-color: var(--primary-black);
+.legal-header .btn-custom-gral.outline-w:hover::before {
+  opacity: 0;
 }
 .legal-header .btn-custom-gral.outline-w:hover {
   background-color: var(--second-color);
