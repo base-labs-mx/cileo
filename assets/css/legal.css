@@ -52,13 +52,23 @@ body {
   background-color: var(--primary-black);
 }
 
-/* Solicitar información button hover — matches index scroll-on light theme state */
-.legal-header .btn-custom-gral.btn-color:hover {
+/* Iniciar sesión — hover amarillo (second-color) */
+.legal-header .d-md-flex > .btn-custom-gral.outline-black:first-child:hover {
+  background-color: var(--second-color);
+  color: var(--primary-black);
+  border-color: var(--second-color);
+}
+.legal-header .d-md-flex > .btn-custom-gral.outline-black:first-child:hover span {
+  color: var(--primary-black);
+}
+
+/* Solicitar información — hover oscuro (black) */
+.legal-header .d-md-flex > .btn-custom-gral.outline-black:last-child:hover {
   background-color: var(--primary-black);
   color: var(--primary-white);
-  border: 1px solid var(--primary-black);
+  border-color: var(--primary-black);
 }
-.legal-header .btn-custom-gral.btn-color:hover span {
+.legal-header .d-md-flex > .btn-custom-gral.outline-black:last-child:hover span {
   color: var(--primary-white);
 }
 
