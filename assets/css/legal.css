@@ -39,6 +39,9 @@ body {
 .legal-header .navbar-expand-lg .navbar-nav .nav-link {
   color: var(--primary-black);
 }
+.legal-header .hover-underline-desk.active::after {
+  width: 100%;
+}
 
 /* Dark logo */
 .legal-header .navbar-brand svg path {
@@ -50,6 +53,35 @@ body {
 .legal-header .navbar-toggler-icon::after,
 .legal-header .navbar-toggler-icon > span {
   background-color: var(--primary-black);
+}
+
+/* Iniciar sesión — outline-w (como scroll-on del index) con hover amarillo */
+.legal-header .btn-custom-gral.outline-w {
+  border-color: var(--primary-black);
+  color: var(--primary-black);
+}
+.legal-header .btn-custom-gral.outline-w span {
+  color: var(--primary-black);
+}
+.legal-header .btn-custom-gral.outline-w:hover::before {
+  opacity: 0;
+}
+.legal-header .btn-custom-gral.outline-w:hover {
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-black);
+}
+.legal-header .btn-custom-gral.outline-w:hover span {
+  color: var(--primary-black);
+}
+
+/* Solicitar información — hover oscuro (black) */
+.legal-header .d-md-flex > .btn-custom-gral.outline-black:last-child:hover {
+  background-color: var(--primary-black);
+  color: var(--primary-white);
+  border-color: var(--primary-black);
+}
+.legal-header .d-md-flex > .btn-custom-gral.outline-black:last-child:hover span {
+  color: var(--primary-white);
 }
 
 /* Shell layout — TOC sidebar + content
