@@ -64,7 +64,7 @@ body {
   opacity: 0;
 }
 .legal-header .btn-custom-gral.outline-w:hover {
-  background-color: var(--second-color);
+  background-color: var(--primary-color);
   border: 1px solid var(--primary-black);
 }
 .legal-header .btn-custom-gral.outline-w:hover span {
