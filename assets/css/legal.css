@@ -39,6 +39,9 @@ body {
 .legal-header .navbar-expand-lg .navbar-nav .nav-link {
   color: var(--primary-black);
 }
+.legal-header .hover-underline-desk.active::after {
+  width: 100%;
+}
 
 /* Dark logo */
 .legal-header .navbar-brand svg path {
