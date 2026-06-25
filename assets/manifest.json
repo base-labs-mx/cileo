@@ -1,0 +1,22 @@
+{
+	"version": "1",
+	"updated_at": "2026-06-24",
+	"documents": {
+		"acuerdo-marco": {
+			"version": "1.0",
+			"title": "Acuerdo Marco"
+		},
+		"confidencialidad": {
+			"version": "1.0",
+			"title": "Confidencialidad"
+		},
+		"deslinde-fiscal": {
+			"version": "1.0",
+			"title": "Deslinde Fiscal"
+		},
+		"aviso-privacidad": {
+			"version": "1.0",
+			"title": "Aviso de Privacidad"
+		}
+	}
+}
