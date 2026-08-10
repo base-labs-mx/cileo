@@ -88,7 +88,7 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link text-l hover-underline-desk" href="#portfolios">Portafolios</a>
+                <a class="nav-link text-l hover-underline-desk" href="#portfolios">Planes</a>
               </li>
             </ul>
             <div class="menu-footer">
@@ -247,7 +247,7 @@
               <div class="mt-40 d-none d-md-flex">
                 <a href="#portfolios" class="text-m btn-custom-gral outline-black"
                   ><span class="text-m text-sm transition-gral"
-                    >Explorar modelos de administración</span
+                    >Explorar planes</span
                   ></a
                 >
               </div>
@@ -257,7 +257,7 @@
             <div class="col-12 text-center">
               <a href="#portfolios" class="text-m btn-custom-gral outline-black"
                 ><span class="text-m text-sm transition-gral"
-                  >Explorar modelos de administración</span
+                  >Explorar planes</span
                 ></a
               >
             </div>
@@ -1354,25 +1354,98 @@
           </div>
         </div>
       </div>
-      <div class="solution-section pt-80 pb-60 pad-40m bg-gray-light p-swiper" id="portfolios">
+      <div class="solution-section pricing-section pt-80 pb-60 pad-40m bg-gray-light p-swiper" id="portfolios">
         <div class="container custom-container">
-          <div class="row">
-            <div class="col-12">
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-8 text-center">
               <h2 class="head-2 head-3m mb-2 text-b">
-                Una solución que se adapta al nivel de tu operación
+                Elige el plan ideal para tu operación
               </h2>
-              <p class="text-l text-mm text-b">
-                Cileo se adapta al nivel de complejidad, volumen y control que requiere cada
-                portafolio.
+              <p class="text-l text-mm text-b pricing-intro">
+                Desde tus primeras propiedades hasta portafolios corporativos, crece con una
+                plataforma que se adapta a cada etapa.
               </p>
+              <div class="pricing-trial mt-3" role="note">
+                <img src="assets/img/main/icon-circle-check-big.svg" alt="" aria-hidden="true" />
+                <span><strong>30 días de prueba sin costo</strong> para conocer Cileo.</span>
+              </div>
+              <div class="pricing-billing mt-24" aria-label="Periodo de contratación">
+                <div
+                  class="pricing-toggle"
+                  role="group"
+                  aria-label="Selecciona el periodo de contratación"
+                >
+                  <button
+                    type="button"
+                    class="pricing-toggle-option active"
+                    data-billing="monthly"
+                    aria-pressed="true"
+                  >
+                    Mensual
+                  </button>
+                  <button
+                    type="button"
+                    class="pricing-toggle-option"
+                    data-billing="annual"
+                    aria-pressed="false"
+                  >
+                    Anual <span>−15%</span>
+                  </button>
+                </div>
+                <p class="text-sm text-b mt-2">Contrata anual y obtén un 15% de descuento.</p>
+              </div>
             </div>
           </div>
           <div
-            class="swiper swiperSolutions mt-40 mb-40 mb-24m mt-18m swiper-dots-black slide-in-left-seq-desk"
+            class="swiper swiperSolutions pricing-swiper mt-40 mb-40 mb-24m mt-18m swiper-dots-black slide-in-left-seq-desk"
           >
             <div class="swiper-wrapper">
+              <article class="swiper-slide">
+                <div class="content-solution pricing-card">
+                  <div class="header-solution pricing-card-header mb-3">
+                    <!-- Free photo: https://www.pexels.com/photo/woman-working-with-laptop-in-office-12902988/ -->
+                    <picture>
+                      <img
+                        class="w-100"
+                        src="assets/img/home/soluciones/bloque-una-solucion-basico.webp"
+                        alt="Profesional organizando su operación desde una laptop"
+                      />
+                    </picture>
+                    <span class="pricing-badge">Nuevo</span>
+                  </div>
+                  <div class="body-solution pricing-card-body">
+                    <h3 class="head-4 head-5m text-b mb-2">Básico</h3>
+                    <p class="pricing-range text-m text-mm text-b mb-3">1 a 10 inmuebles</p>
+                    <p class="pricing-description text-m text-mm text-b">
+                      Para propietarios que buscan digitalizar y organizar sus inmuebles desde el
+                      inicio.
+                    </p>
+                    <ul class="list-automatiza pricing-features mt-md-3 mt-3">
+                      <li class="text-m text-sm">
+                        Contratos, cobranza y facturación en un solo flujo.
+                      </li>
+                      <li class="text-m text-sm">
+                        Visibilidad clara de ingresos, vencimientos y obligaciones.
+                      </li>
+                    </ul>
+                    <div class="pricing-price-block">
+                      <p class="pricing-price">
+                        <span class="pricing-currency">$</span><span class="pricing-amount">2,500</span>
+                        <span class="pricing-period">MXN/mes</span>
+                      </p>
+                      <p class="pricing-price-note text-sm">Facturación mensual</p>
+                    </div>
+                    <a href="#contact" class="pricing-cta" data-plan="Básico">Probar 30 días</a>
+                  </div>
+                  <div class="footer-solution pricing-audience mt-3 text-center">
+                    <p class="text-m text-sm text-b">
+                      Propietarios independientes · Alquileres individuales · Primeras inversiones
+                    </p>
+                  </div>
+                </div>
+              </article>
               <div class="swiper-slide">
-                <div class="content-solution">
+                <div class="content-solution pricing-card">
                   <div class="header-solution mb-3">
                     <picture>
                       <source
@@ -1382,18 +1455,18 @@
                       <img
                         class="w-100"
                         src="assets/img/home/soluciones/bloque-una-solucion-01-movil.webp"
-                        alt="Cileo"
+                        alt="Administradora inmobiliaria revisando su portafolio"
                       />
                     </picture>
                   </div>
-                  <div class="body-solution">
-                    <h4 class="head-4 head-5m text-b mb-2">En crecimiento</h4>
-                    <p class="text-m text-mm text-b mb-3">1 a 50 inmuebles</p>
-                    <p class="text-m text-mm text-b">
-                      Para quienes están dejando atrás la <br class="d-none d-md-block" />
-                      administración informal y necesitan orden desde el inicio.
+                  <div class="body-solution pricing-card-body">
+                    <h3 class="head-4 head-5m text-b mb-2">En crecimiento</h3>
+                    <p class="pricing-range text-m text-mm text-b mb-3">11 a 50 inmuebles</p>
+                    <p class="pricing-description text-m text-mm text-b">
+                      Para quienes están dejando atrás la administración informal y necesitan orden
+                      desde el inicio.
                     </p>
-                    <ul class="list-automatiza mt-md-3 mt-3">
+                    <ul class="list-automatiza pricing-features mt-md-3 mt-3">
                       <li class="text-m text-sm">
                         Contratos, cobranza y facturación en un solo flujo.
                       </li>
@@ -1401,17 +1474,38 @@
                         Visibilidad clara de ingresos, vencimientos y obligaciones.
                       </li>
                     </ul>
+                    <div class="pricing-price-block" data-discounted-plan>
+                      <p class="pricing-original-price" aria-hidden="true">$7,500 MXN</p>
+                      <p class="pricing-price">
+                        <span class="pricing-currency">$</span
+                        ><span
+                          class="pricing-amount"
+                          data-monthly-price="7,500"
+                          data-annual-price="6,400"
+                          >7,500</span
+                        >
+                        <span class="pricing-period">MXN/mes</span>
+                      </p>
+                      <p
+                        class="pricing-price-note text-sm"
+                        data-monthly-copy="Facturación mensual"
+                        data-annual-copy="Facturado anualmente"
+                      >
+                        Facturación mensual
+                      </p>
+                    </div>
+                    <a href="#contact" class="pricing-cta" data-plan="En crecimiento"
+                      >Probar 30 días</a
+                    >
                   </div>
-                  <div class="footer-solution mt-3 text-center">
-                    <h5 class="head-5 head-6m text-b">
-                      Habitacional · Locales · <br class="d-none d-md-block" />
-                      Carteras pequeñas
-                    </h5>
+                  <div class="footer-solution pricing-audience mt-3 text-center">
+                    <p class="text-m text-sm text-b">Habitacional · Locales · Carteras pequeñas</p>
                   </div>
                 </div>
               </div>
               <div class="swiper-slide">
-                <div class="content-solution">
+                <div class="content-solution pricing-card pricing-card-featured">
+                  <div class="pricing-featured-label">Más elegido</div>
                   <div class="header-solution mb-3">
                     <picture>
                       <source
@@ -1421,37 +1515,58 @@
                       <img
                         class="w-100"
                         src="assets/img/home/soluciones/bloque-una-solucion-02-movil.webp"
-                        alt="Cileo"
+                        alt="Profesional gestionando información de propiedades"
                       />
                     </picture>
                   </div>
-                  <div class="body-solution">
-                    <h4 class="head-4 head-5m text-b mb-2">Profesional</h4>
-                    <p class="text-m text-mm text-b mb-3">51 a 500 inmuebles</p>
-                    <p class="text-m text-mm text-b">
+                  <div class="body-solution pricing-card-body">
+                    <h3 class="head-4 head-5m text-b mb-2">Profesional</h3>
+                    <p class="pricing-range text-m text-mm text-b mb-3">51 a 500 inmuebles</p>
+                    <p class="pricing-description text-m text-mm text-b">
                       Para equipos que requieren control, estandarización y visibilidad real del
-                      portafolio. <br class="d-none d-md-block" />&nbsp;
+                      portafolio.
                     </p>
-                    <ul class="list-automatiza mt-md-3 mt-3">
+                    <ul class="list-automatiza pricing-features mt-md-3 mt-3">
                       <li class="text-m text-sm">
                         Flujos automatizados de contratos, cobranza y facturación.
                       </li>
                       <li class="text-m text-sm">
                         KPIs financieros y operativos en tiempo real.
-                        <br class="d-none d-md-block" />&nbsp;
                       </li>
                     </ul>
+                    <div class="pricing-price-block" data-discounted-plan>
+                      <p class="pricing-original-price" aria-hidden="true">$12,000 MXN</p>
+                      <p class="pricing-price">
+                        <span class="pricing-currency">$</span
+                        ><span
+                          class="pricing-amount"
+                          data-monthly-price="12,000"
+                          data-annual-price="10,200"
+                          >12,000</span
+                        >
+                        <span class="pricing-period">MXN/mes</span>
+                      </p>
+                      <p
+                        class="pricing-price-note text-sm"
+                        data-monthly-copy="Facturación mensual"
+                        data-annual-copy="Facturado anualmente"
+                      >
+                        Facturación mensual
+                      </p>
+                    </div>
+                    <a href="#contact" class="pricing-cta" data-plan="Profesional"
+                      >Probar 30 días</a
+                    >
                   </div>
-                  <div class="footer-solution mt-3 text-center">
-                    <h5 class="head-5 head-6m text-b">
-                      Edificios · Retail · Uso mixto · <br class="d-none d-md-block" />
-                      Administración profesional
-                    </h5>
+                  <div class="footer-solution pricing-audience mt-3 text-center">
+                    <p class="text-m text-sm text-b">
+                      Edificios · Retail · Uso mixto · Administración profesional
+                    </p>
                   </div>
                 </div>
               </div>
               <div class="swiper-slide">
-                <div class="content-solution">
+                <div class="content-solution pricing-card pricing-card-corporate">
                   <div class="header-solution mb-3">
                     <picture>
                       <source
@@ -1461,18 +1576,18 @@
                       <img
                         class="w-100"
                         src="assets/img/home/soluciones/bloque-una-solucion-03-movil.webp"
-                        alt="Cileo"
+                        alt="Plataforma Cileo para un portafolio corporativo"
                       />
                     </picture>
                   </div>
-                  <div class="body-solution">
-                    <h4 class="head-4 head-5m text-b mb-2">Corporativa</h4>
-                    <p class="text-m text-mm text-b mb-3">500 a +10,000 inmuebles</p>
-                    <p class="text-m text-mm text-b">
+                  <div class="body-solution pricing-card-body">
+                    <h3 class="head-4 head-5m text-b mb-2">Corporativa</h3>
+                    <p class="pricing-range text-m text-mm text-b mb-3">Más de 500 inmuebles</p>
+                    <p class="pricing-description text-m text-mm text-b">
                       Para portafolios complejos que exigen trazabilidad, reportes ejecutivos y
                       control multi-nivel.
                     </p>
-                    <ul class="list-automatiza mt-md-3 mt-3">
+                    <ul class="list-automatiza pricing-features mt-md-3 mt-3">
                       <li class="text-m text-sm">
                         Gestión por portafolio, cliente o estructura corporativa.
                       </li>
@@ -1480,12 +1595,21 @@
                         Reportes ejecutivos listos para dirección e inversionistas.
                       </li>
                     </ul>
+                    <div class="pricing-price-block">
+                      <p class="pricing-contact-price">Contáctanos</p>
+                      <p class="pricing-price-note text-sm">Solución a la medida</p>
+                    </div>
+                    <a
+                      href="#contact"
+                      class="pricing-cta pricing-cta-dark"
+                      data-plan="Corporativa"
+                      >Hablar con ventas</a
+                    >
                   </div>
-                  <div class="footer-solution mt-3 text-center">
-                    <h5 class="head-5 head-6m text-b">
-                      Fondos · Corporativos · <br class="d-none d-md-block" />
-                      Portafolios multi-ciudad
-                    </h5>
+                  <div class="footer-solution pricing-audience mt-3 text-center">
+                    <p class="text-m text-sm text-b">
+                      Fondos · Corporativos · Portafolios multi-ciudad
+                    </p>
                   </div>
                 </div>
               </div>
@@ -1494,14 +1618,9 @@
           </div>
           <div class="row">
             <div class="col-12 text-center">
-              <p class="text-m text-mm text-b mb-3">
-                Centraliza procesos clave y administra portafolios con precisión en cada etapa.
+              <p class="text-m text-mm text-b">
+                Todos los precios están expresados en pesos mexicanos (MXN) y no incluyen IVA.
               </p>
-              <a
-                href="#contact"
-                class="text-m text-sm btn-custom-gral btn-color border-btn hover-black"
-                ><span class="text-m text-sm transition-gral">Hablar sobre mi operación</span></a
-              >
             </div>
           </div>
         </div>
@@ -1981,7 +2100,7 @@
                   <a
                     href="#portfolios"
                     class="text-s text-w hover-y transition-gral hover-underline"
-                    >Portafolios</a
+                    >Planes</a
                   >
                   <a href="legal/" class="text-s text-w hover-y transition-gral hover-underline"
                     >Documentos Legales</a

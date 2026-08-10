@@ -82,6 +82,30 @@
     .benefit-card:hover {
         cursor: pointer;
     }
+    .pricing-card:hover {
+        z-index: 3;
+        border-color: var(--primary-black);
+        transform: translateY(-8px);
+        box-shadow: 0 14px 32px rgba(10, 18, 15, 0.16);
+    }
+    .pricing-swiper .swiper-slide:hover {
+        z-index: 3;
+    }
+    .pricing-card-featured:hover {
+        box-shadow: 0 0 0 3px var(--primary-color), 0 18px 38px rgba(10, 18, 15, 0.2);
+    }
+    .pricing-cta:hover {
+        color: var(--primary-white);
+        background: var(--primary-black);
+    }
+    .pricing-cta-dark:hover {
+        color: var(--primary-black);
+        background: var(--primary-color);
+    }
+    .pricing-card-featured .pricing-cta:hover {
+        color: var(--primary-black);
+        background: var(--primary-color);
+    }
     .compliance-card:hover {
         background-color: var(--primary-white);
         color: var(--primary-black);
@@ -566,6 +590,26 @@
     .content-solution {
         min-height: 489.84px;
     }
+    .pricing-card {
+        min-height: 650px;
+    }
+    .pricing-description {
+        min-height: 66px;
+    }
+    .pricing-features {
+        min-height: 84px;
+    }
+    .pricing-trial {
+        border-radius: 16px;
+    }
+    .pricing-toggle {
+        width: 100%;
+        max-width: 360px;
+    }
+    .pricing-toggle-option {
+        flex: 1;
+        min-width: 0;
+    }
 }
 @media (max-width: 530px) {
     .banner-home {
@@ -593,7 +637,6 @@
             }
         }
       }
-    }
     .content-integration {
         min-height: 638px;
     }
