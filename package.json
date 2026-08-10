@@ -4,7 +4,8 @@
   "description": "Cileo Landing Page",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "start": "vite"
   },
   "repository": {
     "type": "git",
@@ -14,11 +15,15 @@
   "author": "",
   "license": "ISC",
   "type": "commonjs",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "bugs": {
     "url": "https://github.com/base-labs-mx/cileo/issues"
   },
   "homepage": "https://github.com/base-labs-mx/cileo#readme",
   "devDependencies": {
-    "prettier": "^3.8.4"
+    "prettier": "^3.8.4",
+    "vite": "^8.2.1"
   }
 }

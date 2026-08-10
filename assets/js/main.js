@@ -81,18 +81,44 @@ var swiperSolutions = new Swiper(".swiperSolutions", {
       spaceBetween: 8,
     },
     768: {
-      slidesPerView: 1.2,
+      slidesPerView: 2,
       slidesOffsetBefore: 0,
       slidesOffsetAfter: 0,
       spaceBetween: 20,
     },
     1024: {
-      slidesPerView: 3,
+      slidesPerView: 4,
       slidesOffsetBefore: 0,
       slidesOffsetAfter: 0,
-      spaceBetween: 24.5,
+      spaceBetween: 16,
     },
   },
+});
+
+const pricingSection = document.querySelector('.pricing-section');
+const pricingToggleOptions = document.querySelectorAll('.pricing-toggle-option');
+
+pricingToggleOptions.forEach(option => {
+  option.addEventListener('click', () => {
+    const billingPeriod = option.dataset.billing;
+    const isAnnual = billingPeriod === 'annual';
+
+    pricingToggleOptions.forEach(button => {
+      const isActive = button === option;
+      button.classList.toggle('active', isActive);
+      button.setAttribute('aria-pressed', String(isActive));
+    });
+
+    pricingSection?.classList.toggle('is-annual', isAnnual);
+
+    document.querySelectorAll('[data-monthly-price]').forEach(price => {
+      price.textContent = isAnnual ? price.dataset.annualPrice : price.dataset.monthlyPrice;
+    });
+
+    document.querySelectorAll('[data-monthly-copy]').forEach(note => {
+      note.textContent = isAnnual ? note.dataset.annualCopy : note.dataset.monthlyCopy;
+    });
+  });
 });
 
 var swiperAlliance = new Swiper(".swiperAlliance", {
