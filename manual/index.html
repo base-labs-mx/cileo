@@ -70,9 +70,7 @@
   .mark{position:absolute;transform:translate(-50%,-50%);width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--lime);
     display:grid;place-items:center;font-weight:800;font-size:13px;border:2px solid #fff;box-shadow:0 3px 10px rgba(0,0,0,.35);z-index:2;cursor:help;transition:transform .1s ease}
   .mark:hover{transform:translate(-50%,-50%) scale(1.12);z-index:30}
-  .mark[data-tip]::after{content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 12px);transform:translateX(-50%);width:max-content;max-width:250px;background:var(--ink);color:#F7FEFC;padding:9px 12px;border-radius:10px;font-size:12.5px;font-weight:500;line-height:1.42;text-align:left;box-shadow:0 12px 32px rgba(0,0,0,.32);opacity:0;visibility:hidden;transition:opacity .12s ease;pointer-events:none;z-index:30;white-space:normal}
-  .mark[data-tip]::before{content:"";position:absolute;left:50%;bottom:calc(100% + 6px);transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--ink);opacity:0;visibility:hidden;transition:opacity .12s ease;z-index:30}
-  .mark[data-tip]:hover::after,.mark[data-tip]:hover::before{opacity:1;visibility:visible}
+  .mark-tip{position:fixed;display:none;z-index:9999;max-width:260px;background:var(--ink);color:#F7FEFC;padding:9px 12px;border-radius:10px;font-size:12.5px;font-weight:500;line-height:1.42;text-align:left;box-shadow:0 14px 36px rgba(0,0,0,.34);pointer-events:none}
   .cap{font-size:12.5px;color:var(--ink-soft);margin:8px 2px 0}
 
   .steps{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px}
@@ -601,6 +599,22 @@
       m.setAttribute('aria-label',(h?h+': ':'')+p);
     });
   });
+  // Tooltip flotante sobre <body> (no lo clipea ningún contenedor; se voltea/ajusta)
+  (function(){
+    const tip=document.createElement('div'); tip.className='mark-tip'; document.body.appendChild(tip);
+    const place=(m)=>{
+      tip.textContent=m.getAttribute('data-tip')||''; tip.style.display='block';
+      const r=m.getBoundingClientRect(), tr=tip.getBoundingClientRect();
+      let top=r.top-tr.height-10; if(top<8) top=r.bottom+10;
+      let left=r.left+r.width/2-tr.width/2;
+      left=Math.max(8,Math.min(left,window.innerWidth-tr.width-8));
+      tip.style.left=Math.round(left)+'px'; tip.style.top=Math.round(top)+'px';
+    };
+    document.querySelectorAll('.mark[data-tip]').forEach(m=>{
+      m.addEventListener('mouseenter',()=>place(m));
+      m.addEventListener('mouseleave',()=>{tip.style.display='none';});
+    });
+  })();
 
   const body=document.body, menuBtn=document.getElementById('menuBtn'), backdrop=document.getElementById('backdrop');
   menuBtn.addEventListener('click',()=>body.classList.toggle('nav-open'));
