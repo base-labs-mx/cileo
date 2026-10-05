@@ -66,7 +66,7 @@
   .steps{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px}
   .step{display:flex;gap:13px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px}
   .step .b{flex:none;width:27px;height:27px;border-radius:50%;background:var(--ink);color:var(--lime);display:grid;place-items:center;font-weight:800;font-size:13px}
-  .step h4{margin:0 0 3px;font-size:14.5px}
+  .step h3,.step h4{margin:0 0 3px;font-size:14.5px}
   .step p{margin:0;font-size:13px;color:var(--ink-soft)}
   code{background:var(--panel);color:var(--ink);padding:1px 6px;border-radius:5px;font-size:12px;font-family:"Kumbh Sans",monospace}
   .usd{background:var(--usd-bg);color:var(--usd);font-size:10px;font-weight:800;padding:2px 6px;border-radius:6px}
@@ -129,3 +129,13 @@
     .steps{grid-template-columns:1fr}
     h1{font-size:30px}
   }
+
+  /* Tablas del manual (métodos de pago, planes). Con scroll propio en móvil. */
+  .tablewrap{overflow-x:auto;margin-top:16px;border:1px solid var(--line);border-radius:12px}
+  .tablewrap table{border-collapse:collapse;width:100%;min-width:560px;font-size:13px}
+  .tablewrap th,.tablewrap td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+  .tablewrap thead th{background:var(--panel);font-weight:800;color:var(--ink);white-space:nowrap}
+  .tablewrap tbody tr:last-child td{border-bottom:0}
+  .tablewrap tbody tr:nth-child(even){background:var(--card)}
+  /* URL dentro de la etiqueta de cada vista del carrusel */
+  .slabel .surl{color:var(--ink-soft);font-weight:500}
