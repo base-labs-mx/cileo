@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="es-MX">
+<!--email_off-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Centro de ayuda de Cileo</title>
+<meta name="description" content="Cileo es una plataforma web para administrar arrendamiento inmobiliario. Centraliza en un solo lugar los contratos, la cobranza, la facturación (CFDI) y la gestión de PLD.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://cileo.io/ayuda/">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F7FEFC">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="Cileo">
+<meta property="og:title" content="Centro de ayuda de Cileo">
+<meta property="og:description" content="Cileo es una plataforma web para administrar arrendamiento inmobiliario. Centraliza en un solo lugar los contratos, la cobranza, la facturación (CFDI) y la gestión de PLD.">
+<meta property="og:url" content="https://cileo.io/ayuda/">
+<link rel="icon" type="image/svg+xml" href="../assets/img/main/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;600;800&amp;display=swap">
+<style>
+:root{
+  --bg:#F7FEFC;--panel:#FFFFFF;--ink:#0A1F15;--soft:#4F5866;--faint:#6B7280;
+  --line:#E3EBE7;--line2:#EFF4F1;--accent:#EDFF8C;--accent-2:#DDF25E;--on-accent:#0A1F15;
+  --red:#C8281F;--focus:#0A1F15;--link-line:#609F00;--field-line:#7C8A83;--shadow:rgba(10,31,21,.22);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0A1F15;--panel:#0E271A;--ink:#F3FAEF;--soft:#B4C4B9;--faint:#93A398;
+  --line:#1E3A2B;--line2:#173021;--accent:#EDFF8C;--accent-2:#C7E85A;--on-accent:#0A1F15;
+  --red:#F0817A;--focus:#C7E85A;--link-line:var(--accent-2);--field-line:#7C8D82;--shadow:rgba(0,0,0,.55);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#0A1F15;--panel:#0E271A;--ink:#F3FAEF;--soft:#B4C4B9;--faint:#93A398;
+  --line:#1E3A2B;--line2:#173021;--accent:#EDFF8C;--accent-2:#C7E85A;--on-accent:#0A1F15;
+  --red:#F0817A;--focus:#C7E85A;--link-line:var(--accent-2);--field-line:#7C8D82;--shadow:rgba(0,0,0,.55);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.62;
+  font-family:"Kumbh Sans","Segoe UI",system-ui,-apple-system,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:820px;margin:0 auto;padding:40px 22px 96px}
+p,li,dd,dt,td,th,h1,h2,h3{overflow-wrap:break-word}
+a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--link-line);text-decoration-thickness:2px;text-underline-offset:2px}
+a:hover{text-decoration-color:var(--ink)}
+a.tel{white-space:nowrap}
+a:focus-visible,input:focus-visible,.tablewrap:focus-visible,.totop:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+header.top{border-bottom:1px solid var(--line);padding-bottom:22px}
+.brand{display:inline-flex;color:var(--ink);text-decoration:none}
+.brand svg{height:30px;width:auto;display:block}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);font-weight:800;margin:22px 0 8px}
+h1{font-size:40px;line-height:1.2;margin:0 0 14px;font-weight:800;letter-spacing:-.02em}
+.meta p{margin:4px 0;color:var(--soft);font-size:15px}
+.meta .k{font-weight:800;color:var(--ink)}
+.search{margin:18px 0 0}
+.search input{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--panel);border:1px solid var(--field-line);
+  border-radius:12px;padding:11px 14px}
+.search .empty{margin:10px 2px 0;color:var(--soft)}
+.search .empty:empty{margin:0}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+.toc{margin:22px 0 4px}
+.toc-title{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);font-weight:800;margin:0 0 10px}
+.toc ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:6px 18px}
+.toc li{margin:0}
+.toc a{display:flex;gap:10px;align-items:baseline;text-decoration:none;font-size:14.5px;font-weight:600;color:var(--ink);padding:4px 0}
+.toc a:hover{text-decoration:underline;text-decoration-color:var(--link-line)}
+
+.n{flex:none;display:inline-block;min-width:2.6em;text-align:center;color:var(--on-accent);background:var(--accent);
+  font-size:12px;font-weight:800;letter-spacing:.04em;border-radius:7px;padding:2px 7px;line-height:1.5}
+section{scroll-margin-top:12px}
+h2{font-size:24px;line-height:1.33;font-weight:800;letter-spacing:-.01em;margin:46px 0 8px;padding-top:18px;border-top:1px solid var(--line)}
+h2 .n{transform:translateY(-3px);margin-right:4px}
+h3{font-size:18px;line-height:1.3;font-weight:800;margin:26px 0 6px;scroll-margin-top:12px}
+p{margin:8px 0}
+ul{margin:8px 0;padding-left:22px}
+li{margin:5px 0}
+li>ul{margin:6px 0}
+li>p{margin:6px 0}
+
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:12px;margin:12px 0;
+  background:linear-gradient(to right,var(--panel) 30%,transparent) left center/40px 100% no-repeat local,
+    linear-gradient(to left,var(--panel) 30%,transparent) right center/40px 100% no-repeat local,
+    radial-gradient(farthest-side at 0 50%,var(--shadow),transparent) left center/14px 100% no-repeat scroll,
+    radial-gradient(farthest-side at 100% 50%,var(--shadow),transparent) right center/14px 100% no-repeat scroll,
+    var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line2)}
+thead th{background:var(--line2);font-weight:800}
+tbody th{font-weight:600}
+tbody tr:last-child td{border-bottom:none}
+td.req{color:var(--red);font-weight:800}
+td.no{color:var(--faint)}
+
+.faq .qa{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0;background:var(--panel);scroll-margin-top:12px}
+.faq .qa h3{font-size:16.5px;margin:0 0 6px}
+.faq .qa p{margin:4px 0 0;color:var(--soft)}
+
+dl.glosario{margin:12px 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+dl.glosario div{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--panel)}
+dl.glosario dt{font-weight:800;margin:0 0 3px}
+dl.glosario dd{margin:0;color:var(--soft);font-size:15px}
+
+footer{margin-top:60px;border-top:1px solid var(--line);padding-top:20px;color:var(--faint);font-size:14px;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:center}
+footer p{margin:0}
+footer .brand svg{height:22px}
+.totop{position:fixed;right:16px;bottom:16px;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:var(--accent);color:var(--on-accent);text-decoration:none;font-weight:800;font-size:18px;box-shadow:0 2px 10px rgba(10,31,21,.18)}
+
+@media (max-width:600px){
+  .wrap{padding:24px 16px 80px}
+  h1{font-size:30px}
+  h2{font-size:21px;margin-top:38px}
+  h3{font-size:17px}
+  .toc ol{grid-template-columns:1fr}
+  dl.glosario{grid-template-columns:1fr}
+  .faq .qa{padding:12px 14px}
+}
+@media print{.search,.totop{display:none!important} .wrap{max-width:none}}
+</style>
+</head>
+<body>
+<!-- Generado con kb_a_html.py desde base-conocimiento-cileo-2026-10-05.txt (2026-10-05). El contenido lo mantiene José Marcos (Cileo): no editar a mano; los cambios se le piden a él, se hacen en el .txt y se regenera esta página. -->
+<div class="wrap">
+<header class="top">
+  <a class="brand" href="https://cileo.io/" aria-label="Cileo, ir al inicio"><svg viewBox="0 0 1920 720.1" role="img" aria-label="Cileo"><g fill="currentColor"><rect x="457.9" y="220.2" width="147.1" height="491.6"/><rect x="659.2" y="10.2" width="147.1" height="701.6"/><path d="M531.4,2.7c-45.9,0-83.1,37.2-83.1,83.1c0,45.9,37.2,83.1,83.1,83.1c45.9,0,83.1-37.2,83.1-83.1C614.5,39.9,577.3,2.7,531.4,2.7z"/><path d="M1613.9,214.6c-132.5,0-239.9,93.6-239.9,251.4s107.4,251.4,239.9,251.4s239.9-93.6,239.9-251.4S1746.4,214.6,1613.9,214.6z M1613.9,614.5c-55.9,0-101.1-50.8-101.1-148.4s45.3-148.4,101.1-148.4S1715,368.4,1715,466S1669.7,614.5,1613.9,614.5z"/><path d="M1875.6,634.3c-23,0-41.6,18.6-41.6,41.6c0,23,18.6,41.6,41.6,41.6c23,0,41.6-18.6,41.6-41.6C1917.2,652.9,1898.6,634.3,1875.6,634.3z"/><path d="M281.8,614.5c-65.3,0-140.2-50.8-140.2-148.4s74.9-148.4,140.2-148.4c76,0,121.8,49.9,121.8,49.9v-114c0,0-48.1-38.8-146.7-38.8C124.4,214.6,2.8,298.7,2.8,466c0,157.8,112.2,251.4,254.1,251.4c95,0,146.7-38.8,146.7-38.8V562.7C373.5,605.5,327.6,614.5,281.8,614.5z"/><path d="M1135.8,614.5c-64,0-124.4-36.6-138.4-100.5h328.7c19.9-151.5-58.9-299.4-229.3-299.4c-132.5,0-243.5,93.6-243.5,251.4s109.8,251.4,261.2,251.4c144.5,0,197.3-86.6,197.3-86.6v-82.5C1294.1,596.7,1217.6,614.5,1135.8,614.5z M1096.9,317.6c45,0,85.5,29.5,99.5,93.4H997.5C1011.5,347.1,1051.9,317.6,1096.9,317.6z"/></g></svg></a>
+  <p class="eyebrow">Centro de ayuda</p>
+  <h1>Cileo — Base de conocimiento</h1>
+  <div class="meta">
+    <p><span class="k">Uso:</span> fuente de conocimiento para el asistente/bot. Contenido de cara al usuario.</p>
+    <p><span class="k">Versión:</span> BC 05-10-2026 · documento vivo, se actualiza conforme Cileo libera nuevas funciones.</p>
+    <p><span class="k">Soporte:</span> <a href="mailto:soporte@cileo.io">soporte@cileo.io</a> · WhatsApp <a href="https://wa.me/525662976298" class="tel" target="_blank" rel="noopener">+52 56 6297 6298</a></p>
+  </div>
+  <div class="search" id="buscar" role="search" hidden>
+    <label class="sr-only" for="q">Buscar en la ayuda</label>
+    <input id="q" type="search" placeholder="Buscar en la ayuda…" autocomplete="off">
+  </div>
+</header>
+<nav class="toc" id="indice" aria-label="Índice">
+  <p class="toc-title">Índice</p>
+  <ol>
+    <li><a href="#que-es-cileo"><span class="n">01</span> Qué es Cileo</a></li>
+    <li><a href="#como-empezar"><span class="n">02</span> Cómo empezar (puesta en marcha)</a></li>
+    <li><a href="#inmuebles"><span class="n">03</span> Inmuebles</a></li>
+    <li><a href="#contratos"><span class="n">04</span> Contratos</a></li>
+    <li><a href="#cobranza"><span class="n">05</span> Cobranza</a></li>
+    <li><a href="#acciones-sobre-un-cobro"><span class="n">06</span> Acciones sobre un cobro (menú ⋮ de tres puntos)</a></li>
+    <li><a href="#facturacion"><span class="n">07</span> Facturación (CFDI)</a></li>
+    <li><a href="#pld"><span class="n">08</span> PLD</a></li>
+    <li><a href="#reportes"><span class="n">09</span> Reportes</a></li>
+    <li><a href="#contactos"><span class="n">10</span> Contactos</a></li>
+    <li><a href="#administracion"><span class="n">11</span> Administración</a></li>
+    <li><a href="#dashboard"><span class="n">12</span> Dashboard</a></li>
+    <li><a href="#planes-y-precios"><span class="n">13</span> Planes y precios</a></li>
+    <li><a href="#soporte-y-contacto"><span class="n">14</span> Soporte y contacto</a></li>
+    <li><a href="#lo-que-esta-guia-no-cubre"><span class="n">14b</span> Lo que esta guía NO cubre (casos que atiende una persona)</a></li>
+    <li><a href="#proximamente"><span class="n">15</span> Próximamente</a></li>
+    <li><a href="#glosario"><span class="n">16</span> Glosario</a></li>
+    <li><a href="#preguntas-frecuentes"><span class="n">17</span> Preguntas frecuentes</a></li>
+  </ol>
+</nav>
+<main id="contenido">
+<section id="que-es-cileo">
+  <h2><span class="n">01</span> Qué es Cileo</h2>
+  <p>Cileo es una plataforma web para administrar arrendamiento inmobiliario. Centraliza en un solo lugar los contratos, la cobranza, la facturación (CFDI) y la gestión de PLD.</p>
+  <p>¿Para quién es? Propietarios, administradores de inmuebles y equipos que rentan departamentos, locales, oficinas o bodegas, desde un primer contrato hasta portafolios corporativos multiciudad.</p>
+  <p>No requiere instalación: funciona desde el navegador en <a href="https://app.cileo.io" rel="noopener">app.cileo.io</a>; solo inicias sesión con tu cuenta.</p>
+  <p>Menú principal: Dashboard, Inmuebles, Contratos, Cobranza, PLD, Contactos y Administración (Usuarios, Datos Fiscales, Cuentas e Impuestos). Según tu cuenta, también aparecen Reportes y Suscripción. Solo el administrador ve Administración y Suscripción.</p>
+</section>
+<section id="como-empezar">
+  <h2><span class="n">02</span> Cómo empezar (puesta en marcha)</h2>
+  <p>Ruta recomendada para poner en marcha la operación:</p>
+  <ul>
+    <li>Datos fiscales: la información del emisor para facturar (RFC, régimen, domicilio y certificados), en Administración → Datos Fiscales. Puedes guardarlos sin los certificados (CSD) y completarlos después; para timbrar facturas sí se necesitan.</li>
+    <li>Inmuebles: registra tus propiedades.</li>
+    <li>Contactos: da de alta a propietarios e inquilinos.</li>
+    <li>Contratos: crea los contratos de arrendamiento.</li>
+    <li>Cobranza: genera cobros y dales seguimiento.</li>
+  </ul>
+</section>
+<section id="inmuebles">
+  <h2><span class="n">03</span> Inmuebles</h2>
+  <p>El catálogo de propiedades. Cada inmueble agrupa sus localidades (unidades rentables) y es la base sobre la que se crean contratos y cobros.</p>
+  <ul>
+    <li>Alta: en Inmuebles, botón Nuevo inmueble.</li>
+    <li>Datos: nombre comercial, dirección, superficie y localidades.</li>
+    <li>Ocupación: el Dashboard muestra localidades rentadas, disponibles, totales y la tasa de ocupación.</li>
+  </ul>
+</section>
+<section id="contratos">
+  <h2><span class="n">04</span> Contratos</h2>
+  <p>El acuerdo de arrendamiento que conecta un inmueble, un inquilino y un propietario. Es el eje que alimenta cobranza, facturación y PLD.</p>
+  <h3 id="alta-de-contrato">Alta de contrato (asistente por pasos)</h3>
+  <p>Contratos → Nuevo contrato abre un asistente guiado. Los pasos, en orden:</p>
+  <p>Inmueble → Localidades → Renta → Inquilino → Monto e impuestos → Mantenimiento (opcional) → Verifica los datos.</p>
+  <ul>
+    <li>En el primer paso defines fecha de inicio, tipo de plazo y seleccionas el inmueble.</li>
+    <li>Puedes guardarlo como borrador y, cuando esté completo, usar Confirmar contrato para activarlo. Un borrador se puede guardar aunque el propietario todavía no tenga datos fiscales.</li>
+    <li>Periodicidad de la renta: Mensual, Bimestral, Trimestral, Cuatrimestral, Semestral o Anual.</li>
+    <li>Sufijo del concepto (opcional, en renta y en mantenimiento): texto que se agrega al final del concepto del cobro y la factura, por ejemplo "/m2" o "/mes". El concepto se arma con el prefijo, el periodo de renta, las localidades y el sufijo.</li>
+    <li>Plazo: determinado o indefinido (sin fecha de fin); los dos generan cobros normalmente.</li>
+    <li>Desde el detalle del contrato: Editar, Cancelar (con confirmación), agregar comentarios y generar un Nuevo cobro.</li>
+  </ul>
+</section>
+<section id="cobranza">
+  <h2><span class="n">05</span> Cobranza</h2>
+  <p>Aquí se generan, controlan y dan seguimiento a los cobros de renta y conceptos asociados. Arriba muestra el panorama de cartera: cuentas por cobrar pendientes y vencidas, pagadas, y los totales vencido y pagado del periodo.</p>
+  <h3 id="estatus-de-un-cobro">Estatus de un cobro</h3>
+  <ul>
+    <li>Pendiente de envío: generado, todavía no se envía al inquilino.</li>
+    <li>Pendiente de confirmación: necesita que confirmes un dato antes de enviarse (ver abajo).</li>
+    <li>Enviado: ya se envió al inquilino y espera pago.</li>
+    <li>Parcialmente pagado: tiene abonos, pero queda saldo.</li>
+    <li>Pagado: liquidado por completo.</li>
+    <li>Retroactivos: cobros de periodos anteriores.</li>
+    <li>Cancelado: anulado.</li>
+    <li>Cancelación pendiente: se solicitó al SAT cancelar la factura y se espera su respuesta.</li>
+    <li>Cancelación no aprobada: el SAT rechazó la cancelación (ver "Si el SAT rechaza una cancelación").</li>
+  </ul>
+  <p>Vencido no es una pestaña: un cobro está vencido cuando pasó su fecha de pago y conserva saldo pendiente; se refleja en la cartera vencida y la morosidad.</p>
+  <h3 id="pestanas-de-cobranza">Pestañas de Cobranza</h3>
+  <p>Todos · Pendiente de envío · Pendiente de confirmación · Enviado · Pagado · Retroactivos · Cancelado.</p>
+  <p>En Todos, Enviado, Pagado y Cancelado hay un selector por tipo de comprobante: Facturas, Complementos (de pago) y Notas de crédito, cada uno con sus propias columnas. Si hay cobros con cancelación rechazada, la pestaña Cancelado muestra un aviso para que los atiendas.</p>
+  <h3 id="cuando-un-cobro-queda-pendiente-de-confirmacion">¿Cuándo un cobro queda "Pendiente de confirmación"? (antes "Bloqueado por confirmación")</h3>
+  <p>Cuando necesitas confirmar un dato antes de enviarlo: tipo de cambio por definir (cobros en USD), cuenta de depósito pendiente, un incremento de renta o mantenimiento (por INPC o por una variación de monto) o un tipo de renta mixto. Estos cobros muestran la acción Confirmar y enviar.</p>
+  <h3 id="panel-de-filtros">Panel de filtros</h3>
+  <p>El botón de filtros abre el panel de Filtros dinámicos: Fecha (año/mes o personalizado), Inmueble, Estado del contrato, Contrato, Tipo de localidad, Propietario e Inquilino. Aplica en Cobranza, Dashboard y Reportes.</p>
+  <h3 id="multi-moneda-y-exportacion">Multi-moneda y exportación</h3>
+  <p>Los cobros pueden ser en MXN o USD (con el tipo de cambio del DOF registrado). Si el pago llega en una moneda distinta a la de la factura (por ejemplo, factura en USD pagada en pesos), al registrar el pago capturas el tipo de cambio y lo puedes editar; el complemento de pago se emite con esa equivalencia. Se puede Descargar CSV (incluye totales fiscales) y Descargar CFDIs.</p>
+  <p>Los pagos cancelados ya no cuentan en el Dashboard, en PLD ni en los reportes.</p>
+</section>
+<section id="acciones-sobre-un-cobro">
+  <h2><span class="n">06</span> Acciones sobre un cobro (menú ⋮ de tres puntos)</h2>
+  <h3 id="nuevo-cobro">Nuevo cobro</h3>
+  <p>Se crea desde Cobranza → Nuevo cobro (o desde el contrato). Paso 1: eliges inquilino, contrato y tipo de cobro. Paso 2: agregas los conceptos (renta, mantenimiento…) con sus impuestos. Requisito: el contrato debe tener una cuenta de depósito definida.</p>
+  <h3 id="aplicar-pago">Aplicar pago (Agregar pago)</h3>
+  <p>Registra un pago sobre un cobro. Los campos base siempre aparecen y son obligatorios: Cobro, Fecha de pago, Hora de pago, Importe, Método de pago y Cuenta de depósito. El Importe debe ser mayor a cero y no puede exceder el restante del cobro.</p>
+  <p>Otros tres campos (Cuenta de origen, Número de rastreo y Comprobante) se muestran u ocultan y se vuelven obligatorios según el método de pago:</p>
+  <div class="tablewrap" role="region" aria-label="Tabla: Aplicar pago (Agregar pago)" tabindex="0">
+    <table>
+      <thead><tr><th scope="col">Método de pago (SAT)</th><th scope="col">Cuenta de origen</th><th scope="col">Número de rastreo</th><th scope="col">Comprobante</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">01 Efectivo · 99 Por definir</th><td class="no">no se muestra</td><td class="no">no se muestra</td><td class="no">no se muestra</td></tr>
+        <tr><th scope="row">02 Cheque · 03 Transferencia · 27 A satisfacción del acreedor</th><td>opcional</td><td>opcional</td><td>opcional</td></tr>
+        <tr><th scope="row">06 Dinero electrónico</th><td class="no">no se muestra</td><td class="req">obligatorio</td><td class="req">obligatorio</td></tr>
+        <tr><th scope="row">Cualquier otro (04 T. crédito, 28 T. débito…)</th><td class="req">obligatorio</td><td class="req">obligatorio</td><td class="req">obligatorio</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Al aplicar una nota de crédito como pago, el método cambia automáticamente a 17 Compensación y el comprobante lo define la nota (no se sube manual). El comprobante acepta PDF, PNG o JPG.</p>
+  <h3 id="pago-parcial">Pago parcial (abonos)</h3>
+  <p>Sí se permiten abonos, salvo que el cobro ya tenga una factura timbrada como PUE (pago en una sola exhibición): en ese caso el saldo restante se liquida en un solo pago. Si la factura sigue en borrador, sí se permiten.</p>
+  <h3 id="enviar-cobro">Enviar cobro</h3>
+  <p>Además del envío automático, cada cobro tiene la opción Enviar cobro para mandarlo de forma individual. Se habilita el día de su fecha de envío.</p>
+  <h3 id="cancelar-un-pago">Cancelar un pago</h3>
+  <p>Desde el menú del pago, Cancelar pago. Si el pago tiene complemento de pago timbrado, se envía al SAT la solicitud de cancelación y el pago queda en proceso de cancelación. El SAT puede aceptarla o rechazarla: iniciar el trámite no garantiza la cancelación; revisa el estatus en Cileo. Reglas:</p>
+  <ul>
+    <li>Solo se puede cancelar el pago más reciente; cancela primero los posteriores.</li>
+    <li>Los pagos de un cobro retroactivo no se cancelan; primero usa la acción Mover a pendientes de cobro del menú de ese cobro (pestaña Retroactivos).</li>
+    <li>Si la factura del cobro es PUE y el pago no tiene complemento, Cancelar pago aparece bloqueado: lo que procede es cancelar la factura, no el pago; escribe a soporte.</li>
+    <li>No se puede si el cobro ya está cancelado o en proceso de cancelación, o si hay otra cancelación de pago en curso.</li>
+  </ul>
+  <p>Los pagos cancelados se pueden mostrar u ocultar en la tabla de pagos.</p>
+  <h3 id="cancelar-un-cobro">Cancelar un cobro</h3>
+  <p>Cancelar cobro pide un motivo de cancelación. Si el cobro tiene factura timbrada, se solicita la cancelación al SAT y el cobro queda en "Cancelación pendiente" hasta su respuesta; la aceptación no está garantizada. No se puede cancelar un cobro que tenga complementos de pago activos (cancélalos uno por uno primero) ni uno con nota de crédito asociada.</p>
+  <h3 id="si-el-sat-rechaza-una-cancelacion">Si el SAT rechaza una cancelación</h3>
+  <ul>
+    <li>De un pago: en el menú del pago aparecen Reintentar cancelación (vuelve a solicitarla al SAT) y Revertir cancelación (el pago vuelve a estar activo).</li>
+    <li>De un cobro (estatus "Cancelación no aprobada"): en el menú del cobro aparecen Reintentar cancelación (vuelve a solicitarla) y Revertir cancelación (el cobro vuelve a un estado activo, con confirmación).</li>
+  </ul>
+  <p>Si no ves la acción, escribe a soporte.</p>
+  <h3 id="generar-nota-de-credito">Generar nota de crédito</h3>
+  <p>Reduce o corrige una factura ya emitida. Eliges el tipo de nota (p. ej. "Reducir / Saldar deuda"), revisas los datos de facturación y agregas los conceptos con su regla de impuestos; calcula subtotal e IVA. Si el monto supera la deuda actual, el excedente se convierte en saldo a favor del inquilino.</p>
+  <h3 id="otras-acciones">Otras acciones</h3>
+  <ul>
+    <li>Generar factura: emite el CFDI del cobro.</li>
+    <li>Enviar recordatorio: aviso al inquilino; según el caso incluye el envío del borrador o de la factura.</li>
+    <li>Editar recordatorios (también en cobros ya pagados), Editar cobro, Cancelar cobro.</li>
+    <li>Cuando el cobro ya tiene comprobante: Ver factura, Ver borrador y Ver CFDIs para consultarlo o descargarlo.</li>
+  </ul>
+</section>
+<section id="facturacion">
+  <h2><span class="n">07</span> Facturación (CFDI)</h2>
+  <ul>
+    <li>Las facturas (CFDI) se generan ligadas a los cobros y a su periodo, para que lo facturado corresponda con lo cobrado.</li>
+    <li>Borrador de factura: versión preliminar para revisar antes de emitir (timbrar) en definitiva.</li>
+    <li>Requisito para facturar: tener capturados los datos fiscales (RFC, régimen y certificados).</li>
+    <li>El XML de las facturas emitidas se puede descargar.</li>
+  </ul>
+</section>
+<section id="pld">
+  <h2><span class="n">08</span> PLD</h2>
+  <p>PLD = Prevención de Lavado de Dinero (formalmente PLD/FT, que incluye Financiamiento al Terrorismo). El arrendamiento de inmuebles es una actividad vulnerable bajo la Ley Antilavado (LFPIORPI), con obligaciones de identificación y avisos.</p>
+  <p>Cileo te ayuda a gestionar las tareas y la documentación de PLD: capturar la información, generar y descargar el XML y guardar comprobantes. Completar una tarea en Cileo no confirma la presentación ante la autoridad ni garantiza el cumplimiento; valida tus obligaciones con tu asesor. No incluido en el plan Básico.</p>
+  <p>El panel de PLD muestra los umbrales (calculados en UMA): UMA vigente, umbral de identificación y umbral de aviso; y las tareas por estatus: Requiere identificar, Requiere aviso, Cumplidos, Vencidos, Cancelados. ¿No ves PLD? Escribe a soporte.</p>
+  <h3 id="flujo-de-una-tarea-de-pld">Flujo de una tarea de PLD</h3>
+  <p>Identificar (cargar datos y documentos de la operación) → Generar y descargar el XML → Subir el comprobante → Completado.</p>
+  <p>En cada tarea también hay: Descargar documentos, Descargar XML y Descargar comprobante. El Dashboard muestra la Tasa de cumplimiento PLD, contratos con PLD vencido, próximos a vencer e inquilinos con documentos faltantes.</p>
+</section>
+<section id="reportes">
+  <h2><span class="n">09</span> Reportes</h2>
+  <p>Reportes para análisis y revisión contable:</p>
+  <ul>
+    <li>Estado de cuenta: cobros, pagos y saldos de un inquilino, contrato o propietario en un periodo.</li>
+    <li>Cobranza y morosidad.</li>
+    <li>Estatus de contratos.</li>
+    <li>Fiscales de propietario.</li>
+  </ul>
+</section>
+<section id="contactos">
+  <h2><span class="n">10</span> Contactos</h2>
+  <p>El directorio de inquilinos y propietarios.</p>
+  <ul>
+    <li>Alta: Nuevo inquilino o Nuevo propietario.</li>
+    <li>Propietario: dueño del inmueble (a quien pertenece la renta y, cuando aplica, a cuyo nombre se factura).</li>
+    <li>Inquilino: quien renta y recibe los cobros y facturas. Puede ser persona física o moral.</li>
+    <li>Se pueden agregar notas, editar, o marcar como inactivo para conservar el historial.</li>
+  </ul>
+</section>
+<section id="administracion">
+  <h2><span class="n">11</span> Administración</h2>
+  <ul>
+    <li>Usuarios: Nuevo usuario; cada uno tiene un rol que define sus permisos.</li>
+    <li>Datos Fiscales: información fiscal del emisor para facturar, en tres bloques: Información fiscal (RFC, nombre o razón social, tipo de persona, régimen fiscal, código postal y correo de facturación); Dirección fiscal (interruptor "Completar dirección fiscal"); y Facturación y certificados (interruptor "Completar facturación y certificados": archivos .cer y .key, contraseña del CSD, "Enviar copia de facturas por correo" y correos adicionales). La dirección y los certificados son opcionales al guardar, pero sin certificados no se pueden timbrar facturas. Después de guardar el CSD, el interruptor "Completar facturación y certificados" queda fijo. Si necesitas corregir un dato y no puedes editarlo, escribe a soporte. Se asocian a uno o más contratos; mientras estén en uso por contratos activos no pueden eliminarse.</li>
+    <li>Cuentas: cuentas (por ejemplo bancarias) y sus cotitulares, que luego se usan como cuentas de depósito en los contratos.</li>
+    <li>Impuestos: reglas de impuestos (IVA, retenciones) que se aplican a los conceptos facturables; cada regla se puede activar o desactivar. Las cuentas nuevas ya traen reglas de impuestos por defecto. El catálogo de claves de producto o servicio del SAT incluye, entre otras, servicios de limpieza de edificios (76111500) y agua (50202301 y 83101509) para facturar esos conceptos con su propia clave. La elección de clave para tu caso conviene validarla con tu contador.</li>
+    <li>Migración desde otro sistema (carga masiva): solicita a soporte una revisión del alcance y la habilitación de la carga masiva en tu cuenta.</li>
+  </ul>
+</section>
+<section id="dashboard">
+  <h2><span class="n">12</span> Dashboard</h2>
+  <p>Pantalla de inicio con los indicadores clave, en tres vistas (barra lateral izquierda):</p>
+  <ul>
+    <li>Inmuebles: ocupación, precio por m², histórico de ocupación, tendencia de morosidad, tipos de localidad y contratos nuevos por mes.</li>
+    <li>Cobranza: ingresos, cobrado vs. esperado, morosidad y su evolución.</li>
+    <li>Inquilinos y Propietarios: totales, ingreso promedio por inquilino, top por facturación, facturado vs. cobrado y tabla de propietarios con RFC, pendiente, tasa de cobranza y ocupación.</li>
+  </ul>
+  <p>También verás días de atraso, ocupados/vacantes, contratos por vencer y tasa de cumplimiento PLD. Todo se filtra por periodo y portafolio.</p>
+</section>
+<section id="planes-y-precios">
+  <h2><span class="n">13</span> Planes y precios</h2>
+  <p>Los planes se miden por CONTRATOS ACTIVOS, no por inmuebles (un mismo inmueble puede tener varios contratos). Puedes cambiar de plan cuando crezcas.</p>
+  <div class="tablewrap" role="region" aria-label="Tabla: Planes y precios" tabindex="0">
+    <table>
+      <thead><tr><th scope="col">Plan</th><th scope="col">Contratos activos</th><th scope="col">RFC emisores</th><th scope="col">Facturas por mes</th><th scope="col">Mensual (MXN/mes)</th><th scope="col">Plan anual (MXN/mes)</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Básico</th><td>1 a 10</td><td>1</td><td>hasta 50</td><td>$2,500</td><td>$2,125</td></tr>
+        <tr><th scope="row">En crecimiento</th><td>11 a 50</td><td>3</td><td>hasta 250</td><td>$7,500</td><td>$6,375</td></tr>
+        <tr><th scope="row">Profesional (Recomendado)</th><td>51 a 100</td><td>5</td><td>hasta 500</td><td>$12,000</td><td>$10,200</td></tr>
+        <tr><th scope="row">Corporativa</th><td>más de 100</td><td>ilimitados</td><td>a la medida</td><td>a la medida</td><td>a la medida (habla con un asesor)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <ul>
+    <li>Módulo PLD incluido en En crecimiento, Profesional y Corporativa (no en Básico).</li>
+    <li>Precios en pesos mexicanos (MXN); no incluyen IVA.</li>
+    <li>Contratación anual: ahorras 15% frente al mensual; se factura una vez al año (la tabla muestra el equivalente mensual).</li>
+    <li>Prueba de 30 días sin costo solo en En crecimiento y Profesional, una sola vez por cuenta. Básico no tiene prueba.</li>
+    <li>Ideal para: Básico, propietarios independientes, rentas individuales y primeras inversiones; En crecimiento, habitacional, locales y carteras pequeñas; Profesional, edificios, retail, uso mixto y administración profesional; Corporativa, fondos, corporativos y portafolios multiciudad.</li>
+    <li>Administrar tu suscripción: si en tu cuenta aparece Suscripción → Administrar suscripción (se habilita por cuenta y solo la ve el administrador), desde ahí puedes:
+      <ul>
+        <li>Cambiar de plan: mejora o reduce tu plan; ves una vista previa antes de confirmar y, si algo impide el cambio, se explica el motivo.</li>
+        <li>Cambiar método de pago: débito automático con tarjeta (puedes usar una tarjeta guardada) o pago manual por transferencia. El cambio aplica al terminar el periodo que ya pagaste.</li>
+        <li>Cancelar suscripción: conservas el acceso hasta el final del periodo pagado.</li>
+      </ul>
+      <p>Si no aparece, pídeselo a tu administrador o escribe a soporte.</p>
+    </li>
+    <li>Si la suscripción está inactiva, el acceso se limita hasta regularizarla.</li>
+  </ul>
+</section>
+<section id="soporte-y-contacto">
+  <h2><span class="n">14</span> Soporte y contacto</h2>
+  <ul>
+    <li>Correo <a href="mailto:soporte@cileo.io">soporte@cileo.io</a> · WhatsApp <a href="https://wa.me/525662976298" class="tel" target="_blank" rel="noopener">+52 56 6297 6298</a> · chatbot en la página de Cileo; desde el sitio también puedes hablar con un especialista.</li>
+    <li>Hablar con una persona: en el chat basta con pedirlo ("quiero hablar con alguien", "con un agente", "con un asesor") y la conversación pasa de inmediato al equipo de Cileo. El asistente deja de responder y te contesta una persona.</li>
+    <li>"No puedo entrar / no veo ciertas secciones": revisa tus permisos con el administrador de tu cuenta. El acceso depende del rol del usuario, y algunas funciones también dependen del plan o de su habilitación en tu cuenta.</li>
+    <li>"Aceptación legal" al entrar: es la aceptación de términos que Cileo requiere para operar; debe completarse para continuar.</li>
+  </ul>
+</section>
+<section id="lo-que-esta-guia-no-cubre">
+  <h2><span class="n">14b</span> Lo que esta guía NO cubre (casos que atiende una persona)</h2>
+  <p>Esta guía describe solo lo que está documentado. Si una pantalla, botón, paso o regla no aparece aquí, el asistente NO debe suponer cómo funciona: debe decir que no tiene ese dato confirmado y pasar la conversación al equipo.</p>
+  <p>Siempre los atiende una persona del equipo de Cileo:</p>
+  <ul>
+    <li>Corregir una factura ya timbrada (cancelarla sí: con Cancelar cobro), o cambiar el concepto de cobros o facturas ya generados.</li>
+    <li>Crear cobros retroactivos o de periodos anteriores.</li>
+    <li>Extender, renovar o cambiar la vigencia o las fechas de un contrato.</li>
+    <li>Casos con montos, folios o facturas específicas de la cuenta del usuario.</li>
+    <li>Errores, pantallas que no cargan, opciones que no aparecen o resultados distintos a lo descrito en esta guía.</li>
+    <li>Acceso, contraseñas, usuarios bloqueados, cargos y facturación de la suscripción.</li>
+    <li>Migración o carga masiva de información.</li>
+    <li>Dudas fiscales o legales sobre un caso concreto (además, conviene validarlas con su contador).</li>
+  </ul>
+</section>
+<section id="proximamente">
+  <h2><span class="n">15</span> Próximamente</h2>
+  <p>Funciones anunciadas que aún no están disponibles; no hay fechas de lanzamiento:</p>
+  <ul>
+    <li>IA aplicada a la operación: automatizar consultas y lectura inteligente de información (patrones y alertas entre contratos y cobros).</li>
+    <li>Facturación automática según pagos, ajustes o descuentos.</li>
+    <li>Pagos de tus inquilinos en efectivo en tiendas afiliadas (OXXO, 7-Eleven, farmacias), además de tarjeta y transferencia centralizadas. Se refiere a la cobranza de rentas, no al pago de tu suscripción.</li>
+    <li>Sincronización con portales comerciales de colocación de inmuebles.</li>
+    <li>Integraciones vía API para flujos específicos.</li>
+  </ul>
+</section>
+<section id="glosario">
+  <h2><span class="n">16</span> Glosario</h2>
+  <dl class="glosario">
+    <div><dt>Localidad / Unidad</dt><dd>espacio rentable dentro de un inmueble.</dd></div>
+    <div><dt>Portafolio</dt><dd>conjunto de inmuebles de la cuenta.</dd></div>
+    <div><dt>Ocupación</dt><dd>proporción de unidades ocupadas.</dd></div>
+    <div><dt>Vigencia</dt><dd>periodo activo del contrato.</dd></div>
+    <div><dt>Depósito</dt><dd>garantía al inicio del contrato.</dd></div>
+    <div><dt>Cuenta de depósito</dt><dd>cuenta donde se reciben los pagos; debe estar definida para generar cobros.</dd></div>
+    <div><dt>Saldo a favor</dt><dd>cantidad a favor del inquilino (p. ej. por una nota de crédito que supera la deuda).</dd></div>
+    <div><dt>Cartera vencida / Morosidad</dt><dd>cobros vencidos no pagados.</dd></div>
+  </dl>
+  <dl class="glosario">
+    <div><dt>CFDI</dt><dd>comprobante fiscal digital del SAT (factura).</dd></div>
+    <div><dt>Timbrado</dt><dd>obtener validez fiscal ante el SAT.</dd></div>
+    <div><dt>PUE (pago en una sola exhibición) y PPD (pago en parcialidades o diferido)</dt><dd>métodos de pago del CFDI; cuál corresponde a tu operación lo valida tu contador.</dd></div>
+    <div><dt>Complemento de pago</dt><dd>CFDI que ampara los pagos de una factura PPD.</dd></div>
+    <div><dt>RFC</dt><dd>Registro Federal de Contribuyentes.</dd></div>
+    <div><dt>CSD</dt><dd>Certificado de Sello Digital (para timbrar).</dd></div>
+  </dl>
+  <dl class="glosario">
+    <div><dt>LFPIORPI</dt><dd>Ley Antilavado.</dd></div>
+    <div><dt>Actividad vulnerable</dt><dd>operación sujeta a obligaciones PLD (el arrendamiento lo es).</dd></div>
+    <div><dt>Aviso (PLD)</dt><dd>reporte que se presenta ante la autoridad.</dd></div>
+    <div><dt>UIF</dt><dd>Unidad de Inteligencia Financiera.</dd></div>
+    <div><dt>UMA</dt><dd>Unidad de Medida y Actualización (define umbrales PLD).</dd></div>
+    <div><dt>INPC</dt><dd>Índice Nacional de Precios al Consumidor (para actualizar montos).</dd></div>
+  </dl>
+</section>
+<section id="preguntas-frecuentes">
+  <h2><span class="n">17</span> Preguntas frecuentes</h2>
+  <div class="faq">
+    <div class="qa" id="faq-que-es-cileo-y-que-puedo-hacer">
+      <h3>¿Qué es Cileo y qué puedo hacer?</h3>
+      <p>Es una plataforma para administrar arrendamiento inmobiliario: registrar inmuebles, crear contratos, generar y dar seguimiento a cobros, emitir facturas (CFDI), gestionar las tareas de PLD y monitorear todo desde un Dashboard.</p>
+    </div>
+    <div class="qa" id="faq-necesito-instalar-algo">
+      <h3>¿Necesito instalar algo?</h3>
+      <p>No. Funciona desde el navegador; solo inicias sesión con tu cuenta.</p>
+    </div>
+    <div class="qa" id="faq-por-donde-empiezo">
+      <h3>¿Por dónde empiezo?</h3>
+      <p>1) Datos fiscales, 2) Inmuebles, 3) Contactos (propietarios e inquilinos), 4) Contratos, 5) Cobros.</p>
+    </div>
+    <div class="qa" id="faq-como-creo-un-contrato">
+      <h3>¿Cómo creo un contrato?</h3>
+      <p>Contratos → Nuevo contrato. Es un asistente por pasos: Inmueble → Localidades → Renta → Inquilino → Monto e impuestos → Mantenimiento (opcional) → Verificar. Puedes guardarlo como borrador y luego usar "Confirmar contrato".</p>
+    </div>
+    <div class="qa" id="faq-como-genero-un-cobro">
+      <h3>¿Cómo genero un cobro?</h3>
+      <p>Cobranza → Nuevo cobro (o desde el contrato). Eliges el contrato, agregas los conceptos con sus impuestos y lo generas. El contrato debe tener definida una cuenta de depósito.</p>
+    </div>
+    <div class="qa" id="faq-al-aplicar-un-pago-que-campos-son-obligatorios">
+      <h3>Al aplicar un pago, ¿qué campos son obligatorios?</h3>
+      <p>Siempre: Cobro, Fecha, Hora, Importe, Método de pago y Cuenta de depósito. Según el método de pago se piden además Cuenta de origen, Número de rastreo y/o Comprobante. Con Efectivo (01) o Por definir (99) no se piden esos tres; con Dinero electrónico (06) el rastreo y el comprobante son obligatorios.</p>
+    </div>
+    <div class="qa" id="faq-puedo-registrar-un-pago-parcial-no-me-deja-registrar-un">
+      <h3>¿Puedo registrar un pago parcial? / No me deja registrar un pago parcial, ¿por qué?</h3>
+      <p>Sí, salvo que el cobro ya tenga una factura timbrada como PUE (pago en una sola exhibición): en ese caso el saldo restante se liquida en un solo pago. Si la factura sigue en borrador, sí se permiten abonos. Si no es tu caso y aun así no te deja, escribe a soporte.</p>
+    </div>
+    <div class="qa" id="faq-que-es-una-nota-de-credito">
+      <h3>¿Qué es una nota de crédito?</h3>
+      <p>Un comprobante que reduce o corrige una factura emitida. Si el monto supera la deuda actual, el excedente se vuelve saldo a favor del inquilino.</p>
+    </div>
+    <div class="qa" id="faq-por-que-un-cobro-aparece-pendiente-de-confirmacion">
+      <h3>¿Por qué un cobro aparece "Pendiente de confirmación"?</h3>
+      <p>Porque necesita que confirmes algo antes de enviarlo: el tipo de cambio (cobros en USD), la cuenta de depósito, un incremento (por INPC o variación) o un tipo de renta mixto. Su acción es "Confirmar y enviar". Antes se llamaba "Bloqueados por confirmación".</p>
+    </div>
+    <div class="qa" id="faq-como-cancelo-un-pago-que-registre-por-error">
+      <h3>¿Cómo cancelo un pago que registré por error?</h3>
+      <p>Desde el menú del pago, Cancelar pago. Solo se puede cancelar el más reciente. Si tiene complemento timbrado, la cancelación se solicita al SAT, que puede aceptarla o rechazarla; revisa el estatus en Cileo. Si la factura es PUE y el pago no tiene complemento, no se puede cancelar el pago: lo que procede es cancelar la factura; escribe a soporte. No aplica a cobros retroactivos (ver Mover a pendientes de cobro).</p>
+    </div>
+    <div class="qa" id="faq-no-me-deja-cancelar-un-cobro-por-que">
+      <h3>No me deja cancelar un cobro, ¿por qué?</h3>
+      <p>Si tiene complementos de pago activos, cancélalos uno por uno primero. Tampoco se puede si tiene una nota de crédito asociada.</p>
+    </div>
+    <div class="qa" id="faq-el-sat-rechazo-una-cancelacion-que-hago">
+      <h3>El SAT rechazó una cancelación, ¿qué hago?</h3>
+      <p>Si es de un pago: en su menú, Reintentar cancelación (la vuelve a solicitar) o Revertir cancelación (el pago vuelve a estar activo). Si es de un cobro en "Cancelación no aprobada": en su menú, Reintentar cancelación o Revertir cancelación (el cobro vuelve a un estado activo). Si no ves la opción, escribe a soporte.</p>
+    </div>
+    <div class="qa" id="faq-puedo-cobrar-la-renta-cada-dos-tres-o-seis-meses">
+      <h3>¿Puedo cobrar la renta cada dos, tres o seis meses?</h3>
+      <p>Sí. Al crear el contrato eliges la periodicidad: Mensual, Bimestral, Trimestral, Cuatrimestral, Semestral o Anual.</p>
+    </div>
+    <div class="qa" id="faq-puedo-guardar-mis-datos-fiscales-sin-los-certificados">
+      <h3>¿Puedo guardar mis datos fiscales sin los certificados (CSD)?</h3>
+      <p>Sí, y completarlos después. Para timbrar facturas sí necesitas los certificados.</p>
+    </div>
+    <div class="qa" id="faq-como-cambio-de-plan-o-de-metodo-de-pago">
+      <h3>¿Cómo cambio de plan o de método de pago?</h3>
+      <p>Si en tu cuenta aparece Suscripción → Administrar suscripción, desde ahí: Cambiar de plan, Cambiar método de pago (tarjeta o transferencia) o Cancelar suscripción. Si no aparece, pídeselo a tu administrador o escribe a soporte.</p>
+    </div>
+    <div class="qa" id="faq-que-necesito-para-facturar">
+      <h3>¿Qué necesito para facturar?</h3>
+      <p>Tener capturados tus datos fiscales (RFC, régimen y certificados) en Administración → Datos Fiscales.</p>
+    </div>
+    <div class="qa" id="faq-que-es-pld-y-como-lo-gestiono-en-cileo-con-cileo-ya-cumplo">
+      <h3>¿Qué es PLD y cómo lo gestiono en Cileo? ¿Con Cileo ya cumplo PLD?</h3>
+      <p>PLD es Prevención de Lavado de Dinero; el arrendamiento es actividad vulnerable. En la sección PLD, cada operación sigue el flujo Identificar → Generar/descargar XML → Subir comprobante → Completado. Cileo te ayuda a gestionar esas tareas y su documentación, pero no garantiza el cumplimiento ni confirma la presentación ante la autoridad; valida tus obligaciones con tu asesor. No incluido en el plan Básico.</p>
+    </div>
+    <div class="qa" id="faq-cuanto-cuesta-que-planes-hay">
+      <h3>¿Cuánto cuesta / qué planes hay?</h3>
+      <p>Se miden por CONTRATOS ACTIVOS (no por inmuebles). Básico (1 a 10 contratos): $2,500 al mes, sin módulo PLD y sin prueba. En crecimiento (11 a 50): $7,500. Profesional (Recomendado, 51 a 100): $12,000. Corporativa (más de 100): a la medida. En plan anual ahorras 15%: $2,125, $6,375 y $10,200 al mes, facturado anualmente. Precios en MXN, no incluyen IVA. Prueba de 30 días sin costo solo en En crecimiento y Profesional, una vez por cuenta.</p>
+    </div>
+    <div class="qa" id="faq-puedo-migrar-mi-informacion-desde-otro-sistema">
+      <h3>¿Puedo migrar mi información desde otro sistema?</h3>
+      <p>Solicita a soporte la carga masiva: revisan el alcance y su habilitación en tu cuenta.</p>
+    </div>
+    <div class="qa" id="faq-como-contacto-a-soporte">
+      <h3>¿Cómo contacto a soporte?</h3>
+      <p>Correo <a href="mailto:soporte@cileo.io">soporte@cileo.io</a>, WhatsApp <a href="https://wa.me/525662976298" class="tel" target="_blank" rel="noopener">+52 56 6297 6298</a>, o pide en el chat hablar con una persona.</p>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <p>Actualizado: <time datetime="2026-10-05">5 de octubre de 2026</time></p>
+  <a class="brand" href="https://cileo.io/" aria-label="Cileo"><svg viewBox="0 0 1920 720.1" role="img" aria-label="Cileo"><g fill="currentColor"><rect x="457.9" y="220.2" width="147.1" height="491.6"/><rect x="659.2" y="10.2" width="147.1" height="701.6"/><path d="M531.4,2.7c-45.9,0-83.1,37.2-83.1,83.1c0,45.9,37.2,83.1,83.1,83.1c45.9,0,83.1-37.2,83.1-83.1C614.5,39.9,577.3,2.7,531.4,2.7z"/><path d="M1613.9,214.6c-132.5,0-239.9,93.6-239.9,251.4s107.4,251.4,239.9,251.4s239.9-93.6,239.9-251.4S1746.4,214.6,1613.9,214.6z M1613.9,614.5c-55.9,0-101.1-50.8-101.1-148.4s45.3-148.4,101.1-148.4S1715,368.4,1715,466S1669.7,614.5,1613.9,614.5z"/><path d="M1875.6,634.3c-23,0-41.6,18.6-41.6,41.6c0,23,18.6,41.6,41.6,41.6c23,0,41.6-18.6,41.6-41.6C1917.2,652.9,1898.6,634.3,1875.6,634.3z"/><path d="M281.8,614.5c-65.3,0-140.2-50.8-140.2-148.4s74.9-148.4,140.2-148.4c76,0,121.8,49.9,121.8,49.9v-114c0,0-48.1-38.8-146.7-38.8C124.4,214.6,2.8,298.7,2.8,466c0,157.8,112.2,251.4,254.1,251.4c95,0,146.7-38.8,146.7-38.8V562.7C373.5,605.5,327.6,614.5,281.8,614.5z"/><path d="M1135.8,614.5c-64,0-124.4-36.6-138.4-100.5h328.7c19.9-151.5-58.9-299.4-229.3-299.4c-132.5,0-243.5,93.6-243.5,251.4s109.8,251.4,261.2,251.4c144.5,0,197.3-86.6,197.3-86.6v-82.5C1294.1,596.7,1217.6,614.5,1135.8,614.5z M1096.9,317.6c45,0,85.5,29.5,99.5,93.4H997.5C1011.5,347.1,1051.9,317.6,1096.9,317.6z"/></g></svg></a>
+</footer>
+</div>
+<a class="totop" href="#indice" aria-label="Volver al índice">↑</a>
+<script>
+(function(){
+  var box=document.getElementById('buscar');
+  if(!box||!String.prototype.normalize) return;
+  var input=document.getElementById('q');
+  var norm=function(s){return s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();};
+  var each=function(list,fn){[].forEach.call(list,fn);};
+  var data=[].map.call(document.querySelectorAll('main section'),function(sec){
+    var qas=[].slice.call(sec.querySelectorAll('.qa')), head=sec.cloneNode(true);
+    each(head.querySelectorAll('.qa'),function(q){q.parentNode.removeChild(q);});
+    return {el:sec, all:norm(sec.textContent), head:norm(head.textContent), qas:qas,
+            qIdx:qas.map(function(q){return norm(q.textContent);})};
+  });
+  var empty=document.createElement('p');
+  empty.className='empty'; empty.setAttribute('role','status'); empty.setAttribute('aria-live','polite');
+  box.appendChild(empty); box.hidden=false;
+  var has=function(txt,terms){for(var i=0;i<terms.length;i++){if(txt.indexOf(terms[i])<0)return false;}return true;};
+  input.addEventListener('input',function(){
+    var terms=norm(input.value).trim().split(/\s+/).filter(Boolean), any=false;
+    data.forEach(function(d){
+      var ok;
+      if(terms.length&&d.qas.length&&!has(d.head,terms)){
+        /* seccion con preguntas: solo se muestra si alguna pregunta coincide */
+        ok=false;
+        d.qas.forEach(function(q,i){var m=has(d.qIdx[i],terms);q.hidden=!m;if(m)ok=true;});
+      }else{
+        ok=!terms.length||has(d.all,terms);
+        d.qas.forEach(function(q){q.hidden=false;});
+      }
+      d.el.hidden=!ok; if(ok)any=true;
+    });
+    empty.textContent=any?'':'Sin resultados.';
+  });
+})();
+</script>
+</body>
+<!--/email_off-->
+</html>
