@@ -597,10 +597,7 @@
         min-height: 66px;
     }
     .pricing-features {
-        min-height: 84px;
-    }
-    .pricing-trial {
-        border-radius: 16px;
+        min-height: 150px;
     }
     .pricing-toggle {
         width: 100%;
