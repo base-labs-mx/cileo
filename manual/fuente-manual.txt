@@ -1,0 +1,535 @@
+# Fuente del Manual de Cileo. Este es el único archivo que se edita a mano.
+# Para regenerar manual/index.html:  python manual/construir_manual.py
+# Formato: ver el encabezado de manual/construir_manual.py
+
+TITULO: Manual Cileo
+LEDE: Guía de uso de Cileo: inmuebles, contratos, cobranza, facturación (CFDI) y PLD. Cada sección explica, en pocos pasos, qué hace cada pantalla y cómo se usa.
+TAGS: Capturas reales | Datos ficticios | app.cileo.io
+ACTUALIZADO: 5 de octubre de 2026
+
+NAV: intro | Introducción | introducción inicio empezar
+
+NAVGRUPO: Operación
+NAV: dashboard | Dashboard | dashboard panorama kpis indicadores
+NAV: inmuebles | Inmuebles | inmuebles propiedades localidades
+NAV: contratos | Contratos | contratos arrendamiento
+NAV: alta-contrato | Alta de contrato | alta contrato asistente pasos nuevo borrador | sub
+NAV: contratos-tabla | Tabla y vistas | tabla columnas vistas guardadas búsqueda | sub
+NAV: contratos-documentos | Documentos del contrato | documentos adjuntar pdf contrato firmado | sub
+NAV: cobranza | Cobranza | cobranza cobros cartera estatus
+NAV: cobranza-acciones | Acciones de un cobro | acciones pago nota de crédito recordatorio cancelar | sub
+NAV: filtros | Panel de filtros | filtros panel dinámicos fecha inmueble propietario | sub
+
+NAVGRUPO: Facturación
+NAV: facturacion | Facturación (CFDI) | facturación cfdi factura timbrado borrador xml
+NAV: complementos | Complementos de pago | complemento de pago ppd pue parcialidades | sub
+NAV: cancelaciones | Cancelaciones y SAT | cancelar cancelación motivo sat rechazo | sub
+NAV: sustitucion | Sustituir una factura | sustitución sustituir cfdi relacionado | sub
+
+NAVGRUPO: Cumplimiento y análisis
+NAV: pld | PLD / Cumplimiento | pld lavado dinero cumplimiento uma antilavado
+NAV: reportes | Reportes | reportes estado de cuenta morosidad fiscales
+
+NAVGRUPO: Directorio y administración
+NAV: contactos | Contactos | contactos inquilinos propietarios
+NAV: usuarios | Usuarios y permisos | usuarios roles permisos administrador acceso
+NAV: datos-fiscales | Datos Fiscales | datos fiscales rfc régimen csd certificados
+NAV: cuentas | Cuentas | cuentas bancarias depósito cotitulares
+NAV: impuestos | Impuestos | impuestos iva retenciones reglas claves sat
+NAV: carga-masiva | Migración y carga masiva | migración carga masiva plantilla excel importar
+
+NAVGRUPO: Tu cuenta
+NAV: planes | Planes y precios | planes precios contratos activos prueba
+NAV: suscripcion | Administrar suscripción | suscripción cambiar plan método de pago cancelar | sub
+NAV: soporte | Soporte y contacto | soporte contacto ayuda whatsapp correo
+
+NAVGRUPO: Referencia
+NAV: proximamente | Próximamente | próximamente futuro
+NAV: glosario | Glosario | glosario términos vocabulario definiciones
+NAV: faq | Preguntas frecuentes | faq preguntas frecuentes dudas ayuda
+
+SECCION: intro | top
+KICKER: Empezar aquí
+H2: Introducción
+INTRO: Cileo es una plataforma web para administrar arrendamiento inmobiliario. Centraliza en un solo lugar los contratos, la cobranza, la facturación (CFDI) y la gestión de PLD, con información trazable. Usa el menú lateral para navegar; el vocabulario está en el [Glosario](#glosario) y las dudas comunes en las [Preguntas frecuentes](#faq).
+P: **Para quién es.** Propietarios, administradores de inmuebles y equipos que rentan departamentos, locales, oficinas o bodegas, desde un primer contrato hasta portafolios corporativos multiciudad.
+P: **No requiere instalación.** Funciona desde el navegador en app.cileo.io; solo inicias sesión con tu cuenta.
+P: **Menú principal.** Dashboard, Inmuebles, Contratos, Cobranza, PLD, Contactos y Administración (Usuarios, Datos Fiscales, Cuentas e Impuestos). Según tu cuenta, también aparecen Reportes y Suscripción. Solo el administrador ve Administración y Suscripción.
+STEPPER: Datos fiscales > Inmuebles > Contactos > Contratos > Cobranza
+CAP: Ruta recomendada para poner en marcha tu operación.
+P: Así se recorre esa ruta:
+LISTA:
+- **Datos fiscales:** la información del emisor para facturar (RFC, régimen, domicilio y certificados), en Administración y luego Datos Fiscales. Puedes guardarlos sin los certificados (CSD) y completarlos después; para timbrar facturas sí se necesitan.
+- **Inmuebles:** registra tus propiedades y sus localidades.
+- **Contactos:** da de alta a propietarios e inquilinos.
+- **Contratos:** crea los contratos de arrendamiento.
+- **Cobranza:** genera cobros y dales seguimiento.
+
+DIVISOR: Operación
+
+SECCION: dashboard
+KICKER: 01 · Panorama
+H2: Dashboard
+INTRO: Los indicadores clave de tu operación, en **tres vistas** que se cambian con la barra lateral izquierda. Navega entre ellas con el carrusel. Todo se filtra por periodo y portafolio.
+CARRUSEL: dashCar
+SLIDE: Inmuebles | app.cileo.io/dashboard/properties
+SHOT: 01-dashboard-de-inmuebles.webp | Dashboard de Inmuebles
+MARCAS: 1:16,19 | 2:15,42 | 3:15,70 | 4:92,11
+PASO: KPIs de ocupación | Total de localidades, ocupados, vacantes y tasa de ocupación.
+PASO: Evolución | Precio por metro cuadrado, histórico de ocupación y tendencia de morosidad.
+PASO: Composición | Tipos de localidad y contratos nuevos por mes.
+PASO: Filtros | Exportar, compartir, refrescar y filtrar por periodo o portafolio.
+SLIDE: Cobranza | app.cileo.io/dashboard/billings
+SHOT: 02-dashboard-de-cobranza.webp | Dashboard de Cobranza
+CAP: Indicadores financieros de cobranza: ingresos, cobrado contra esperado, morosidad y su evolución.
+SLIDE: Inquilinos y Propietarios | app.cileo.io/dashboard/stakeholders
+SHOT: 03-dashboard-de-inquilinos-y-propietarios.webp | Dashboard de Inquilinos y Propietarios
+MARCAS: 1:15,14 | 2:15,30 | 3:15,52 | 4:15,82
+PASO: KPIs de personas | Total de propietarios e inquilinos, promedio e ingreso promedio por inquilino.
+PASO: Rankings | Top propietarios y top inquilinos por facturación.
+PASO: Desempeño | Facturado contra cobrado por cada propietario.
+PASO: Tabla de propietarios | RFC, tipo, facturado, cobrado, pendiente, tasa de cobranza y ocupación.
+P: Además verás días de atraso, ocupados y vacantes, contratos por vencer y la tasa de cumplimiento PLD.
+
+DIVISOR: Propiedades
+
+SECCION: inmuebles
+KICKER: 02 · Propiedades
+H2: Inmuebles
+INTRO: El catálogo de tus propiedades. Cada inmueble agrupa sus localidades (unidades rentables) y es la base sobre la que se crean contratos y cobros.
+SHOT: 04-lista-de-inmuebles.webp | Lista de Inmuebles | app.cileo.io/properties
+MARCAS: 1:20,13 | 3:82,24 | 2:14,48
+PASO: Resumen | Localidades rentadas, disponibles, totales y porcentaje de ocupación.
+PASO: Lista | Nombre comercial, dirección, superficie y localidades por propiedad.
+PASO: Nuevo inmueble | El botón `Nuevo inmueble` da de alta una propiedad; el buscador acota la lista.
+
+DIVISOR: Arrendamiento
+
+SECCION: contratos
+KICKER: 03 · Arrendamiento
+H2: Contratos
+INTRO: El acuerdo de arrendamiento que conecta un inmueble, un inquilino y un propietario. Es el eje que alimenta la cobranza, la facturación y el PLD.
+SHOT: 05-lista-de-contratos.webp | Lista de Contratos | app.cileo.io/contracts
+CAP: Cada contrato con su inmueble, inquilino, vigencia y estatus.
+P: Desde el detalle del contrato puedes **Editar**, **Cancelar** (con confirmación), agregar comentarios y generar un **Nuevo cobro**.
+
+H3: Alta de contrato (asistente) | alta-contrato
+P: En Contratos, el botón **Nuevo contrato** abre un asistente guiado. Estos son los pasos, en orden:
+SHOT: 06-asistente-de-nuevo-contrato.webp | Asistente de nuevo contrato | app.cileo.io/contracts/new
+STEPPER: Inmueble > Localidades > Renta > Inquilino > Monto e impuestos > Mantenimiento > Verifica los datos
+LISTA:
+- En el primer paso defines la **fecha de inicio**, el **tipo de plazo** y seleccionas el inmueble.
+- **Plazo:** determinado o indefinido (sin fecha de fin). Los dos generan cobros con normalidad.
+- **Periodicidad de la renta:** Mensual, Bimestral, Trimestral, Cuatrimestral, Semestral o Anual.
+- **Sufijo del concepto** (opcional, en renta y en mantenimiento): texto que se agrega al final del concepto del cobro y de la factura. El concepto se arma con el prefijo, el periodo de renta, las localidades y el sufijo. Es el lugar para incluir, por ejemplo, la dirección del inmueble o una o varias cuentas prediales.
+- **Mantenimiento** es un paso opcional, con su propio concepto y periodicidad.
+- **Borrador:** puedes guardar el contrato incompleto y, cuando esté listo, usar **Confirmar contrato** para activarlo. Un borrador se puede guardar aunque el propietario todavía no tenga datos fiscales.
+
+H3: Tabla de contratos y vistas | contratos-tabla
+P: La tabla muestra Contrato, Inmueble, Localidades, Propietario, Inquilino, fechas, Próximo incremento, Renta actual y Moneda, con paginación y búsqueda (también por localidad).
+LISTA:
+- Con **Columnas** eliges cuáles ver, las reordenas y ajustas su ancho.
+- **Vista** guarda columnas, orden y filas por página. Puedes Guardar vista, Guardar cambios, Guardar como nueva, Renombrar, Eliminar y elegir cuál usar al abrir la tabla.
+- Las vistas son de cada usuario: lo que guardes no cambia lo que ven tus compañeros.
+- Al buscar, los contadores de las pestañas siguen mostrando los totales generales.
+
+H3: Documentos del contrato | contratos-documentos
+P: Al crear o editar un contrato puedes **adjuntar documentos**: archivos PDF, JPG, PNG, DOC o DOCX de hasta 20 MB cada uno, con nombre y fechas de emisión y vencimiento opcionales. Es donde se guarda, por ejemplo, el contrato firmado.
+P: Desde el detalle del contrato tienes **Ver documentos**, con vista previa y descarga, y **Editar documentos**.
+
+DIVISOR: Cobranza
+
+SECCION: cobranza
+KICKER: 04 · Cobranza
+H2: Cobranza
+INTRO: Aquí se generan, controlan y dan seguimiento los cobros de renta y los conceptos asociados. Arriba se muestra el panorama de cartera: cuentas por cobrar pendientes y vencidas, pagadas, y los totales vencido y pagado del periodo.
+SHOT: 07-pantalla-de-cobranza.webp | Pantalla de Cobranza | app.cileo.io/billings
+MARCAS: 1:7,13 | 2:8,30 | 3:90,36 | 4:84,58
+PASO: Panorama de cartera | Cuentas por cobrar pendientes y vencidas, pagadas, y los totales del periodo.
+PASO: Pestañas por estatus | Todos, Pendiente de envío, Pendiente de confirmación, Enviado, Pagado, Retroactivos y Cancelado.
+PASO: Nuevo cobro y acciones | El menú de tres puntos ofrece Generar factura, Agregar pago, Enviar recordatorio y Generar nota de crédito.
+PASO: Multi-moneda | Cobros en pesos o en dólares; además puedes descargar el CSV y los CFDIs.
+P: **Estatus de un cobro.** Los primeros siete son también pestañas de la tabla; los dos últimos son estados que aparecen durante una cancelación:
+LISTA:
+- **Pendiente de envío:** generado, todavía no se envía al inquilino.
+- **Pendiente de confirmación:** necesita que confirmes un dato antes de enviarse.
+- **Enviado:** ya se envió al inquilino y espera pago.
+- **Parcialmente pagado:** tiene abonos, pero queda saldo.
+- **Pagado:** liquidado por completo.
+- **Retroactivos:** cobros de periodos anteriores.
+- **Cancelado:** anulado.
+- **Cancelación pendiente:** se solicitó al SAT cancelar la factura y se espera su respuesta.
+- **Cancelación no aprobada:** el SAT rechazó la cancelación. Ver [Cancelaciones y respuestas del SAT](#cancelaciones).
+NOTA: **Vencido no es una pestaña.** Un cobro está vencido cuando pasó su fecha de pago y conserva saldo pendiente; eso se refleja en la cartera vencida y en la morosidad.
+P: En las pestañas Todos, Enviado, Pagado y Cancelado hay un **selector por tipo de comprobante**: Facturas, Complementos de pago y Notas de crédito, cada uno con sus propias columnas. Si hay cobros con cancelación rechazada, la pestaña Cancelado muestra un aviso para que los atiendas.
+NOTA: **¿Cuándo un cobro queda Pendiente de confirmación?** Cuando hace falta confirmar un dato antes de enviarlo: tipo de cambio por definir (cobros en dólares), cuenta de depósito pendiente, un incremento de renta o de mantenimiento (por INPC o por una variación de monto), o un tipo de renta mixto. Estos cobros muestran la acción **Confirmar y enviar**. Antes se llamaba Bloqueado por confirmación.
+P: **Multi-moneda y exportación.** Los cobros pueden ser en pesos o en dólares, con el tipo de cambio del DOF registrado. Si el pago llega en una moneda distinta a la de la factura, al registrarlo capturas el tipo de cambio y lo puedes editar; el complemento de pago se emite con esa equivalencia. Puedes **Descargar CSV** (incluye totales fiscales) y **Descargar CFDIs**. Los pagos cancelados ya no cuentan en el Dashboard, en PLD ni en los reportes.
+
+H3: Acciones de un cobro | cobranza-acciones
+P: Cada cobro abre sus acciones desde el menú de tres puntos. Así se ven sus formularios.
+P: **Nuevo cobro.** Se crea desde Cobranza con el botón **Nuevo cobro**, o desde el contrato. En el paso 1 eliges inquilino, contrato y tipo de cobro; en el paso 2 agregas los conceptos (renta, mantenimiento y los que apliquen) con sus impuestos. Requisito: el contrato debe tener una cuenta de depósito definida.
+SHOT: 08-formulario-de-nuevo-cobro.webp | Formulario de nuevo cobro | app.cileo.io/billings/new
+P: **Aplicar pago.** Registra un pago sobre un cobro. Los campos base siempre aparecen y son obligatorios: Cobro, Fecha de pago, Hora de pago, Importe, Método de pago y Cuenta de depósito. El importe debe ser mayor a cero y no puede exceder el restante del cobro. Otros tres campos se muestran u ocultan, y se vuelven obligatorios, según el método de pago:
+TABLA:
+| Método de pago (SAT) | Cuenta de origen | Número de rastreo | Comprobante
+| 01 Efectivo · 99 Por definir | no se muestra | no se muestra | no se muestra
+| 02 Cheque · 03 Transferencia · 27 A satisfacción del acreedor | opcional | opcional | opcional
+| 06 Dinero electrónico | no se muestra | obligatorio | obligatorio
+| Cualquier otro (04 tarjeta de crédito, 28 tarjeta de débito y demás) | obligatorio | obligatorio | obligatorio
+P: El comprobante acepta PDF, PNG o JPG. Al aplicar una **nota de crédito** como pago, el método cambia automáticamente a 17 Compensación y el comprobante lo define la nota, así que no se sube a mano.
+P: **Pago parcial.** Se permiten abonos, salvo que el cobro ya tenga una factura timbrada como PUE (pago en una sola exhibición): en ese caso el saldo restante se liquida en un solo pago. Si la factura sigue en borrador, sí se permiten abonos.
+P: **Enviar cobro.** Además del envío automático, cada cobro tiene la opción **Enviar cobro** para mandarlo de forma individual. Se habilita el día de su fecha de envío.
+P: **Generar nota de crédito.** Reduce o corrige una factura ya emitida. Eliges el tipo de nota, revisas los datos de facturación y agregas los conceptos con su regla de impuestos; el sistema calcula subtotal e IVA. Si el monto supera la deuda actual, el excedente se convierte en **saldo a favor** del inquilino.
+SHOT: 09-modal-de-generar-nota-de-credito.webp | Modal de generar nota de crédito
+P: **Otras acciones.** Generar factura (emite el CFDI del cobro), Enviar recordatorio (aviso al inquilino que, según el caso, incluye el borrador o la factura), Editar recordatorios (también en cobros ya pagados), Editar cobro y Cancelar cobro. Cuando el cobro ya tiene comprobante, aparecen además Ver factura, Ver borrador y Ver CFDIs para consultarlo o descargarlo.
+P: Para cancelar un pago o un cobro, y para sustituir una factura, revisa [Cancelaciones y respuestas del SAT](#cancelaciones) y [Sustituir una factura](#sustitucion).
+
+H3: Panel de filtros | filtros
+P: El botón de filtros abre el panel de **Filtros dinámicos**: Fecha (año y mes, o un rango personalizado), Inmueble, Estado del contrato, Contrato, Tipo de localidad, Propietario e Inquilino. El mismo panel aplica en Cobranza, Dashboard y Reportes.
+SHOT: 10-panel-de-filtros-dinamicos.webp | Panel de filtros dinámicos | | max-width:420px
+
+DIVISOR: Facturación
+
+SECCION: facturacion
+KICKER: 05 · Facturación
+H2: Facturación (CFDI)
+INTRO: Las facturas se generan ligadas a los cobros y a su periodo, para que lo facturado corresponda con lo cobrado.
+LISTA:
+- **Borrador de factura:** versión preliminar para revisar antes de emitir, o sea antes de timbrar en definitiva.
+- **Requisito para facturar:** tener capturados los datos fiscales del emisor (RFC, régimen y certificados) en [Datos Fiscales](#datos-fiscales).
+- El **XML** de las facturas emitidas se puede descargar, igual que el PDF.
+P: Qué método de pago y qué uso de CFDI corresponden a tu operación conviene validarlo con tu contador.
+
+H3: Complementos de pago | complementos
+P: Cuando una factura se emite como **PPD** (pago en parcialidades o diferido), cada pago que recibes se ampara con un **complemento de pago**: un CFDI aparte que acredita ese abono contra la factura original.
+P: En Cobranza, el selector por tipo de comprobante te deja ver los **Complementos** con sus propias columnas. Si el pago llega en una moneda distinta a la de la factura, el complemento se emite con la equivalencia que capturaste al registrar el pago.
+P: Las facturas **PUE** (pago en una sola exhibición) no llevan complemento: se liquidan en una sola exhibición.
+
+H3: Cancelaciones y respuestas del SAT | cancelaciones
+P: **Cancelar un pago.** Desde el menú del pago, **Cancelar pago**. Si el pago tiene complemento timbrado, se envía al SAT la solicitud de cancelación y el pago queda en proceso de cancelación. Iniciar el trámite no garantiza la cancelación: el SAT puede aceptarla o rechazarla, y el estatus se ve en Cileo. Reglas:
+LISTA:
+- Solo se puede cancelar el pago más reciente; cancela primero los posteriores.
+- Los pagos de un cobro retroactivo no se cancelan: primero usa la acción **Mover a pendientes de cobro** del menú de ese cobro, en la pestaña Retroactivos.
+- Si la factura del cobro es PUE y el pago no tiene complemento, Cancelar pago aparece bloqueado: lo que procede es cancelar la factura, no el pago. Escribe a soporte.
+- No se puede cancelar si el cobro ya está cancelado o en proceso de cancelación, o si hay otra cancelación de pago en curso.
+- Los pagos cancelados se pueden mostrar u ocultar en la tabla de pagos.
+P: **Cancelar un cobro.** La acción **Cancelar cobro** pide un motivo: 01 Comprobante emitido con errores con relación, 02 Comprobante emitido con errores sin relación, o 03 No se llevó a cabo la operación. El motivo 01 solo procede si ya hay un cobro timbrado que lo sustituye. Si el cobro tiene factura timbrada, se solicita la cancelación al SAT y el cobro queda en Cancelación pendiente hasta su respuesta; la aceptación no está garantizada.
+P: No se puede cancelar un cobro que tenga complementos de pago activos (hay que cancelarlos uno por uno primero) ni uno con nota de crédito asociada.
+P: **Si el SAT rechaza una cancelación.** En el menú del pago, o del cobro cuando queda en Cancelación no aprobada, aparecen **Reintentar cancelación**, que vuelve a solicitarla al SAT, y **Revertir cancelación**, que regresa el pago o el cobro a un estado activo con una confirmación. Si no ves la acción, escribe a soporte.
+
+H3: Sustituir una factura | sustitucion
+P: Al generar la factura de un cobro nuevo, o en su borrador, activa **Sustitución de los CFDI previos** y elige en **CFDIs a sustituir** las facturas anteriores. Es la vía para corregir una factura ya timbrada emitiendo una nueva que la reemplaza.
+LISTA:
+- No se puede sustituir una factura con notas de crédito activas, complementos de pago activos o CFDI relacionados; el selector indica el motivo.
+- El cobro sustituido muestra el aviso de que fue sustituido, con enlace al nuevo, un ícono en la tabla y el estatus de factura **Sustituido**, disponible también en el filtro. Ver facturas muestra las dos.
+- Un cobro sustituido solo se cancela con el motivo 01, ligado al CFDI que lo sustituye.
+- Si un cobro sustituyó a otro que ya se canceló, no se puede cancelar: emite un nuevo cobro que lo sustituya.
+P: Qué motivo y qué tipo de relación corresponden a tu caso lo valida tu contador.
+
+DIVISOR: Cumplimiento y análisis
+
+SECCION: pld
+KICKER: 06 · Cumplimiento
+H2: PLD / Cumplimiento
+INTRO: PLD es Prevención de Lavado de Dinero, formalmente PLD/FT porque incluye Financiamiento al Terrorismo. El arrendamiento de inmuebles es una actividad vulnerable bajo la Ley Antilavado (LFPIORPI), con obligaciones de identificación y avisos.
+SHOT: 11-pantalla-de-pld.webp | Pantalla de PLD | app.cileo.io/pld
+MARCAS: 1:34,20 | 2:14,40 | 3:47,65 | 4:80,70
+PASO: Umbrales (en UMA) | UMA vigente, umbral de identificación y umbral de aviso.
+PASO: Tareas por estatus | Requiere identificar, Requiere aviso, Cumplidos, Vencidos y Cancelados.
+PASO: Operaciones | Propietario, contrato, inquilino, renta, fecha límite y estado.
+PASO: Acción | El botón Identificar inicia el flujo de cumplimiento.
+P: **Flujo de una tarea.** En cada tarea tienes además Descargar documentos, Descargar XML y Descargar comprobante.
+STEPPER: Identificar > Generar y descargar el XML > Subir el comprobante > Completado
+P: El Dashboard muestra la tasa de cumplimiento PLD, los contratos con PLD vencido, los próximos a vencer y los inquilinos con documentos faltantes.
+NOTA: Cileo te ayuda a gestionar las tareas y la documentación de PLD, pero **completar una tarea en Cileo no confirma la presentación ante la autoridad ni garantiza el cumplimiento**; valida tus obligaciones con tu asesor. El módulo no está incluido en el plan Básico. Si no ves la sección PLD, escribe a soporte.
+
+SECCION: reportes
+KICKER: 07 · Análisis
+H2: Reportes
+INTRO: Reportes para análisis y revisión contable. Se filtran con el mismo panel de filtros del resto del sistema.
+SHOT: 12-seccion-de-reportes.webp | Sección de Reportes | app.cileo.io/reports
+LISTA:
+- **Estado de cuenta:** cobros, pagos y saldos de un inquilino, contrato o propietario en un periodo.
+- **Cobranza y morosidad.**
+- **Estatus de contratos.**
+- **Fiscales de propietario.**
+
+DIVISOR: Directorio y administración
+
+SECCION: contactos
+KICKER: 08 · Directorio
+H2: Contactos
+INTRO: El directorio de inquilinos y propietarios, con sus datos de identificación y contacto.
+SHOT: 13-lista-de-contactos.webp | Lista de Contactos | app.cileo.io/contacts
+LISTA:
+- **Alta:** usa Nuevo inquilino o Nuevo propietario según corresponda.
+- **Propietario:** dueño del inmueble, a quien pertenece la renta y, cuando aplica, a cuyo nombre se factura.
+- **Inquilino:** quien renta y recibe los cobros y las facturas. Puede ser persona física o moral.
+- **Gestión:** puedes agregar notas, editar o marcar como inactivo para conservar el historial.
+
+SECCION: usuarios
+KICKER: 09 · Administración
+H2: Usuarios y permisos
+INTRO: En Administración, la sección **Usuarios** permite dar de alta a las personas de tu equipo con el botón Nuevo usuario. Cada usuario tiene un **rol** que define sus permisos.
+P: Lo que cada quien ve depende de ese rol: algunas secciones, como Administración y Suscripción, solo las ve el administrador. Además, ciertas funciones dependen del plan contratado o de su habilitación en tu cuenta.
+P: Si no puedes entrar o no ves una sección, revisa tus permisos con el administrador de tu cuenta.
+
+SECCION: datos-fiscales
+KICKER: 10 · Administración
+H2: Datos Fiscales
+INTRO: La información fiscal del emisor para facturar. Se asocia a uno o más contratos y se organiza en tres bloques.
+SHOT: 14-datos-fiscales.webp | Datos Fiscales | app.cileo.io/admin/fiscal-data
+LISTA:
+- **Información fiscal:** RFC, nombre o razón social, tipo de persona, régimen fiscal, código postal y correo de facturación.
+- **Dirección fiscal:** se captura al activar el interruptor Completar dirección fiscal.
+- **Facturación y certificados:** al activar Completar facturación y certificados capturas los archivos .cer y .key, la contraseña del CSD, la opción Enviar copia de facturas por correo y los correos adicionales.
+P: La dirección y los certificados son opcionales al guardar, pero **sin certificados no se pueden timbrar facturas**. Después de guardar el CSD, el interruptor de facturación y certificados queda fijo.
+NOTA: Unos datos fiscales en uso por contratos activos no pueden eliminarse mientras sigan asociados. Si necesitas corregir un dato y no puedes editarlo, escribe a soporte.
+
+SECCION: cuentas
+KICKER: 11 · Administración
+H2: Cuentas
+INTRO: En Administración, **Cuentas** guarda las cuentas bancarias y sus cotitulares. Son las que después se eligen como **cuenta de depósito** en los contratos, y por eso un contrato necesita una cuenta definida para poder generar cobros.
+
+SECCION: impuestos
+KICKER: 12 · Administración
+H2: Impuestos
+INTRO: Las reglas de impuestos (IVA y retenciones) que se aplican a los conceptos facturables. Cada regla se puede activar o desactivar, y las cuentas nuevas ya traen reglas por defecto.
+SHOT: 15-reglas-de-impuestos.webp | Reglas de Impuestos | app.cileo.io/admin/taxes
+P: El catálogo de claves de producto o servicio del SAT incluye, entre otras, servicios de limpieza de edificios (76111500) y agua (50202301 y 83101509), para facturar esos conceptos con su propia clave.
+NOTA: La elección de la clave y de la regla de impuestos que corresponden a tu caso conviene validarla con tu contador.
+
+SECCION: carga-masiva
+KICKER: 13 · Administración
+H2: Migración y carga masiva
+INTRO: Si vienes de otro sistema, puedes cargar tu información de forma masiva en lugar de capturarla una por una.
+LISTA:
+- Solicita a soporte una revisión del alcance y la habilitación de la carga masiva en tu cuenta.
+- Ya habilitada, en Administración eliges **Subir plantilla**: descargas la plantilla, la llenas y subes el archivo de Excel (.xlsx).
+- También puedes optar por la **Captura manual** si prefieres ir registrando la información a mano.
+
+DIVISOR: Tu cuenta
+
+SECCION: planes
+KICKER: 14 · Tu cuenta
+H2: Planes y precios
+INTRO: Los planes se miden por **contratos activos**, no por inmuebles, porque un mismo inmueble puede tener varios contratos. Puedes cambiar de plan cuando crezcas.
+TABLA:
+| Plan | Contratos activos | RFC emisores | Facturas por mes | Mensual (MXN) | Plan anual (MXN al mes)
+| Básico | 1 a 10 | 1 | hasta 50 | $2,500 | $2,125
+| En crecimiento | 11 a 50 | 3 | hasta 250 | $7,500 | $6,375
+| Profesional (Recomendado) | 51 a 100 | 5 | hasta 500 | $12,000 | $10,200
+| Corporativa | más de 100 | ilimitados | a la medida | a la medida | a la medida
+LISTA:
+- El **módulo PLD** está incluido en En crecimiento, Profesional y Corporativa; no en Básico.
+- Precios en pesos mexicanos y **no incluyen IVA**.
+- Con la **contratación anual** ahorras 15% frente al mensual; se factura una vez al año y la tabla muestra el equivalente mensual.
+- La **prueba de 30 días sin costo** aplica solo en En crecimiento y Profesional, una sola vez por cuenta. Básico no tiene prueba.
+- En Corporativa, el precio y el volumen de facturación se definen con un asesor.
+P: **Para qué perfil es cada plan.** Básico, para propietarios independientes, rentas individuales y primeras inversiones. En crecimiento, para habitacional, locales y carteras pequeñas. Profesional, para edificios, retail, uso mixto y administración profesional. Corporativa, para fondos, corporativos y portafolios multiciudad.
+
+H3: Administrar tu suscripción | suscripcion
+P: Si en tu cuenta aparece **Suscripción** y dentro **Administrar suscripción**, desde ahí puedes hacer tres cosas. La sección se habilita por cuenta y solo la ve el administrador; si no aparece, pídesela a tu administrador o escribe a soporte.
+LISTA:
+- **Cambiar de plan:** mejora o reduce tu plan. Ves una vista previa antes de confirmar y, si algo impide el cambio, se explica el motivo.
+- **Cambiar método de pago:** débito automático con tarjeta, incluso una tarjeta guardada, o pago manual por transferencia. El cambio aplica al terminar el periodo que ya pagaste.
+- **Cancelar suscripción:** conservas el acceso hasta el final del periodo pagado.
+P: **Avisos.** Si tu suscripción no tiene método de pago, Cileo te pide elegirlo, y también es necesario para cambiar de plan. Si pagas por transferencia, antes de que termine el periodo se te recuerda pagar tu orden para no perder el acceso. Si no eres administrador, el aviso te pide contactarlo. Si la suscripción queda inactiva, el acceso se limita hasta regularizarla.
+
+SECCION: soporte
+KICKER: 15 · Tu cuenta
+H2: Soporte y contacto
+INTRO: Si algo no aparece en esta guía, o si tu caso tiene montos, folios o facturas concretas de tu cuenta, escríbenos: una persona del equipo lo revisa contigo.
+CONTACTO: soporte@cileo.io | mailto:soporte@cileo.io
+CONTACTO: WhatsApp +52 56 6297 6298 | https://wa.me/525662976298
+CONTACTO: Chatbot en cileo.io | https://cileo.io
+P: **Hablar con una persona.** En el chat basta con pedirlo, por ejemplo quiero hablar con alguien, con un agente o con un asesor, y te atiende una persona del equipo de Cileo.
+P: **No puedo entrar o no veo ciertas secciones.** Revisa tus permisos con el administrador de tu cuenta. El acceso depende del rol del usuario, y algunas funciones también dependen del plan o de su habilitación en tu cuenta.
+P: **Aceptación legal al entrar.** Es la aceptación de términos que Cileo requiere para operar; debe completarse para continuar.
+
+DIVISOR: Referencia
+
+SECCION: proximamente
+KICKER: Referencia
+H2: Próximamente
+INTRO: Funciones anunciadas que todavía no están disponibles. No hay fechas de lanzamiento.
+LISTA:
+- **IA aplicada a la operación:** automatizar consultas y lectura inteligente de información, con patrones y alertas entre contratos y cobros.
+- **Facturación automática** según pagos, ajustes o descuentos.
+- **Pagos en efectivo** de tus inquilinos en tiendas afiliadas (OXXO, 7-Eleven, farmacias), además de tarjeta y transferencia centralizadas. Se refiere a la cobranza de rentas, no al pago de tu suscripción.
+- **Sincronización con portales** comerciales de colocación de inmuebles.
+- **Integraciones vía API** para flujos específicos.
+
+
+SECCION: glosario | gloss
+KICKER: Referencia
+H2: Glosario
+INTRO: Vocabulario oficial de la plataforma. Cada término usa el nombre con el que aparece en Cileo; cuando aplica, se indica la sección donde lo encuentras.
+GCAT: La plataforma y conceptos base
+TERMINO: Cileo | Plataforma para administrar arrendamiento inmobiliario: centraliza contratos, cobranza, facturación y cumplimiento PLD en un solo lugar, con información trazable.
+TERMINO: Portafolio | El conjunto total de inmuebles que administras dentro de tu cuenta. Los reportes y el Dashboard pueden filtrarse para ver todo el portafolio o una parte.
+TERMINO: Dashboard -> Dashboard | Pantalla de inicio con los indicadores clave: ingresos, ocupación, morosidad y estatus de cumplimiento en una sola vista.
+TERMINO: Cuenta | El espacio de trabajo de tu organización dentro de Cileo, donde viven tus inmuebles, contratos y usuarios.
+TERMINO: Suscripción -> Planes | El plan contratado que habilita el uso de Cileo (Básico, En crecimiento, Profesional o Corporativa), definido por el número de **contratos activos**.
+TERMINO: Prueba (30 días) -> Planes | Periodo de evaluación sin costo, disponible una sola vez por cuenta y solo en los planes En crecimiento y Profesional.
+GCAT: Personas y accesos
+TERMINO: Usuario -> Usuarios | Persona con acceso a Cileo dentro de tu cuenta. Se administra desde Administración y luego Usuarios.
+TERMINO: Rol -> Usuarios | Nivel de permisos de un usuario. Define qué puede ver y hacer; por ejemplo, quién solo consulta y quién puede editar o administrar.
+TERMINO: Propietario -> Contactos | Dueño de uno o varios inmuebles. Es a quien pertenece la renta y, cuando aplica, a cuyo nombre se emiten las facturas.
+TERMINO: Inquilino -> Contactos | Persona física o moral que renta un inmueble bajo un contrato. Es quien recibe los cobros y las facturas.
+TERMINO: Contacto -> Contactos | Registro de una persona u organización (propietario, inquilino u otro) con sus datos de identificación y contacto.
+TERMINO: Administración -> Administración | Sección donde se configuran los elementos maestros de la cuenta: usuarios, datos fiscales, cuentas e impuestos.
+GCAT: Inmuebles y ocupación
+TERMINO: Inmueble o propiedad -> Inmuebles | Cada bien que administras: departamento, local, oficina, bodega y demás. Es la unidad base sobre la que se crean contratos y cobros.
+TERMINO: Localidad o unidad | Espacio rentable dentro de un inmueble. En los indicadores de ocupación se cuentan como el total de unidades disponibles.
+TERMINO: Ocupado -> Dashboard | Inmueble o unidad con al menos un contrato activo en el periodo consultado.
+TERMINO: Vacante -> Dashboard | Inmueble o unidad sin contrato activo, que podría ofrecerse en renta.
+TERMINO: Ocupación | Proporción de unidades ocupadas frente al total del portafolio. Es uno de los indicadores principales del Dashboard.
+GCAT: Contratos
+TERMINO: Contrato -> Contratos | Acuerdo de arrendamiento entre un propietario y un inquilino sobre un inmueble, con su renta, vigencia y condiciones.
+TERMINO: Renta | Monto periódico que el inquilino paga por el inmueble según el contrato.
+TERMINO: Periodicidad | Cada cuánto se genera el cobro de la renta: mensual, bimestral, trimestral, cuatrimestral, semestral o anual.
+TERMINO: Depósito en garantía | Cantidad que el inquilino entrega como garantía al inicio del contrato, por lo general reembolsable al término.
+TERMINO: Cuenta de depósito -> Cuentas | Cuenta bancaria asociada al contrato donde se reciben los pagos. Debe estar definida para poder generar cobros.
+TERMINO: Vigencia | Periodo durante el cual el contrato está activo, con su fecha de inicio y de término.
+TERMINO: Plazo | Determinado, con fecha de fin, o indefinido, sin ella. Los dos generan cobros con normalidad.
+TERMINO: Sufijo del concepto -> Alta de contrato | Texto opcional que se agrega al final del concepto del cobro y de la factura; sirve, por ejemplo, para incluir la dirección del inmueble o las cuentas prediales.
+TERMINO: Borrador de contrato -> Alta de contrato | Contrato guardado a medias, que se activa después con Confirmar contrato. Puede guardarse aunque el propietario aún no tenga datos fiscales.
+TERMINO: Contrato por vencer -> Dashboard | Contrato cuya fecha de término se aproxima, para dar seguimiento a su renovación.
+TERMINO: Renovación -> Dashboard | Extensión o recontratación de un arrendamiento que está por terminar.
+TERMINO: Mantenimiento | Concepto asociado al contrato para cubrir gastos de conservación del inmueble, que puede cobrarse junto con la renta.
+TERMINO: Vista (de tabla) -> Tabla y vistas | Combinación guardada de columnas, orden y filas por página en la tabla de contratos. Cada usuario tiene las suyas.
+GCAT: Cobranza
+TERMINO: Cobranza -> Cobranza | Sección donde se generan, controlan y dan seguimiento los cobros de renta y los conceptos asociados.
+TERMINO: Cobro | Cargo generado a un inquilino por un periodo o concepto (renta, mantenimiento y demás). Es la unidad de trabajo de la cobranza.
+TERMINO: Concepto | Cada línea que compone un cobro o una factura (renta, mantenimiento, depósito u otro), con su cantidad y precio.
+TERMINO: Estatus de cobro -> Cobranza | Situación de un cobro: Pendiente de envío, Pendiente de confirmación, Enviado, Parcialmente pagado, Pagado, Retroactivo, Cancelado, Cancelación pendiente o Cancelación no aprobada.
+TERMINO: Vencido -> Cobranza | Cobro cuya fecha de pago ya pasó y conserva saldo pendiente. No es una pestaña: se refleja en la cartera vencida y en la morosidad.
+TERMINO: Pendiente de confirmación -> Cobranza | Cobro que necesita que confirmes un dato antes de enviarse: tipo de cambio, cuenta de depósito, un incremento o un tipo de renta mixto. Antes se llamaba Bloqueado por confirmación.
+TERMINO: Pago parcial | Abono que cubre solo una parte del monto de un cobro; el resto queda como saldo pendiente.
+TERMINO: Saldo pendiente | Monto que aún falta por cobrar de uno o varios cobros.
+TERMINO: Cartera vencida o morosidad -> Dashboard | Suma de los cobros vencidos no pagados. Refleja el nivel de riesgo de la cartera.
+TERMINO: Saldo a favor | Cantidad a favor del inquilino, por ejemplo cuando una nota de crédito supera la deuda actual. Queda disponible para cobros futuros.
+TERMINO: Conciliación | Proceso de confirmar que los pagos recibidos corresponden con los cobros registrados, actualizando su estatus.
+TERMINO: Recordatorio de pago -> Cobranza | Aviso que se envía al inquilino sobre un cobro próximo o vencido; según el caso incluye el borrador o la factura.
+TERMINO: Línea de tiempo | Historial cronológico de cobros, pagos y movimientos de un inquilino o contrato.
+GCAT: Facturación (CFDI)
+TERMINO: Factura -> Facturación | Comprobante fiscal (CFDI) emitido por un cobro, ligado al contrato y al periodo correspondiente.
+TERMINO: CFDI | Comprobante Fiscal Digital por Internet: el formato oficial de factura electrónica en México, regulado por el SAT.
+TERMINO: Borrador de factura -> Facturación | Versión preliminar de una factura antes de su emisión. Permite revisarla antes de timbrar en definitiva.
+TERMINO: Timbrado | Proceso por el cual una factura obtiene validez fiscal oficial ante el SAT.
+TERMINO: PUE | Pago en una sola exhibición. La factura se liquida de una vez y no lleva complemento de pago.
+TERMINO: PPD | Pago en parcialidades o diferido. Cada pago recibido se ampara con un complemento de pago.
+TERMINO: Complemento de pago -> Complementos de pago | CFDI que ampara los pagos de una factura PPD.
+TERMINO: Nota de crédito | Comprobante que reduce o corrige el monto de una factura ya emitida. Si supera la deuda actual, el excedente se convierte en saldo a favor del inquilino.
+TERMINO: Sustitución de CFDI -> Sustituir una factura | Emitir una factura nueva que reemplaza a una anterior con errores, relacionándolas entre sí.
+TERMINO: Motivo de cancelación -> Cancelaciones | Razón que el SAT exige al cancelar: 01 con errores con relación, 02 con errores sin relación, o 03 no se llevó a cabo la operación.
+TERMINO: Datos fiscales -> Datos Fiscales | Información fiscal del emisor necesaria para facturar: RFC, régimen, domicilio y certificados.
+TERMINO: Régimen fiscal | Clasificación ante el SAT que determina las obligaciones fiscales del contribuyente, sea persona física o moral.
+TERMINO: Persona física o persona moral | Distinción fiscal: una persona física es un individuo; una persona moral es una empresa u organización.
+TERMINO: RFC | Registro Federal de Contribuyentes. Clave que identifica a cada contribuyente ante el SAT.
+TERMINO: CSD | Certificado de Sello Digital. El certificado que el SAT otorga al emisor para firmar y timbrar sus facturas.
+TERMINO: Impuestos -> Impuestos | Configuración de las tasas aplicables, IVA o retenciones, que se calculan sobre los conceptos facturables.
+TERMINO: IVA | Impuesto al Valor Agregado, que se agrega al monto de los conceptos gravados.
+TERMINO: ISR | Impuesto Sobre la Renta, relevante en los reportes fiscales de propietarios.
+GCAT: PLD y cumplimiento
+TERMINO: PLD -> PLD | Prevención de Lavado de Dinero. Conjunto de obligaciones legales que aplican a ciertas operaciones inmobiliarias.
+TERMINO: PLD/FT | Prevención de Lavado de Dinero y Financiamiento al Terrorismo: la denominación formal completa del régimen. En Cileo, PLD y PLD/FT se refieren al mismo módulo.
+TERMINO: LFPIORPI | Ley Federal para la Prevención e Identificación de Operaciones con Recursos de Procedencia Ilícita, conocida como Ley Antilavado.
+TERMINO: Actividad vulnerable | Operación que la Ley Antilavado sujeta a obligaciones de PLD/FT. El arrendamiento es una de ellas.
+TERMINO: UIF | Unidad de Inteligencia Financiera. Autoridad que, junto con el SAT, recibe y analiza los avisos derivados de actividades vulnerables.
+TERMINO: Aviso (PLD) | Reporte que debe generarse y presentarse ante la autoridad como parte del cumplimiento de una operación.
+TERMINO: Trazabilidad | Capacidad de reconstruir el historial completo de una operación (contrato, cobro, aviso), lista para auditoría o supervisión.
+TERMINO: Documentos faltantes -> Dashboard | Documentación de identificación o cumplimiento que aún no se ha cargado para un inquilino.
+TERMINO: Tasa de cumplimiento PLD -> Dashboard | Indicador que mide qué proporción de tus contratos está al día en sus obligaciones PLD.
+TERMINO: Expediente | Conjunto de documentos e información de identificación que respalda el cumplimiento.
+GCAT: Reportes e indicadores
+TERMINO: Reportes -> Reportes | Sección con reportes de la operación para análisis, revisión contable y toma de decisiones.
+TERMINO: Estado de cuenta -> Reportes | Reporte que resume los cobros, pagos y saldos de un inquilino, contrato o propietario en un periodo.
+TERMINO: KPI o indicador clave | Métrica resumen del Dashboard: ingresos del periodo, cobranza contra esperado, morosidad, días de atraso, ocupados y vacantes, contratos por vencer y tasa de cumplimiento PLD.
+TERMINO: Periodo | Rango de fechas sobre el que se calculan los indicadores y los reportes.
+GCAT: Referencia fiscal (México)
+TERMINO: SAT | Servicio de Administración Tributaria, la autoridad fiscal en México.
+TERMINO: UMA | Unidad de Medida y Actualización. Referencia económica que se usa para determinar umbrales en obligaciones como las de PLD.
+TERMINO: INPC | Índice Nacional de Precios al Consumidor. Indicador de inflación que puede usarse para actualizar montos, como los incrementos de renta.
+TERMINO: Tipo de cambio | Valor de conversión entre monedas, aplicado cuando un contrato, un cobro o un pago se maneja en una moneda distinta al peso.
+TERMINO: Carga masiva -> Migración y carga masiva | Alta de información en bloque desde una plantilla de Excel, en lugar de capturarla registro por registro.
+
+DIVISOR: Ayuda
+
+SECCION: faq | faq
+KICKER: Ayuda
+H2: Preguntas frecuentes
+INTRO: Respuestas breves a las dudas más comunes. El vocabulario se explica en el [Glosario](#glosario).
+FCAT: Generales y primeros pasos
+PREGUNTA: ¿Qué es Cileo y qué puedo hacer? | Es una plataforma para administrar arrendamiento inmobiliario: registrar inmuebles, crear contratos, generar y dar seguimiento a cobros, emitir facturas (CFDI), gestionar las tareas de PLD y monitorear todo desde un Dashboard.
+PREGUNTA: ¿Necesito instalar algo? | No. Funciona desde el navegador en app.cileo.io; solo inicias sesión con tu cuenta.
+PREGUNTA: ¿Por dónde empiezo? | En este orden: 1) datos fiscales, 2) inmuebles, 3) contactos (propietarios e inquilinos), 4) contratos y 5) cobros.
+PREGUNTA: ¿Cómo está organizada la plataforma? | El menú principal se compone de Dashboard, Inmuebles, Contratos, Cobranza, PLD, Contactos y Administración (Usuarios, Datos Fiscales, Cuentas e Impuestos). Según tu cuenta también aparecen Reportes y Suscripción.
+PREGUNTA: ¿Puedo migrar mi información desde otro sistema? | Sí. Solicita a soporte la carga masiva: revisan el alcance y la habilitan en tu cuenta. Después descargas la plantilla, la llenas y subes el Excel. Ver [Migración y carga masiva](#carga-masiva).
+FCAT: Inmuebles y contratos
+PREGUNTA: ¿Cómo registro un inmueble? | Entra a Inmuebles y usa Nuevo inmueble. Una vez registrado podrás asociarlo a contratos.
+PREGUNTA: ¿Qué es una localidad o unidad? | Es cada espacio rentable dentro de un inmueble. Los indicadores de ocupación cuentan las unidades para decirte cuántas están ocupadas y cuántas vacantes.
+PREGUNTA: ¿Cómo creo un contrato? | Contratos y luego Nuevo contrato. Es un asistente por pasos: Inmueble, Localidades, Renta, Inquilino, Monto e impuestos, Mantenimiento (opcional) y Verificar. Ver [Alta de contrato](#alta-contrato).
+PREGUNTA: ¿Puedo guardar un contrato a medio capturar? | Sí, queda como borrador y después usas Confirmar contrato para activarlo. Se puede guardar aunque el propietario todavía no tenga datos fiscales.
+PREGUNTA: ¿Puedo cobrar la renta cada dos, tres o seis meses? | Sí. Al crear el contrato eliges la periodicidad: mensual, bimestral, trimestral, cuatrimestral, semestral o anual.
+PREGUNTA: ¿Puedo adjuntar el contrato firmado? | Sí. Al crear o editar el contrato usa Adjuntar documentos: PDF, JPG, PNG, DOC o DOCX de hasta 20 MB cada uno. Luego los consultas con Ver documentos.
+PREGUNTA: ¿Cómo edito o cancelo un contrato? | Desde el detalle del contrato usa Editar o Cancelar; en ambos casos se te pide confirmar la acción.
+PREGUNTA: ¿Puedo agregar notas o comentarios a un contrato? | Sí. Cada contrato tiene un espacio de comentarios para dejar registro de acuerdos o seguimientos.
+PREGUNTA: ¿Cómo sé cuáles inmuebles están ocupados o vacantes? | En el Dashboard, con los indicadores de ocupados (con contrato activo) y vacantes (sin contrato activo), según el periodo y los filtros que elijas.
+PREGUNTA: ¿Puedo elegir qué columnas ver en la tabla de contratos? | Sí, con el botón Columnas, y puedes guardar la combinación como una Vista propia. Ver [Tabla y vistas](#contratos-tabla).
+PREGUNTA: ¿Cómo sé qué contratos están por vencer? | El Dashboard muestra los contratos por vencer, para que des seguimiento a su renovación.
+FCAT: Cobranza y pagos
+PREGUNTA: ¿Cómo genero un cobro? | Cobranza y luego Nuevo cobro, o desde el contrato. Eliges el contrato, agregas los conceptos con sus impuestos y lo generas. El contrato debe tener definida una cuenta de depósito.
+PREGUNTA: Antes de crear cobros me pide una cuenta de depósito, ¿por qué? | Porque cada contrato necesita la cuenta donde se reciben los pagos. Se configura en Administración y luego Cuentas, y se elige en el contrato.
+PREGUNTA: Al aplicar un pago, ¿qué campos son obligatorios? | Siempre Cobro, Fecha, Hora, Importe, Método de pago y Cuenta de depósito. Según el método se piden además Cuenta de origen, Número de rastreo o Comprobante. Con Efectivo (01) o Por definir (99) no se piden esos tres; con Dinero electrónico (06) el rastreo y el comprobante son obligatorios.
+PREGUNTA: ¿Puedo registrar un pago parcial? | Sí, salvo que el cobro ya tenga una factura timbrada como PUE: en ese caso el saldo restante se liquida en un solo pago. Si la factura sigue en borrador, sí se permiten abonos. Si no es tu caso y aun así no te deja, escribe a soporte.
+PREGUNTA: ¿Por qué un cobro aparece Pendiente de confirmación? | Porque necesita que confirmes algo antes de enviarlo: el tipo de cambio en cobros en dólares, la cuenta de depósito, un incremento por INPC o por variación, o un tipo de renta mixto. Su acción es Confirmar y enviar. Antes se llamaba Bloqueado por confirmación.
+PREGUNTA: ¿Qué significa que un cobro esté vencido? | Que pasó su fecha de pago y conserva saldo pendiente. No es una pestaña: se refleja en la cartera vencida y en la morosidad.
+PREGUNTA: ¿Cómo envío un recordatorio de pago? | Usa Enviar recordatorio desde el cobro. Según el caso, incluye el envío del borrador o de la factura.
+PREGUNTA: ¿Puedo enviar un cobro sin esperar al envío automático? | Sí, con la acción Enviar cobro, que se habilita el día de su fecha de envío.
+PREGUNTA: ¿Qué pasa si facturo en dólares y me pagan en pesos? | Al registrar el pago capturas el tipo de cambio, que puedes editar, y el complemento de pago se emite con esa equivalencia.
+PREGUNTA: ¿Qué es un saldo a favor? | Una cantidad a favor del inquilino, por ejemplo cuando una nota de crédito supera la deuda actual. Queda disponible para cobros futuros.
+PREGUNTA: ¿Qué significan los estatus de un cobro? | Pendiente de envío, Pendiente de confirmación, Enviado, Parcialmente pagado, Pagado, Retroactivo, Cancelado, Cancelación pendiente y Cancelación no aprobada. Los tienes explicados en [Cobranza](#cobranza).
+PREGUNTA: ¿Puedo ver el historial de pagos de un inquilino? | Sí. Cada inquilino y cada contrato tienen una línea de tiempo con sus cobros, pagos y movimientos.
+FCAT: Facturación, cancelaciones y notas de crédito
+PREGUNTA: ¿Qué necesito para facturar? | Tener capturados tus datos fiscales (RFC, régimen y certificados) en Administración y luego Datos Fiscales. Sin certificados no se pueden timbrar facturas.
+PREGUNTA: ¿Puedo guardar mis datos fiscales sin los certificados (CSD)? | Sí, y completarlos después. Para timbrar facturas sí se necesitan.
+PREGUNTA: ¿Qué es un borrador de factura? | Una versión preliminar que te permite revisar la factura antes de emitirla en definitiva, es decir antes de timbrarla.
+PREGUNTA: ¿Puedo descargar el XML de mis facturas? | Sí. Las facturas emitidas pueden descargarse en XML y PDF para tu resguardo y contabilidad.
+PREGUNTA: ¿Cómo se emiten las facturas en Cileo? | Se generan ligadas a los cobros y a su periodo, de modo que lo facturado corresponde con lo cobrado según el contrato.
+PREGUNTA: ¿Puedo enviar copia de las facturas por correo? | Sí. En Datos Fiscales existe la opción Enviar copia de facturas por correo, con correos adicionales.
+PREGUNTA: ¿Qué es un complemento de pago? | El CFDI que ampara cada pago de una factura emitida como PPD. Las facturas PUE no llevan complemento. Ver [Complementos de pago](#complementos).
+PREGUNTA: ¿Qué es una nota de crédito? | Un comprobante que reduce o corrige una factura ya emitida. Si el monto supera la deuda actual, el excedente se vuelve saldo a favor del inquilino.
+PREGUNTA: ¿Cómo cancelo un pago que registré por error? | Desde el menú del pago, Cancelar pago. Solo se puede cancelar el más reciente. Si tiene complemento timbrado, la cancelación se solicita al SAT, que puede aceptarla o rechazarla. Si la factura es PUE y el pago no tiene complemento, lo que procede es cancelar la factura: escribe a soporte. No aplica a cobros retroactivos. Ver [Cancelaciones](#cancelaciones).
+PREGUNTA: No me deja cancelar un cobro, ¿por qué? | Si tiene complementos de pago activos, cancélalos uno por uno primero. Tampoco se puede si tiene una nota de crédito asociada, ni si sustituyó a un cobro ya cancelado. Si el cobro está sustituido, solo se cancela con el motivo 01.
+PREGUNTA: ¿Cómo sustituyo una factura con errores? | Genera la factura del cobro nuevo con la opción Sustitución de los CFDI previos activada y elige las facturas a sustituir; después cancela la anterior con el motivo 01. Ver [Sustituir una factura](#sustitucion). Valida el caso con tu contador.
+PREGUNTA: El SAT rechazó una cancelación, ¿qué hago? | En el menú del pago, o del cobro cuando queda en Cancelación no aprobada, tienes Reintentar cancelación, que la vuelve a solicitar, y Revertir cancelación, que regresa el pago o el cobro a un estado activo. Si no ves la opción, escribe a soporte.
+FCAT: PLD y cumplimiento
+PREGUNTA: ¿Qué es PLD y por qué aparece en Cileo? | PLD es Prevención de Lavado de Dinero. El arrendamiento es una actividad vulnerable bajo la Ley Antilavado, con obligaciones de identificación y avisos, y Cileo integra ese cumplimiento en tu operación.
+PREGUNTA: ¿Cuál es el flujo de cumplimiento PLD? | Identificar, es decir cargar los datos y documentos de la operación; generar y descargar el XML; subir el comprobante; y la tarea queda como Completado. También puede mostrarse Vencido o Cancelado.
+PREGUNTA: ¿Con Cileo ya cumplo con PLD? | No por sí solo. Cileo te ayuda a gestionar las tareas y su documentación, pero no confirma la presentación ante la autoridad ni garantiza el cumplimiento. Valida tus obligaciones con tu asesor.
+PREGUNTA: No veo la sección PLD, ¿por qué? | El módulo no está incluido en el plan Básico y además depende de tu rol. Si deberías verlo y no aparece, escribe a soporte.
+PREGUNTA: ¿Cómo sé si tengo pendientes de PLD? | El Dashboard muestra la tasa de cumplimiento PLD, los contratos con PLD vencido, los próximos a vencer y los inquilinos con documentos faltantes.
+PREGUNTA: ¿Cómo cargo la información de PLD de un contrato? | Desde la sección PLD, con la opción Identificar, que inicia el flujo y pide los datos y documentos de la operación.
+PREGUNTA: ¿Puedo descargar los documentos y comprobantes de PLD? | Sí. Cada tarea tiene Descargar documentos, Descargar XML y Descargar comprobante.
+FCAT: Reportes y Dashboard
+PREGUNTA: ¿Qué muestra el Dashboard? | Los indicadores clave de tu operación: ingresos del periodo, cobranza contra esperado, morosidad, días de atraso, ocupación, contratos por vencer y cumplimiento PLD, entre otros.
+PREGUNTA: ¿Qué es la morosidad? | La proporción del saldo pendiente frente a lo facturado; refleja el nivel de cartera vencida de tu operación.
+PREGUNTA: ¿Qué reportes puedo obtener? | Estado de cuenta, Cobranza y morosidad, Estatus de contratos y Fiscales de propietario.
+PREGUNTA: ¿Puedo exportar la información de cobranza? | Sí. Desde Cobranza puedes Descargar CSV, que incluye los totales fiscales, y Descargar CFDIs.
+FCAT: Contactos, usuarios y cuenta
+PREGUNTA: ¿Cómo agrego un inquilino o un propietario? | Entra a Contactos y usa Nuevo inquilino o Nuevo propietario, según corresponda.
+PREGUNTA: ¿Cuál es la diferencia entre inquilino y propietario? | El propietario es el dueño del inmueble, a quien pertenece la renta y, cuando aplica, a cuyo nombre se factura. El inquilino es quien renta y recibe los cobros y las facturas.
+PREGUNTA: ¿Cómo agrego usuarios de mi equipo? | En Administración y luego Usuarios, con Nuevo usuario. Cada uno tiene un rol que define sus permisos. Ver [Usuarios y permisos](#usuarios).
+PREGUNTA: ¿Por qué no me deja eliminar unos datos fiscales? | Porque están en uso por contratos activos. Mientras sigan asociados no pueden eliminarse.
+PREGUNTA: ¿Cómo configuro los impuestos? | En Administración y luego Impuestos defines las reglas de IVA y retenciones que se aplican a los conceptos facturables; cada regla se activa o desactiva. Las cuentas nuevas ya traen reglas por defecto.
+PREGUNTA: Al entrar me pide una aceptación legal, ¿qué es? | Es la aceptación de los términos que Cileo requiere para operar. Debe completarse para continuar.
+PREGUNTA: No puedo entrar o no veo ciertas secciones, ¿qué hago? | El acceso depende del rol de tu usuario, y algunas funciones dependen del plan o de su habilitación en tu cuenta. Revisa tus permisos con el administrador.
+FCAT: Planes, suscripción y soporte
+PREGUNTA: ¿Cuánto cuesta y qué planes hay? | Se miden por contratos activos: Básico de 1 a 10 por $2,500 al mes, En crecimiento de 11 a 50 por $7,500, Profesional de 51 a 100 por $12,000 y Corporativa de más de 100 a la medida. En plan anual ahorras 15%. Precios en pesos, sin IVA. Ver [Planes y precios](#planes).
+PREGUNTA: ¿Hay prueba sin costo? | Sí, de 30 días, una sola vez por cuenta y solo en los planes En crecimiento y Profesional. Básico no tiene prueba.
+PREGUNTA: ¿El módulo PLD está en todos los planes? | No. Está incluido en En crecimiento, Profesional y Corporativa, pero no en Básico.
+PREGUNTA: ¿Cómo cambio de plan o de método de pago? | Si en tu cuenta aparece Suscripción y dentro Administrar suscripción, desde ahí puedes cambiar de plan, cambiar el método de pago o cancelar. Si no aparece, pídeselo a tu administrador o escribe a soporte. Ver [Administrar suscripción](#suscripcion).
+PREGUNTA: ¿Qué pasa si no pago a tiempo? | Si la suscripción queda inactiva, el acceso se limita hasta regularizarla. Si pagas por transferencia, antes del fin del periodo se te recuerda pagar tu orden.
+PREGUNTA: ¿Cómo contacto a soporte? | Por correo a soporte@cileo.io, por WhatsApp al +52 56 6297 6298, o pidiendo en el chat hablar con una persona. Ver [Soporte y contacto](#soporte).

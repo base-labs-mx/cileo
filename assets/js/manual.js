@@ -9,7 +9,7 @@ document.querySelectorAll('.imgwrap').forEach(wrap => {
         const n = parseInt(m.textContent.trim(), 10);
         const step = steps[n - 1];
         if (!step) return;
-        const h = (step.querySelector('h4')?.textContent || '').trim();
+        const h = (step.querySelector('h3,h4')?.textContent || '').trim();
         const p = (step.querySelector('p')?.textContent || '').trim();
         m.setAttribute('data-tip', (h ? h + ' — ' : '') + p);
         m.setAttribute('aria-label', (h ? h + ': ' : '') + p);
@@ -50,8 +50,8 @@ search.addEventListener('input', () => {
 });
 
 (function () {
-    const track = document.getElementById('dashTrack'), tabs = [...document.querySelectorAll('#dashCar .car-tab')];
-    const dotsWrap = document.getElementById('dashDots'); const n = track.children.length;
+    const track = (document.querySelector('#dashCar .track') || document.getElementById('dashTrack')), tabs = [...document.querySelectorAll('#dashCar .car-tab')];
+    const dotsWrap = (document.querySelector('#dashCar .dots') || document.getElementById('dashDots')); const n = track.children.length;
     for (let i = 0; i < n; i++) { const d = document.createElement('button'); d.className = 'dot' + (i === 0 ? ' active' : ''); d.addEventListener('click', () => go(i)); dotsWrap.appendChild(d); }
     const dots = [...dotsWrap.children];
     function go(i) { track.scrollTo({ left: track.clientWidth * i, behavior: 'smooth' }); }
