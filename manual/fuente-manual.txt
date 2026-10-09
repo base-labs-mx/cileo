@@ -39,7 +39,7 @@ NAV: impuestos | Impuestos | impuestos iva retenciones reglas claves sat
 NAV: carga-masiva | Migración y carga masiva | migración carga masiva plantilla excel importar
 
 NAVGRUPO: Tu cuenta
-NAV: planes | Planes y precios | planes precios contratos activos prueba
+NAV: planes | Planes y precios | planes precios contratos activos prueba timbrado timbres facturas por mes
 NAV: suscripcion | Administrar suscripción | suscripción cambiar plan método de pago cancelar | sub
 NAV: soporte | Soporte y contacto | soporte contacto ayuda whatsapp correo
 
@@ -322,6 +322,7 @@ TABLA:
 | Corporativa | más de 100 | ilimitados | a la medida | a la medida | a la medida
 LISTA:
 - El **módulo PLD** está incluido en En crecimiento, Profesional y Corporativa; no en Básico.
+- El **timbrado está incluido** en el precio del plan: no se cobra por timbre. El límite es el número de **facturas por mes** de tu plan y no se puede rebasar; si necesitas más, cambia de plan.
 - Precios en pesos mexicanos y **no incluyen IVA**.
 - Con la **contratación anual** ahorras 15% frente al mensual; se factura una vez al año y la tabla muestra el equivalente mensual.
 - La **prueba de 30 días sin costo** aplica solo en En crecimiento y Profesional, una sola vez por cuenta. Básico no tiene prueba.
@@ -530,6 +531,7 @@ FCAT: Planes, suscripción y soporte
 PREGUNTA: ¿Cuánto cuesta y qué planes hay? | Se miden por contratos activos: Básico de 1 a 10 por $2,500 al mes, En crecimiento de 11 a 50 por $7,500, Profesional de 51 a 100 por $12,000 y Corporativa de más de 100 a la medida. En plan anual ahorras 15%. Precios en pesos, sin IVA. Ver [Planes y precios](#planes).
 PREGUNTA: ¿Hay prueba sin costo? | Sí, de 30 días, una sola vez por cuenta y solo en los planes En crecimiento y Profesional. Básico no tiene prueba.
 PREGUNTA: ¿El módulo PLD está en todos los planes? | No. Está incluido en En crecimiento, Profesional y Corporativa, pero no en Básico.
+PREGUNTA: ¿El timbrado de las facturas se cobra aparte? | No. Va incluido en el precio del plan y no se cobra por timbre. Lo que aplica es el límite de facturas por mes de tu plan: hasta 50 en Básico, 250 en En crecimiento y 500 en Profesional. Ese límite no se puede rebasar, así que si necesitas facturar más, hay que cambiar de plan. Ver [Planes y precios](#planes).
 PREGUNTA: ¿Cómo cambio de plan o de método de pago? | Si en tu cuenta aparece Suscripción y dentro Administrar suscripción, desde ahí puedes cambiar de plan, cambiar el método de pago o cancelar. Si no aparece, pídeselo a tu administrador o escribe a soporte. Ver [Administrar suscripción](#suscripcion).
 PREGUNTA: ¿Qué pasa si no pago a tiempo? | Si la suscripción queda inactiva, el acceso se limita hasta regularizarla. Si pagas por transferencia, antes del fin del periodo se te recuerda pagar tu orden.
 PREGUNTA: ¿Cómo contacto a soporte? | Por correo a soporte@cileo.io, por WhatsApp al +52 56 6297 6298, o pidiendo en el chat hablar con una persona. Ver [Soporte y contacto](#soporte).
