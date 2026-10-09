@@ -30,9 +30,10 @@
       <a href="#inmuebles" data-t="inmuebles propiedades localidades">Inmuebles</a>
       <a href="#contratos" data-t="contratos arrendamiento">Contratos</a>
       <a href="#alta-contrato" class="sub" data-t="alta contrato asistente pasos nuevo borrador">Alta de contrato</a>
-      <a href="#contratos-tabla" class="sub" data-t="tabla columnas vistas guardadas búsqueda">Tabla y vistas</a>
+      <a href="#contratos-tabla" class="sub" data-t="tabla columnas vistas guardadas búsqueda preferencias ordenar descargar csv">Tabla y vistas</a>
       <a href="#contratos-documentos" class="sub" data-t="documentos adjuntar pdf contrato firmado">Documentos del contrato</a>
       <a href="#cobranza" data-t="cobranza cobros cartera estatus">Cobranza</a>
+      <a href="#cobranza-tabla" class="sub" data-t="tabla cobros columnas vistas ordenar serie folio descargar csv cfdi">Tabla de cobros y vistas</a>
       <a href="#cobranza-acciones" class="sub" data-t="acciones pago nota de crédito recordatorio cancelar">Acciones de un cobro</a>
       <a href="#filtros" class="sub" data-t="filtros panel dinámicos fecha inmueble propietario">Panel de filtros</a>
     </div>
@@ -80,7 +81,7 @@
   <h1>Manual Cileo</h1>
   <p class="lede">Guía de uso de Cileo: inmuebles, contratos, cobranza, facturación (CFDI) y PLD. Cada sección explica, en pocos pasos, qué hace cada pantalla y cómo se usa.</p>
   <div class="meta"><span class="tag">Capturas reales</span><span class="tag">Datos ficticios</span><span class="tag">app.cileo.io</span></div>
-  <p class="cap">Actualizado: 5 de octubre de 2026</p>
+  <p class="cap">Actualizado: 9 de octubre de 2026</p>
   <section id="intro" class="top">
     <p class="kicker">Empezar aquí</p>
     <h2>Introducción</h2>
@@ -173,11 +174,13 @@
       <li><b>Borrador:</b> puedes guardar el contrato incompleto y, cuando esté listo, usar <b>Confirmar contrato</b> para activarlo. Un borrador se puede guardar aunque el propietario todavía no tenga datos fiscales.</li>
     </ul>
     <h3 class="sub" id="contratos-tabla">Tabla de contratos y vistas</h3>
-    <p>La tabla muestra Contrato, Inmueble, Localidades, Propietario, Inquilino, fechas, Próximo incremento, Renta actual y Moneda, con paginación y búsqueda (también por localidad).</p>
+    <p>La tabla muestra Contrato, Inmueble, Localidades, Propietario, Inquilino, fechas, Próximo incremento, Renta actual y Moneda, con paginación y búsqueda (también por localidad). Al hacer clic en el encabezado de una columna, la tabla se ordena por ella.</p>
     <ul>
-      <li>Con <b>Columnas</b> eliges cuáles ver, las reordenas y ajustas su ancho.</li>
-      <li><b>Vista</b> guarda columnas, orden y filas por página. Puedes Guardar vista, Guardar cambios, Guardar como nueva, Renombrar, Eliminar y elegir cuál usar al abrir la tabla.</li>
+      <li>El botón de <b>preferencias</b> (ícono de ajustes, junto a los filtros; al pasar el cursor dice <b>Preferencias: vistas y columnas</b>) abre un panel con dos pestañas: <b>Vistas</b> y <b>Columnas</b>.</li>
+      <li>En <b>Columnas</b> eliges cuáles ver, las reordenas (arrastrando o con las flechas) y ajustas su ancho. Si la pantalla no alcanza para todas, algunas se marcan como <b>oculta por ancho</b> y puedes mostrarlas desde ahí.</li>
+      <li>En <b>Vistas</b> guardas columnas, orden y filas por página. Puedes Guardar vista, Guardar cambios, Guardar como nueva, Renombrar, Eliminar y elegir cuál usar al abrir la tabla.</li>
       <li>Las vistas son de cada usuario: lo que guardes no cambia lo que ven tus compañeros.</li>
+      <li>Con el menú <b>Descargar</b> obtienes el CSV con todas las columnas. Solo se descargan las filas visibles: amplía las filas por página para incluir todo.</li>
       <li>Al buscar, los contadores de las pestañas siguen mostrando los totales generales.</li>
     </ul>
     <h3 class="sub" id="contratos-documentos">Documentos del contrato</h3>
@@ -194,7 +197,7 @@
       <div class="step"><div class="b">1</div><div><h3>Panorama de cartera</h3><p>Cuentas por cobrar pendientes y vencidas, pagadas, y los totales del periodo.</p></div></div>
       <div class="step"><div class="b">2</div><div><h3>Pestañas por estatus</h3><p>Todos, Pendiente de envío, Pendiente de confirmación, Enviado, Pagado, Retroactivos y Cancelado.</p></div></div>
       <div class="step"><div class="b">3</div><div><h3>Nuevo cobro y acciones</h3><p>El menú de tres puntos ofrece Generar factura, Agregar pago, Enviar recordatorio y Generar nota de crédito.</p></div></div>
-      <div class="step"><div class="b">4</div><div><h3>Multi-moneda</h3><p>Cobros en pesos o en dólares; además puedes descargar el CSV y los CFDIs.</p></div></div>
+      <div class="step"><div class="b">4</div><div><h3>Multi-moneda y descargas</h3><p>Cobros en pesos o en dólares; con el menú Descargar obtienes el CSV o los CFDIs.</p></div></div>
     </div>
     <p><b>Estatus de un cobro.</b> Los primeros siete son también pestañas de la tabla; los dos últimos son estados que aparecen durante una cancelación:</p>
     <ul>
@@ -211,7 +214,15 @@
     <p class="callout"><b>Vencido no es una pestaña.</b> Un cobro está vencido cuando pasó su fecha de pago y conserva saldo pendiente; eso se refleja en la cartera vencida y en la morosidad.</p>
     <p>En las pestañas Todos, Enviado, Pagado y Cancelado hay un <b>selector por tipo de comprobante</b>: Facturas, Complementos de pago y Notas de crédito, cada uno con sus propias columnas. Si hay cobros con cancelación rechazada, la pestaña Cancelado muestra un aviso para que los atiendas.</p>
     <p class="callout"><b>¿Cuándo un cobro queda Pendiente de confirmación?</b> Cuando hace falta confirmar un dato antes de enviarlo: tipo de cambio por definir (cobros en dólares), cuenta de depósito pendiente, un incremento de renta o de mantenimiento (por INPC o por una variación de monto), o un tipo de renta mixto. Estos cobros muestran la acción <b>Confirmar y enviar</b>. Antes se llamaba Bloqueado por confirmación.</p>
-    <p><b>Multi-moneda y exportación.</b> Los cobros pueden ser en pesos o en dólares, con el tipo de cambio del DOF registrado. Si el pago llega en una moneda distinta a la de la factura, al registrarlo capturas el tipo de cambio y lo puedes editar; el complemento de pago se emite con esa equivalencia. Puedes <b>Descargar CSV</b> (incluye totales fiscales) y <b>Descargar CFDIs</b>. Los pagos cancelados ya no cuentan en el Dashboard, en PLD ni en los reportes.</p>
+    <p><b>Multi-moneda.</b> Los cobros pueden ser en pesos o en dólares, con el tipo de cambio del DOF registrado. Si el pago llega en una moneda distinta a la de la factura, al registrarlo capturas el tipo de cambio y lo puedes editar; el complemento de pago se emite con esa equivalencia. Los pagos cancelados ya no cuentan en el Dashboard, en PLD ni en los reportes.</p>
+    <h3 class="sub" id="cobranza-tabla">Tabla de cobros y vistas</h3>
+    <p>La tabla de cobros muestra Cobro, Inquilino · Contrato, Inmueble · Localidades, Propietario, Estado, Fechas, Conceptos, Tipo de cobro, CFDIs, <b>Serie</b> y <b>Folio</b> de la factura principal, Monto sin impuestos y Total. Al hacer clic en el encabezado se ordena por Inquilino · Contrato, Inmueble, Propietario, Fechas, Serie o Folio.</p>
+    <ul>
+      <li>El botón de <b>preferencias</b> (ícono de ajustes; al pasar el cursor dice <b>Preferencias: vistas y columnas</b>) funciona igual que en Contratos: en <b>Columnas</b> eliges cuáles ver, las reordenas y ajustas su ancho, y en <b>Vistas</b> guardas esa combinación con su orden y filas por página. Las vistas son de cada usuario.</li>
+      <li>Las tablas de <b>Complementos de pago</b> y <b>Notas de crédito</b> (selector por tipo de comprobante) tienen sus propias columnas, orden y vistas.</li>
+      <li>Con el menú <b>Descargar</b> eliges <b>CSV</b> (todas las columnas, con totales fiscales) o <b>CFDIs</b> (facturas en XML y PDF dentro de un .zip, agrupadas por inquilino, contrato y mes). Solo se descargan las filas visibles: amplía las filas por página para incluir todo.</li>
+      <li>Los botones de la barra (filtros, restablecer filtros, preferencias y descargas) son íconos; al pasar el cursor muestran su nombre.</li>
+    </ul>
     <h3 class="sub" id="cobranza-acciones">Acciones de un cobro</h3>
     <p>Cada cobro abre sus acciones desde el menú de tres puntos. Así se ven sus formularios.</p>
     <p><b>Nuevo cobro.</b> Se crea desde Cobranza con el botón <b>Nuevo cobro</b>, o desde el contrato. En el paso 1 eliges inquilino, contrato y tipo de cobro; en el paso 2 agregas los conceptos (renta, mantenimiento y los que apliquen) con sus impuestos. Requisito: el contrato debe tener una cuenta de depósito definida.</p>
@@ -455,7 +466,7 @@
       <dt>Contrato por vencer <span class="ref">&rarr; Dashboard</span></dt><dd>Contrato cuya fecha de término se aproxima, para dar seguimiento a su renovación.</dd>
       <dt>Renovación <span class="ref">&rarr; Dashboard</span></dt><dd>Extensión o recontratación de un arrendamiento que está por terminar.</dd>
       <dt>Mantenimiento</dt><dd>Concepto asociado al contrato para cubrir gastos de conservación del inmueble, que puede cobrarse junto con la renta.</dd>
-      <dt>Vista (de tabla) <span class="ref">&rarr; Tabla y vistas</span></dt><dd>Combinación guardada de columnas, orden y filas por página en la tabla de contratos. Cada usuario tiene las suyas.</dd>
+      <dt>Vista (de tabla) <span class="ref">&rarr; Tabla y vistas</span></dt><dd>Combinación guardada de columnas, orden y filas por página en las tablas de contratos, cobros, complementos y notas de crédito. Se administra desde el botón de preferencias de la tabla. Cada usuario tiene las suyas.</dd>
     <div class="gcat">Cobranza</div>
       <dt>Cobranza <span class="ref">&rarr; Cobranza</span></dt><dd>Sección donde se generan, controlan y dan seguimiento los cobros de renta y los conceptos asociados.</dd>
       <dt>Cobro</dt><dd>Cargo generado a un inquilino por un periodo o concepto (renta, mantenimiento y demás). Es la unidad de trabajo de la cobranza.</dd>
@@ -534,7 +545,8 @@
     <details><summary>¿Cómo edito o cancelo un contrato?</summary><div class="ans">Desde el detalle del contrato usa Editar o Cancelar; en ambos casos se te pide confirmar la acción.</div></details>
     <details><summary>¿Puedo agregar notas o comentarios a un contrato?</summary><div class="ans">Sí. Cada contrato tiene un espacio de comentarios para dejar registro de acuerdos o seguimientos.</div></details>
     <details><summary>¿Cómo sé cuáles inmuebles están ocupados o vacantes?</summary><div class="ans">En el Dashboard, con los indicadores de ocupados (con contrato activo) y vacantes (sin contrato activo), según el periodo y los filtros que elijas.</div></details>
-    <details><summary>¿Puedo elegir qué columnas ver en la tabla de contratos?</summary><div class="ans">Sí, con el botón Columnas, y puedes guardar la combinación como una Vista propia. Ver <a href="#contratos-tabla">Tabla y vistas</a>.</div></details>
+    <details><summary>¿Puedo elegir qué columnas ver en la tabla de contratos?</summary><div class="ans">Sí. El botón de preferencias (ícono de ajustes, Preferencias: vistas y columnas) abre las pestañas Columnas y Vistas: eliges y reordenas columnas, y guardas la combinación como una Vista propia. Ver <a href="#contratos-tabla">Tabla y vistas</a>.</div></details>
+    <details><summary>¿Dónde quedaron los botones Columnas y Vista?</summary><div class="ans">Ahora están juntos en el botón de preferencias (ícono de ajustes) de la tabla, en las pestañas Vistas y Columnas. Tus vistas guardadas siguen ahí.</div></details>
     <details><summary>¿Cómo sé qué contratos están por vencer?</summary><div class="ans">El Dashboard muestra los contratos por vencer, para que des seguimiento a su renovación.</div></details>
     <div class="fcat">Cobranza y pagos</div>
     <details><summary>¿Cómo genero un cobro?</summary><div class="ans">Cobranza y luego Nuevo cobro, o desde el contrato. Eliges el contrato, agregas los conceptos con sus impuestos y lo generas. El contrato debe tener definida una cuenta de depósito.</div></details>
@@ -549,6 +561,8 @@
     <details><summary>¿Qué es un saldo a favor?</summary><div class="ans">Una cantidad a favor del inquilino, por ejemplo cuando una nota de crédito supera la deuda actual. Queda disponible para cobros futuros.</div></details>
     <details><summary>¿Qué significan los estatus de un cobro?</summary><div class="ans">Pendiente de envío, Pendiente de confirmación, Enviado, Parcialmente pagado, Pagado, Retroactivo, Cancelado, Cancelación pendiente y Cancelación no aprobada. Los tienes explicados en <a href="#cobranza">Cobranza</a>.</div></details>
     <details><summary>¿Puedo ver el historial de pagos de un inquilino?</summary><div class="ans">Sí. Cada inquilino y cada contrato tienen una línea de tiempo con sus cobros, pagos y movimientos.</div></details>
+    <details><summary>¿Puedo ordenar la tabla de cobros o ver la serie y el folio de la factura?</summary><div class="ans">Sí. La tabla tiene columnas Serie y Folio de la factura principal, se ordena desde el encabezado (inquilino, inmueble, propietario, fechas, serie o folio) y puedes guardar tus columnas como una vista. Ver <a href="#cobranza-tabla">Tabla de cobros y vistas</a>.</div></details>
+    <details><summary>¿Cómo descargo mis cobros o los CFDIs?</summary><div class="ans">En Cobranza, con el menú Descargar: CSV con todas las columnas o CFDIs (XML y PDF en un .zip, agrupados por inquilino, contrato y mes). Solo se descargan las filas visibles, así que amplía las filas por página si quieres todo.</div></details>
     <div class="fcat">Facturación, cancelaciones y notas de crédito</div>
     <details><summary>¿Qué necesito para facturar?</summary><div class="ans">Tener capturados tus datos fiscales (RFC, régimen y certificados) en Administración y luego Datos Fiscales. Sin certificados no se pueden timbrar facturas.</div></details>
     <details><summary>¿Puedo guardar mis datos fiscales sin los certificados (CSD)?</summary><div class="ans">Sí, y completarlos después. Para timbrar facturas sí se necesitan.</div></details>

@@ -5,7 +5,7 @@
 TITULO: Manual Cileo
 LEDE: Guía de uso de Cileo: inmuebles, contratos, cobranza, facturación (CFDI) y PLD. Cada sección explica, en pocos pasos, qué hace cada pantalla y cómo se usa.
 TAGS: Capturas reales | Datos ficticios | app.cileo.io
-ACTUALIZADO: 5 de octubre de 2026
+ACTUALIZADO: 9 de octubre de 2026
 
 NAV: intro | Introducción | introducción inicio empezar
 
@@ -14,9 +14,10 @@ NAV: dashboard | Dashboard | dashboard panorama kpis indicadores
 NAV: inmuebles | Inmuebles | inmuebles propiedades localidades
 NAV: contratos | Contratos | contratos arrendamiento
 NAV: alta-contrato | Alta de contrato | alta contrato asistente pasos nuevo borrador | sub
-NAV: contratos-tabla | Tabla y vistas | tabla columnas vistas guardadas búsqueda | sub
+NAV: contratos-tabla | Tabla y vistas | tabla columnas vistas guardadas búsqueda preferencias ordenar descargar csv | sub
 NAV: contratos-documentos | Documentos del contrato | documentos adjuntar pdf contrato firmado | sub
 NAV: cobranza | Cobranza | cobranza cobros cartera estatus
+NAV: cobranza-tabla | Tabla de cobros y vistas | tabla cobros columnas vistas ordenar serie folio descargar csv cfdi | sub
 NAV: cobranza-acciones | Acciones de un cobro | acciones pago nota de crédito recordatorio cancelar | sub
 NAV: filtros | Panel de filtros | filtros panel dinámicos fecha inmueble propietario | sub
 
@@ -126,11 +127,13 @@ LISTA:
 - **Borrador:** puedes guardar el contrato incompleto y, cuando esté listo, usar **Confirmar contrato** para activarlo. Un borrador se puede guardar aunque el propietario todavía no tenga datos fiscales.
 
 H3: Tabla de contratos y vistas | contratos-tabla
-P: La tabla muestra Contrato, Inmueble, Localidades, Propietario, Inquilino, fechas, Próximo incremento, Renta actual y Moneda, con paginación y búsqueda (también por localidad).
+P: La tabla muestra Contrato, Inmueble, Localidades, Propietario, Inquilino, fechas, Próximo incremento, Renta actual y Moneda, con paginación y búsqueda (también por localidad). Al hacer clic en el encabezado de una columna, la tabla se ordena por ella.
 LISTA:
-- Con **Columnas** eliges cuáles ver, las reordenas y ajustas su ancho.
-- **Vista** guarda columnas, orden y filas por página. Puedes Guardar vista, Guardar cambios, Guardar como nueva, Renombrar, Eliminar y elegir cuál usar al abrir la tabla.
+- El botón de **preferencias** (ícono de ajustes, junto a los filtros; al pasar el cursor dice **Preferencias: vistas y columnas**) abre un panel con dos pestañas: **Vistas** y **Columnas**.
+- En **Columnas** eliges cuáles ver, las reordenas (arrastrando o con las flechas) y ajustas su ancho. Si la pantalla no alcanza para todas, algunas se marcan como **oculta por ancho** y puedes mostrarlas desde ahí.
+- En **Vistas** guardas columnas, orden y filas por página. Puedes Guardar vista, Guardar cambios, Guardar como nueva, Renombrar, Eliminar y elegir cuál usar al abrir la tabla.
 - Las vistas son de cada usuario: lo que guardes no cambia lo que ven tus compañeros.
+- Con el menú **Descargar** obtienes el CSV con todas las columnas. Solo se descargan las filas visibles: amplía las filas por página para incluir todo.
 - Al buscar, los contadores de las pestañas siguen mostrando los totales generales.
 
 H3: Documentos del contrato | contratos-documentos
@@ -148,7 +151,7 @@ MARCAS: 1:7,13 | 2:8,30 | 3:90,36 | 4:84,58
 PASO: Panorama de cartera | Cuentas por cobrar pendientes y vencidas, pagadas, y los totales del periodo.
 PASO: Pestañas por estatus | Todos, Pendiente de envío, Pendiente de confirmación, Enviado, Pagado, Retroactivos y Cancelado.
 PASO: Nuevo cobro y acciones | El menú de tres puntos ofrece Generar factura, Agregar pago, Enviar recordatorio y Generar nota de crédito.
-PASO: Multi-moneda | Cobros en pesos o en dólares; además puedes descargar el CSV y los CFDIs.
+PASO: Multi-moneda y descargas | Cobros en pesos o en dólares; con el menú Descargar obtienes el CSV o los CFDIs.
 P: **Estatus de un cobro.** Los primeros siete son también pestañas de la tabla; los dos últimos son estados que aparecen durante una cancelación:
 LISTA:
 - **Pendiente de envío:** generado, todavía no se envía al inquilino.
@@ -163,7 +166,15 @@ LISTA:
 NOTA: **Vencido no es una pestaña.** Un cobro está vencido cuando pasó su fecha de pago y conserva saldo pendiente; eso se refleja en la cartera vencida y en la morosidad.
 P: En las pestañas Todos, Enviado, Pagado y Cancelado hay un **selector por tipo de comprobante**: Facturas, Complementos de pago y Notas de crédito, cada uno con sus propias columnas. Si hay cobros con cancelación rechazada, la pestaña Cancelado muestra un aviso para que los atiendas.
 NOTA: **¿Cuándo un cobro queda Pendiente de confirmación?** Cuando hace falta confirmar un dato antes de enviarlo: tipo de cambio por definir (cobros en dólares), cuenta de depósito pendiente, un incremento de renta o de mantenimiento (por INPC o por una variación de monto), o un tipo de renta mixto. Estos cobros muestran la acción **Confirmar y enviar**. Antes se llamaba Bloqueado por confirmación.
-P: **Multi-moneda y exportación.** Los cobros pueden ser en pesos o en dólares, con el tipo de cambio del DOF registrado. Si el pago llega en una moneda distinta a la de la factura, al registrarlo capturas el tipo de cambio y lo puedes editar; el complemento de pago se emite con esa equivalencia. Puedes **Descargar CSV** (incluye totales fiscales) y **Descargar CFDIs**. Los pagos cancelados ya no cuentan en el Dashboard, en PLD ni en los reportes.
+P: **Multi-moneda.** Los cobros pueden ser en pesos o en dólares, con el tipo de cambio del DOF registrado. Si el pago llega en una moneda distinta a la de la factura, al registrarlo capturas el tipo de cambio y lo puedes editar; el complemento de pago se emite con esa equivalencia. Los pagos cancelados ya no cuentan en el Dashboard, en PLD ni en los reportes.
+
+H3: Tabla de cobros y vistas | cobranza-tabla
+P: La tabla de cobros muestra Cobro, Inquilino · Contrato, Inmueble · Localidades, Propietario, Estado, Fechas, Conceptos, Tipo de cobro, CFDIs, **Serie** y **Folio** de la factura principal, Monto sin impuestos y Total. Al hacer clic en el encabezado se ordena por Inquilino · Contrato, Inmueble, Propietario, Fechas, Serie o Folio.
+LISTA:
+- El botón de **preferencias** (ícono de ajustes; al pasar el cursor dice **Preferencias: vistas y columnas**) funciona igual que en Contratos: en **Columnas** eliges cuáles ver, las reordenas y ajustas su ancho, y en **Vistas** guardas esa combinación con su orden y filas por página. Las vistas son de cada usuario.
+- Las tablas de **Complementos de pago** y **Notas de crédito** (selector por tipo de comprobante) tienen sus propias columnas, orden y vistas.
+- Con el menú **Descargar** eliges **CSV** (todas las columnas, con totales fiscales) o **CFDIs** (facturas en XML y PDF dentro de un .zip, agrupadas por inquilino, contrato y mes). Solo se descargan las filas visibles: amplía las filas por página para incluir todo.
+- Los botones de la barra (filtros, restablecer filtros, preferencias y descargas) son íconos; al pasar el cursor muestran su nombre.
 
 H3: Acciones de un cobro | cobranza-acciones
 P: Cada cobro abre sus acciones desde el menú de tres puntos. Así se ven sus formularios.
@@ -399,7 +410,7 @@ TERMINO: Borrador de contrato -> Alta de contrato | Contrato guardado a medias, 
 TERMINO: Contrato por vencer -> Dashboard | Contrato cuya fecha de término se aproxima, para dar seguimiento a su renovación.
 TERMINO: Renovación -> Dashboard | Extensión o recontratación de un arrendamiento que está por terminar.
 TERMINO: Mantenimiento | Concepto asociado al contrato para cubrir gastos de conservación del inmueble, que puede cobrarse junto con la renta.
-TERMINO: Vista (de tabla) -> Tabla y vistas | Combinación guardada de columnas, orden y filas por página en la tabla de contratos. Cada usuario tiene las suyas.
+TERMINO: Vista (de tabla) -> Tabla y vistas | Combinación guardada de columnas, orden y filas por página en las tablas de contratos, cobros, complementos y notas de crédito. Se administra desde el botón de preferencias de la tabla. Cada usuario tiene las suyas.
 GCAT: Cobranza
 TERMINO: Cobranza -> Cobranza | Sección donde se generan, controlan y dan seguimiento los cobros de renta y los conceptos asociados.
 TERMINO: Cobro | Cargo generado a un inquilino por un periodo o concepto (renta, mantenimiento y demás). Es la unidad de trabajo de la cobranza.
@@ -478,7 +489,8 @@ PREGUNTA: ¿Puedo adjuntar el contrato firmado? | Sí. Al crear o editar el cont
 PREGUNTA: ¿Cómo edito o cancelo un contrato? | Desde el detalle del contrato usa Editar o Cancelar; en ambos casos se te pide confirmar la acción.
 PREGUNTA: ¿Puedo agregar notas o comentarios a un contrato? | Sí. Cada contrato tiene un espacio de comentarios para dejar registro de acuerdos o seguimientos.
 PREGUNTA: ¿Cómo sé cuáles inmuebles están ocupados o vacantes? | En el Dashboard, con los indicadores de ocupados (con contrato activo) y vacantes (sin contrato activo), según el periodo y los filtros que elijas.
-PREGUNTA: ¿Puedo elegir qué columnas ver en la tabla de contratos? | Sí, con el botón Columnas, y puedes guardar la combinación como una Vista propia. Ver [Tabla y vistas](#contratos-tabla).
+PREGUNTA: ¿Puedo elegir qué columnas ver en la tabla de contratos? | Sí. El botón de preferencias (ícono de ajustes, Preferencias: vistas y columnas) abre las pestañas Columnas y Vistas: eliges y reordenas columnas, y guardas la combinación como una Vista propia. Ver [Tabla y vistas](#contratos-tabla).
+PREGUNTA: ¿Dónde quedaron los botones Columnas y Vista? | Ahora están juntos en el botón de preferencias (ícono de ajustes) de la tabla, en las pestañas Vistas y Columnas. Tus vistas guardadas siguen ahí.
 PREGUNTA: ¿Cómo sé qué contratos están por vencer? | El Dashboard muestra los contratos por vencer, para que des seguimiento a su renovación.
 FCAT: Cobranza y pagos
 PREGUNTA: ¿Cómo genero un cobro? | Cobranza y luego Nuevo cobro, o desde el contrato. Eliges el contrato, agregas los conceptos con sus impuestos y lo generas. El contrato debe tener definida una cuenta de depósito.
@@ -493,6 +505,8 @@ PREGUNTA: ¿Qué pasa si facturo en dólares y me pagan en pesos? | Al registrar
 PREGUNTA: ¿Qué es un saldo a favor? | Una cantidad a favor del inquilino, por ejemplo cuando una nota de crédito supera la deuda actual. Queda disponible para cobros futuros.
 PREGUNTA: ¿Qué significan los estatus de un cobro? | Pendiente de envío, Pendiente de confirmación, Enviado, Parcialmente pagado, Pagado, Retroactivo, Cancelado, Cancelación pendiente y Cancelación no aprobada. Los tienes explicados en [Cobranza](#cobranza).
 PREGUNTA: ¿Puedo ver el historial de pagos de un inquilino? | Sí. Cada inquilino y cada contrato tienen una línea de tiempo con sus cobros, pagos y movimientos.
+PREGUNTA: ¿Puedo ordenar la tabla de cobros o ver la serie y el folio de la factura? | Sí. La tabla tiene columnas Serie y Folio de la factura principal, se ordena desde el encabezado (inquilino, inmueble, propietario, fechas, serie o folio) y puedes guardar tus columnas como una vista. Ver [Tabla de cobros y vistas](#cobranza-tabla).
+PREGUNTA: ¿Cómo descargo mis cobros o los CFDIs? | En Cobranza, con el menú Descargar: CSV con todas las columnas o CFDIs (XML y PDF en un .zip, agrupados por inquilino, contrato y mes). Solo se descargan las filas visibles, así que amplía las filas por página si quieres todo.
 FCAT: Facturación, cancelaciones y notas de crédito
 PREGUNTA: ¿Qué necesito para facturar? | Tener capturados tus datos fiscales (RFC, régimen y certificados) en Administración y luego Datos Fiscales. Sin certificados no se pueden timbrar facturas.
 PREGUNTA: ¿Puedo guardar mis datos fiscales sin los certificados (CSD)? | Sí, y completarlos después. Para timbrar facturas sí se necesitan.
