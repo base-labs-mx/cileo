@@ -5,35 +5,40 @@
 TITULO: Manual Cileo
 LEDE: Guía de uso de Cileo: inmuebles, contratos, cobranza, facturación (CFDI) y PLD. Cada sección explica, en pocos pasos, qué hace cada pantalla y cómo se usa.
 TAGS: Capturas reales | Datos ficticios | app.cileo.io
-ACTUALIZADO: 9 de octubre de 2026
+ACTUALIZADO: 9 de noviembre de 2026
 
 NAV: intro | Introducción | introducción inicio empezar
 
 NAVGRUPO: Operación
 NAV: dashboard | Dashboard | dashboard panorama kpis indicadores
-NAV: inmuebles | Inmuebles | inmuebles propiedades localidades
-NAV: contratos | Contratos | contratos arrendamiento
+NAV: inmuebles | Inmuebles | inmuebles propiedades localidades vistas columnas planilla de gastos porcentaje
+NAV: contratos | Contratos | contratos arrendamiento extender prórroga vigencia
+NAV: incrementos | Incrementos e INPC | incremento renta mantenimiento inpc variación histórico | sub
 NAV: alta-contrato | Alta de contrato | alta contrato asistente pasos nuevo borrador | sub
 NAV: contratos-tabla | Tabla y vistas | tabla columnas vistas guardadas búsqueda preferencias ordenar descargar csv | sub
 NAV: contratos-documentos | Documentos del contrato | documentos adjuntar pdf contrato firmado | sub
 NAV: cobranza | Cobranza | cobranza cobros cartera estatus
-NAV: cobranza-tabla | Tabla de cobros y vistas | tabla cobros columnas vistas ordenar serie folio descargar csv cfdi | sub
-NAV: cobranza-acciones | Acciones de un cobro | acciones pago nota de crédito recordatorio cancelar | sub
+NAV: cobranza-tabla | Tabla de cobros y vistas | tabla cobros columnas vistas ordenar serie folio buscar descargar csv cfdi zip carpetas propietario filas por página 100 | sub
+NAV: cobranza-acciones | Acciones de un cobro | acciones pago nota de crédito recordatorio cancelar compartir borrador enviar cobro vencido | sub
+NAV: operaciones-masivas | Timbrar y enviar en bloque | seleccionar varios cobros timbrar borradores enviar facturas masivo operaciones | sub
+NAV: pago-varios-cobros | Pago a varios cobros | registrar pago varios cobros masivo complemento único liquidar saldos | sub
 NAV: filtros | Panel de filtros | filtros panel dinámicos fecha inmueble propietario | sub
 
 NAVGRUPO: Facturación
 NAV: facturacion | Facturación (CFDI) | facturación cfdi factura timbrado borrador xml
-NAV: complementos | Complementos de pago | complemento de pago ppd pue parcialidades | sub
+NAV: complementos | Complementos de pago | complemento de pago ppd pue parcialidades ver complemento único | sub
 NAV: cancelaciones | Cancelaciones y SAT | cancelar cancelación motivo sat rechazo | sub
+NAV: notas-credito | Notas de crédito | nota de crédito cancelar sustituir canceladas | sub
 NAV: sustitucion | Sustituir una factura | sustitución sustituir cfdi relacionado | sub
+NAV: sustitucion-pago | Sustituir un pago | sustituir pago complemento de pago sustituto corregir pago relación 04 | sub
 
 NAVGRUPO: Cumplimiento y análisis
 NAV: pld | PLD / Cumplimiento | pld lavado dinero cumplimiento uma antilavado
-NAV: reportes | Reportes | reportes estado de cuenta morosidad fiscales
+NAV: reportes | Reportes | reportes estado de cuenta morosidad fiscales pdf ahorro de tinta movimientos del período
 
 NAVGRUPO: Directorio y administración
-NAV: contactos | Contactos | contactos inquilinos propietarios
-NAV: usuarios | Usuarios y permisos | usuarios roles permisos administrador acceso
+NAV: contactos | Contactos | contactos inquilinos propietarios vistas columnas
+NAV: usuarios | Usuarios y permisos | usuarios roles permisos administrador acceso vistas
 NAV: datos-fiscales | Datos Fiscales | datos fiscales rfc régimen csd certificados
 NAV: cuentas | Cuentas | cuentas bancarias depósito cotitulares
 NAV: impuestos | Impuestos | impuestos iva retenciones reglas claves sat
@@ -41,7 +46,7 @@ NAV: carga-masiva | Migración y carga masiva | migración carga masiva plantill
 
 NAVGRUPO: Tu cuenta
 NAV: planes | Planes y precios | planes precios contratos activos prueba timbrado timbres facturas por mes
-NAV: suscripcion | Administrar suscripción | suscripción cambiar plan método de pago cancelar | sub
+NAV: suscripcion | Administrar suscripción | suscripción cambiar plan método de pago cancelar transferencia spei clabe orden de pago fecha de pago | sub
 NAV: soporte | Soporte y contacto | soporte contacto ayuda whatsapp correo
 
 NAVGRUPO: Referencia
@@ -103,6 +108,8 @@ MARCAS: 1:20,13 | 3:82,24 | 2:14,48
 PASO: Resumen | Localidades rentadas, disponibles, totales y porcentaje de ocupación.
 PASO: Lista | Nombre comercial, dirección, superficie y localidades por propiedad.
 PASO: Nuevo inmueble | El botón `Nuevo inmueble` da de alta una propiedad; el buscador acota la lista.
+P: **Columnas y vistas.** La tabla de inmuebles tiene el mismo botón de **preferencias** (Preferencias: vistas y columnas) que Contratos y Cobranza. En **Columnas** puedes alternar entre las columnas del inmueble (nombre comercial, dirección, superficie, localidades, estacionamientos, bodegas y otros) y las de la subtabla de **localidades** (superficie, tipo, propietario, cuenta predial, contrato, vigencia y renta), y guardar todo como una **Vista**. Ver [Tabla y vistas](#contratos-tabla).
+P: **Planilla de gastos.** En el menú de cada inmueble, junto a Editar inmueble, Agregar localidad y Nuevo contrato, está **Planilla de gastos**: ahí asignas a cada localidad el porcentaje de los gastos del inmueble que le corresponde. La suma no puede exceder 100% y conviene asignar el 100% completo para que los gastos del inmueble se repartan bien; el botón **Distribuir por superficie** calcula los porcentajes a partir de la superficie de cada localidad. Requiere permiso de edición.
 
 DIVISOR: Arrendamiento
 
@@ -112,7 +119,8 @@ H2: Contratos
 INTRO: El acuerdo de arrendamiento que conecta un inmueble, un inquilino y un propietario. Es el eje que alimenta la cobranza, la facturación y el PLD.
 SHOT: 05-lista-de-contratos.webp | Lista de Contratos | app.cileo.io/contracts
 CAP: Cada contrato con su inmueble, inquilino, vigencia y estatus.
-P: Desde el detalle del contrato puedes **Editar**, **Cancelar** (con confirmación), agregar comentarios y generar un **Nuevo cobro**.
+P: Desde el detalle del contrato puedes **Editar**, **Cancelar** (con confirmación), **Extender contrato**, agregar comentarios y generar un **Nuevo cobro**.
+P: **Extender contrato.** Prolonga la vigencia de un contrato sin volver a capturarlo: eliges el tipo de plazo, la nueva fecha de terminación y, si cambia, la renta. La extensión empieza el día siguiente a la fecha de terminación actual, **aunque esa fecha ya haya pasado**, para que no quede un hueco entre el contrato y su extensión.
 
 H3: Alta de contrato (asistente) | alta-contrato
 P: En Contratos, el botón **Nuevo contrato** abre un asistente guiado. Estos son los pasos, en orden:
@@ -133,12 +141,20 @@ LISTA:
 - En **Columnas** eliges cuáles ver, las reordenas (arrastrando o con las flechas) y ajustas su ancho. Si la pantalla no alcanza para todas, algunas se marcan como **oculta por ancho** y puedes mostrarlas desde ahí.
 - En **Vistas** guardas columnas, orden y filas por página. Puedes Guardar vista, Guardar cambios, Guardar como nueva, Renombrar, Eliminar y elegir cuál usar al abrir la tabla.
 - Las vistas son de cada usuario: lo que guardes no cambia lo que ven tus compañeros.
-- Con el menú **Descargar** obtienes el CSV con todas las columnas. Solo se descargan las filas visibles: amplía las filas por página para incluir todo.
+- Con el menú **Descargar** obtienes el CSV con todas las columnas. Solo se descargan las filas visibles. La tabla muestra hasta **100 filas por página** (10, 20, 50 o 100; ya no existe la opción Todos): si tienes más, descarga página por página o acota la tabla con filtros.
 - Al buscar, los contadores de las pestañas siguen mostrando los totales generales.
 
 H3: Documentos del contrato | contratos-documentos
 P: Al crear o editar un contrato puedes **adjuntar documentos**: archivos PDF, JPG, PNG, DOC o DOCX de hasta 20 MB cada uno, con nombre y fechas de emisión y vencimiento opcionales. Es donde se guarda, por ejemplo, el contrato firmado.
 P: Desde el detalle del contrato tienes **Ver documentos**, con vista previa y descarga, y **Editar documentos**.
+
+H3: Incrementos e INPC | incrementos
+P: Desde el menú de un contrato en la tabla, **Histórico de incrementos** muestra los incrementos de renta o de mantenimiento aplicados y permite agregar uno nuevo. También se agrega al confirmar un cobro que quedó **Pendiente de confirmación** por un incremento.
+LISTA:
+- Si el incremento es **por INPC**, eliges el **INPC inicial** y el **INPC final** por mes, y Cileo calcula la **Variación de INPC**. El INPC final debe ser posterior al inicial.
+- Si es una **variación de monto**, capturas la nueva renta o el nuevo mantenimiento y Cileo muestra el porcentaje de variación.
+- En los dos casos defines la **Fecha de incremento** y puedes dejar comentarios.
+P: Qué índice y qué periodo corresponden a tu contrato lo define lo pactado en él.
 
 DIVISOR: Cobranza
 
@@ -150,7 +166,7 @@ SHOT: 07-pantalla-de-cobranza.webp | Pantalla de Cobranza | app.cileo.io/billing
 MARCAS: 1:7,13 | 2:8,30 | 3:90,36 | 4:84,58
 PASO: Panorama de cartera | Cuentas por cobrar pendientes y vencidas, pagadas, y los totales del periodo.
 PASO: Pestañas por estatus | Todos, Pendiente de envío, Pendiente de confirmación, Enviado, Pagado, Retroactivos y Cancelado.
-PASO: Nuevo cobro y acciones | El menú de tres puntos ofrece Generar factura, Agregar pago, Enviar recordatorio y Generar nota de crédito.
+PASO: Nuevo cobro y acciones | Junto a Nuevo cobro está Registrar pago, para aplicar un pago a varios cobros. El menú de tres puntos ofrece Generar factura, Agregar pago, Enviar recordatorio y Generar nota de crédito.
 PASO: Multi-moneda y descargas | Cobros en pesos o en dólares; con el menú Descargar obtienes el CSV o los CFDIs.
 P: **Estatus de un cobro.** Los primeros siete son también pestañas de la tabla; los dos últimos son estados que aparecen durante una cancelación:
 LISTA:
@@ -163,17 +179,21 @@ LISTA:
 - **Cancelado:** anulado.
 - **Cancelación pendiente:** se solicitó al SAT cancelar la factura y se espera su respuesta.
 - **Cancelación no aprobada:** el SAT rechazó la cancelación. Ver [Cancelaciones y respuestas del SAT](#cancelaciones).
+P: **Pendiente de envío por periodo.** Al abrir esa pestaña verás los cobros con fecha de envío en el **mes actual y el siguiente**. Puedes cambiar las fechas desde el panel de filtros; **Restablecer filtros** regresa a ese periodo.
 NOTA: **Vencido no es una pestaña.** Un cobro está vencido cuando pasó su fecha de pago y conserva saldo pendiente; eso se refleja en la cartera vencida y en la morosidad.
 P: En las pestañas Todos, Enviado, Pagado y Cancelado hay un **selector por tipo de comprobante**: Facturas, Complementos de pago y Notas de crédito, cada uno con sus propias columnas. Si hay cobros con cancelación rechazada, la pestaña Cancelado muestra un aviso para que los atiendas.
 NOTA: **¿Cuándo un cobro queda Pendiente de confirmación?** Cuando hace falta confirmar un dato antes de enviarlo: tipo de cambio por definir (cobros en dólares), cuenta de depósito pendiente, un incremento de renta o de mantenimiento (por INPC o por una variación de monto), o un tipo de renta mixto. Estos cobros muestran la acción **Confirmar y enviar**. Antes se llamaba Bloqueado por confirmación.
 P: **Multi-moneda.** Los cobros pueden ser en pesos o en dólares, con el tipo de cambio del DOF registrado. Si el pago llega en una moneda distinta a la de la factura, al registrarlo capturas el tipo de cambio y lo puedes editar; el complemento de pago se emite con esa equivalencia. Los pagos cancelados ya no cuentan en el Dashboard, en PLD ni en los reportes.
 
 H3: Tabla de cobros y vistas | cobranza-tabla
-P: La tabla de cobros muestra Cobro, Inquilino · Contrato, Inmueble · Localidades, Propietario, Estado, Fechas, Conceptos, Tipo de cobro, CFDIs, **Serie** y **Folio** de la factura principal, Monto sin impuestos y Total. Al hacer clic en el encabezado se ordena por Inquilino · Contrato, Inmueble, Propietario, Fechas, Serie o Folio.
+P: La tabla de cobros muestra Cobro, Inquilino · Contrato, Inmueble · Localidades, Propietario, Estado, Fechas, Conceptos, Tipo, CFDIs, **Serie · Folio** de la factura principal (en una sola columna), Sin impuestos y Total. Al hacer clic en el encabezado se ordena por Inquilino · Contrato, Inmueble, Propietario, Fechas o Serie · Folio. El buscador encuentra un cobro también por el **folio de su factura**.
 LISTA:
 - El botón de **preferencias** (ícono de ajustes; al pasar el cursor dice **Preferencias: vistas y columnas**) funciona igual que en Contratos: en **Columnas** eliges cuáles ver, las reordenas y ajustas su ancho, y en **Vistas** guardas esa combinación con su orden y filas por página. Las vistas son de cada usuario.
 - Las tablas de **Complementos de pago** y **Notas de crédito** (selector por tipo de comprobante) tienen sus propias columnas, orden y vistas.
-- Con el menú **Descargar** eliges **CSV** (todas las columnas, con totales fiscales) o **CFDIs** (facturas en XML y PDF dentro de un .zip, agrupadas por inquilino, contrato y mes). Solo se descargan las filas visibles: amplía las filas por página para incluir todo.
+- Con el menú **Descargar** eliges **CSV** (todas las columnas, con totales fiscales) o **CFDIs** (facturas en XML y PDF dentro de un .zip). Solo se descargan las filas visibles, hasta **100 filas por página**: si tienes más, descarga página por página o acota con filtros.
+- Al descargar CFDIs eliges cómo organizar las carpetas del .zip. Primero decides si la carpeta principal es por **Inquilino** o por **Propietario**, y después qué va dentro: **Contrato y Periodo** (una carpeta por año y mes dentro de cada contrato), solo **Contrato** (todos los periodos de un contrato en una misma carpeta) o nada más (todos los CFDIs del inquilino o del propietario en una misma carpeta). Si agrupas por propietario, los cobros con varios propietarios se guardan en la carpeta del representante común.
+- Dentro del .zip, cada archivo lleva el tipo de comprobante (factura, complemento o nota de crédito) y la serie y el folio del CFDI, en PDF y en XML.
+- Un ícono de envío junto al cobro indica que la **factura se envió como recordatorio**.
 - Los botones de la barra (filtros, restablecer filtros, preferencias y descargas) son íconos; al pasar el cursor muestran su nombre.
 
 H3: Acciones de un cobro | cobranza-acciones
@@ -189,11 +209,36 @@ TABLA:
 | Cualquier otro (04 tarjeta de crédito, 28 tarjeta de débito y demás) | obligatorio | obligatorio | obligatorio
 P: El comprobante acepta PDF, PNG o JPG. Al aplicar una **nota de crédito** como pago, el método cambia automáticamente a 17 Compensación y el comprobante lo define la nota, así que no se sube a mano.
 P: **Pago parcial.** Se permiten abonos, salvo que el cobro ya tenga una factura timbrada como PUE (pago en una sola exhibición): en ese caso el saldo restante se liquida en un solo pago. Si la factura sigue en borrador, sí se permiten abonos.
-P: **Enviar cobro.** Además del envío automático, cada cobro tiene la opción **Enviar cobro** para mandarlo de forma individual. Se habilita el día de su fecha de envío.
+P: **Enviar cobro.** Además del envío automático, cada cobro tiene la opción **Enviar cobro** para mandarlo de forma individual. Se habilita a partir de su fecha de envío y sigue disponible después, así que también puedes mandar un cobro vencido o uno que no se envió en su día. Antes solo se habilitaba el día exacto de la fecha de envío.
 P: **Generar nota de crédito.** Reduce o corrige una factura ya emitida. Eliges el tipo de nota, revisas los datos de facturación y agregas los conceptos con su regla de impuestos; el sistema calcula subtotal e IVA. Si el monto supera la deuda actual, el excedente se convierte en **saldo a favor** del inquilino.
 SHOT: 09-modal-de-generar-nota-de-credito.webp | Modal de generar nota de crédito
-P: **Otras acciones.** Generar factura (emite el CFDI del cobro), Enviar recordatorio (aviso al inquilino que, según el caso, incluye el borrador o la factura), Editar recordatorios (también en cobros ya pagados), Editar cobro y Cancelar cobro. Cuando el cobro ya tiene comprobante, aparecen además Ver factura, Ver borrador y Ver CFDIs para consultarlo o descargarlo.
+P: **Otras acciones.** Generar factura (emite el CFDI del cobro), Enviar recordatorio (aviso al inquilino que, según el caso, incluye el borrador o la factura), Editar recordatorios (también en cobros ya pagados), Editar cobro y Cancelar cobro. Cuando el cobro ya tiene comprobante, aparecen además Ver factura, Ver borrador y Ver CFDIs para consultarlo o descargarlo. Desde el visor del comprobante también puedes mandarlo al inquilino: **Compartir borrador** si es un borrador, o **Enviar recordatorio** si ya está timbrado.
 P: Para cancelar un pago o un cobro, y para sustituir una factura, revisa [Cancelaciones y respuestas del SAT](#cancelaciones) y [Sustituir una factura](#sustitucion).
+
+H3: Timbrar y enviar varios cobros a la vez | operaciones-masivas
+P: En la tabla de cobros puedes **seleccionar varios cobros** con las casillas de cada fila. Arriba aparece una barra con el número de cobros seleccionados y tres acciones:
+LISTA:
+- **Timbrar borradores:** timbra el borrador de factura de cada cobro.
+- **Enviar:** manda cada cobro al inquilino. El botón cambia según lo que elegiste: **Enviar borradores**, **Enviar facturas** o **Enviar facturas - borradores** si mezclas los dos.
+- **Descargar:** descarga los CFDIs de los cobros seleccionados.
+P: **Panel de Operaciones.** Cada acción se procesa cobro por cobro en el panel **Operaciones**, abajo a la derecha, con una pestaña por tipo de operación y el resultado de cada cobro (por ejemplo, Factura timbrada o Factura enviada). Si algo queda pendiente, por ejemplo porque recargaste la página, puedes retomarlo con **Reanudar pendientes**.
+P: Si un cobro no puede completar la acción, el panel te dice por qué y los demás siguen. Los casos más comunes:
+LISTA:
+- No se timbra un cobro **cancelado o en proceso de cancelación**, uno sin borrador o uno que ya tiene factura timbrada.
+- Un borrador **PUE** no se timbra mientras el cobro no esté pagado: registra primero el pago.
+- No se envía un cobro sin correos de notificación configurados, ni uno que no tenga borrador ni factura timbrada. Un cobro que ya está en cola para enviarse no se manda dos veces.
+P: Timbrar y enviar requieren permiso de edición; descargar no.
+
+H3: Registrar un pago a varios cobros | pago-varios-cobros
+P: Cuando un inquilino paga varios cobros con un solo depósito, en Cobranza usa el botón **Registrar pago** (junto a Nuevo cobro). Capturas el pago una vez y lo repartes entre los cobros.
+LISTA:
+- Capturas **Importe**, método de pago y los demás datos del pago, con las mismas reglas por método que en Aplicar pago. La cuenta de depósito se toma del contrato de los cobros.
+- Buscas los cobros por folio o contrato y los agregas. Cada opción muestra propietario, contrato y periodo; la lista se ordena del más antiguo al más reciente.
+- Todos los cobros deben ser **del mismo inquilino y en la misma moneda**, hasta **50 cobros** por pago. Los cobros retroactivos no entran aquí: se pagan desde su propio menú.
+- En **Asignación** ves el saldo pendiente de cada cobro y el **Monto a aplicar**. El importe se reparte del cobro más antiguo al más reciente; **Redistribuir** vuelve a repartirlo y **Liquidar saldos** ajusta el importe a la suma de los saldos (verifica que coincida con el depósito). El resumen muestra lo asignado y lo que queda **Por asignar**.
+- Un cobro con factura **PUE** timbrada solo recibe el pago si el monto cubre su saldo completo.
+- Si ya elegiste cobros **PPD timbrados**, solo puedes combinarlos con otros PPD timbrados.
+P: **Complemento único.** Con dos o más cobros puedes activar **Generar complemento único**: se emite un solo complemento de pago que relaciona todos los cobros. Requiere que todas las facturas estén timbradas, sean PPD y tengan los mismos datos fiscales del emisor; si un cobro no cumple, el selector te dice por qué. Sin esta opción, cada cobro registra su propio pago. Si el pago de algún cobro no se pudo registrar, el resultado lo indica y puedes reintentarlo.
 
 H3: Panel de filtros | filtros
 P: El botón de filtros abre el panel de **Filtros dinámicos**: Fecha (año y mes, o un rango personalizado), Inmueble, Estado del contrato, Contrato, Tipo de localidad, Propietario e Inquilino. El mismo panel aplica en Cobranza, Dashboard y Reportes.
@@ -215,6 +260,7 @@ H3: Complementos de pago | complementos
 P: Cuando una factura se emite como **PPD** (pago en parcialidades o diferido), cada pago que recibes se ampara con un **complemento de pago**: un CFDI aparte que acredita ese abono contra la factura original.
 P: En Cobranza, el selector por tipo de comprobante te deja ver los **Complementos** con sus propias columnas. Si el pago llega en una moneda distinta a la de la factura, el complemento se emite con la equivalencia que capturaste al registrar el pago.
 P: Las facturas **PUE** (pago en una sola exhibición) no llevan complemento: se liquidan en una sola exhibición.
+P: En el menú de cada pago, **Ver complemento de pago** abre el complemento para consultarlo o descargarlo. Para pagar varios cobros con un solo complemento, ver [Registrar un pago a varios cobros](#pago-varios-cobros).
 
 H3: Cancelaciones y respuestas del SAT | cancelaciones
 P: **Cancelar un pago.** Desde el menú del pago, **Cancelar pago**. Si el pago tiene complemento timbrado, se envía al SAT la solicitud de cancelación y el pago queda en proceso de cancelación. Iniciar el trámite no garantiza la cancelación: el SAT puede aceptarla o rechazarla, y el estatus se ve en Cileo. Reglas:
@@ -224,9 +270,21 @@ LISTA:
 - Si la factura del cobro es PUE y el pago no tiene complemento, Cancelar pago aparece bloqueado: lo que procede es cancelar la factura, no el pago. Escribe a soporte.
 - No se puede cancelar si el cobro ya está cancelado o en proceso de cancelación, o si hay otra cancelación de pago en curso.
 - Los pagos cancelados se pueden mostrar u ocultar en la tabla de pagos.
+- Si el pago ya fue sustituido por otro, Cancelar pago solicita la cancelación de su complemento con el motivo 01 y el pago sustituto se aplica cuando el SAT la acepta. Ver [Sustituir un pago](#sustitucion-pago).
 P: **Cancelar un cobro.** La acción **Cancelar cobro** pide un motivo: 01 Comprobante emitido con errores con relación, 02 Comprobante emitido con errores sin relación, o 03 No se llevó a cabo la operación. El motivo 01 solo procede si ya hay un cobro timbrado que lo sustituye. Si el cobro tiene factura timbrada, se solicita la cancelación al SAT y el cobro queda en Cancelación pendiente hasta su respuesta; la aceptación no está garantizada.
-P: No se puede cancelar un cobro que tenga complementos de pago activos (hay que cancelarlos uno por uno primero) ni uno con nota de crédito asociada.
+P: No se puede cancelar un cobro que tenga complementos de pago activos (hay que cancelarlos uno por uno primero) ni uno con una nota de crédito activa: cancela primero la nota (ver [Notas de crédito](#notas-credito)). Las notas de crédito canceladas ya no cuentan.
 P: **Si el SAT rechaza una cancelación.** En el menú del pago, o del cobro cuando queda en Cancelación no aprobada, aparecen **Reintentar cancelación**, que vuelve a solicitarla al SAT, y **Revertir cancelación**, que regresa el pago o el cobro a un estado activo con una confirmación. Si no ves la acción, escribe a soporte.
+
+H3: Notas de crédito: cancelar y sustituir | notas-credito
+P: Las notas de crédito de un cobro se ven en el selector **Notas de crédito** de Cobranza y en el visor del cobro (Ver CFDIs), agrupadas con su factura. Cada una muestra su estado: **Activa**, **Cancelación pendiente**, **Cancelación no aprobada** o **Cancelada**. Las canceladas se ocultan; actívalas con **Mostrar canceladas**.
+P: **Cancelar una nota de crédito.** Desde su menú, o desde el visor del cobro, usa **Cancelar nota de crédito** y elige el motivo. Se solicita la cancelación al SAT, que puede aceptarla o rechazarla:
+LISTA:
+- Mientras el SAT responde, la nota queda en Cancelación pendiente y su acción es **Comprobar cancelación**.
+- Si el SAT la rechaza, la nota sigue activa y puedes usar **Reintentar cancelación**.
+- Solo se cancelan notas timbradas. Si la nota se aplicó como pago, cancela primero ese pago.
+- Una nota cancelada deja de contar en los saldos del cobro.
+P: **Sustituir una nota de crédito.** Al generar una nota nueva, activa **Sustitución de las notas de crédito previas** y elige la nota a sustituir (del mismo tipo). La nueva queda relacionada con la anterior y la sustituida se cancela sola ante el SAT con el motivo 01; si esa cancelación no se completa, Cileo te avisa para que la canceles a mano con el motivo 01. Una nota sustituida ya no se puede aplicar como pago: usa la nueva.
+P: Qué tipo de nota y qué motivo corresponden a tu caso lo valida tu contador.
 
 H3: Sustituir una factura | sustitucion
 P: Al generar la factura de un cobro nuevo, o en su borrador, activa **Sustitución de los CFDI previos** y elige en **CFDIs a sustituir** las facturas anteriores. Es la vía para corregir una factura ya timbrada emitiendo una nueva que la reemplaza.
@@ -235,6 +293,18 @@ LISTA:
 - El cobro sustituido muestra el aviso de que fue sustituido, con enlace al nuevo, un ícono en la tabla y el estatus de factura **Sustituido**, disponible también en el filtro. Ver facturas muestra las dos.
 - Un cobro sustituido solo se cancela con el motivo 01, ligado al CFDI que lo sustituye.
 - Si un cobro sustituyó a otro que ya se canceló, no se puede cancelar: emite un nuevo cobro que lo sustituya.
+P: Qué motivo y qué tipo de relación corresponden a tu caso lo valida tu contador.
+
+H3: Sustituir un pago (complemento de pago) | sustitucion-pago
+P: Si registraste un pago con datos equivocados y su **complemento de pago ya está timbrado**, puedes corregirlo emitiendo un complemento nuevo que sustituye al anterior, en lugar de solo cancelarlo.
+P: **Un pago.** En el menú del pago usa **Sustituir pago** y captura el pago correcto. Se emite el complemento nuevo y se solicita al SAT la cancelación del anterior. Si no es el último pago del cobro, el monto, la fecha y la moneda no se pueden cambiar; sí puedes corregir el método de pago, las cuentas y la referencia. La opción aparece solo en pagos con complemento timbrado y vigente, que no se aplicaron con una nota de crédito ni forman parte de un complemento único.
+P: **Uno o varios complementos desde Agregar pago.** Al agregar un pago, activa **Sustitución de pagos previos** y elige en **Sustituir complementos de pago** los complementos que reemplaza, empezando por el más reciente. El nuevo queda relacionado con ellos (tipo de relación 04). Así se sustituyen también varios complementos con uno solo.
+LISTA:
+- Cuando el pago sustituye a varios complementos, Cileo timbra el complemento sustituto y te pide **cancelar a mano cada complemento original** desde **Cancelar pago**, uno a la vez y del más reciente al más antiguo. La cancelación va con el motivo 01.
+- El pago sustituto **se aplica cuando el SAT acepta la cancelación** de todos los complementos originales.
+- Mientras una sustitución está en curso, ese cobro no recibe otros pagos.
+- La cancelación de un complemento original no se puede revertir, porque su sustituto ya está timbrado.
+- En la tabla de pagos y en el visor de complementos, un ícono indica la relación: **Sustituido por** el pago que lo reemplaza, o **Sustituye a** los complementos que reemplazó.
 P: Qué motivo y qué tipo de relación corresponden a tu caso lo valida tu contador.
 
 DIVISOR: Cumplimiento y análisis
@@ -249,7 +319,7 @@ PASO: Umbrales (en UMA) | UMA vigente, umbral de identificación y umbral de avi
 PASO: Tareas por estatus | Requiere identificar, Requiere aviso, Cumplidos, Vencidos y Cancelados.
 PASO: Operaciones | Propietario, contrato, inquilino, renta, fecha límite y estado.
 PASO: Acción | El botón Identificar inicia el flujo de cumplimiento.
-P: **Flujo de una tarea.** En cada tarea tienes además Descargar documentos, Descargar XML y Descargar comprobante.
+P: **Flujo de una tarea.** En cada tarea tienes además Descargar documentos, Descargar XML y Descargar comprobante. En **Subir comprobante** cargas el acuse como **un solo archivo PDF**.
 STEPPER: Identificar > Generar y descargar el XML > Subir el comprobante > Completado
 P: El Dashboard muestra la tasa de cumplimiento PLD, los contratos con PLD vencido, los próximos a vencer y los inquilinos con documentos faltantes.
 NOTA: Cileo te ayuda a gestionar las tareas y la documentación de PLD, pero **completar una tarea en Cileo no confirma la presentación ante la autoridad ni garantiza el cumplimiento**; valida tus obligaciones con tu asesor. El módulo no está incluido en el plan Básico. Si no ves la sección PLD, escribe a soporte.
@@ -261,9 +331,10 @@ INTRO: Reportes para análisis y revisión contable. Se filtran con el mismo pan
 SHOT: 12-seccion-de-reportes.webp | Sección de Reportes | app.cileo.io/reports
 LISTA:
 - **Estado de cuenta:** cobros, pagos y saldos de un inquilino, contrato o propietario en un periodo.
-- **Cobranza y morosidad.**
+- **Cobranza y morosidad:** incluye la sección **Movimientos del período**, con cada cobro emitido y cada pago recibido en el periodo (fecha, inmueble, inquilino, contrato y monto).
 - **Estatus de contratos.**
 - **Fiscales de propietario.**
+P: Los reportes se generan en PDF con vista previa. Al generarlos puedes activar **Ahorro de tinta**, que genera el PDF con menos color y sin fondos decorativos, pensado para imprimir.
 
 DIVISOR: Directorio y administración
 
@@ -277,6 +348,7 @@ LISTA:
 - **Propietario:** dueño del inmueble, a quien pertenece la renta y, cuando aplica, a cuyo nombre se factura.
 - **Inquilino:** quien renta y recibe los cobros y las facturas. Puede ser persona física o moral.
 - **Gestión:** puedes agregar notas, editar o marcar como inactivo para conservar el historial.
+- **Columnas y vistas:** con el botón de preferencias eliges las columnas de la tabla (nombre, tipo, RFC, tipo de persona, correo) y las de la subtabla de personas de contacto (nombre, rol, teléfono, correo y estado), y las guardas como una Vista.
 
 SECCION: usuarios
 KICKER: 09 · Administración
@@ -284,6 +356,7 @@ H2: Usuarios y permisos
 INTRO: En Administración, la sección **Usuarios** permite dar de alta a las personas de tu equipo con el botón Nuevo usuario. Cada usuario tiene un **rol** que define sus permisos.
 P: Lo que cada quien ve depende de ese rol: algunas secciones, como Administración y Suscripción, solo las ve el administrador. Además, ciertas funciones dependen del plan contratado o de su habilitación en tu cuenta.
 P: Si no puedes entrar o no ves una sección, revisa tus permisos con el administrador de tu cuenta.
+P: Las tablas de Administración (Usuarios, Datos Fiscales, Cuentas e Impuestos) también tienen el botón de preferencias para elegir columnas, ordenarlas y guardar vistas, y se ordenan desde el encabezado.
 
 SECCION: datos-fiscales
 KICKER: 10 · Administración
@@ -346,7 +419,8 @@ LISTA:
 - **Cambiar de plan:** mejora o reduce tu plan. Ves una vista previa antes de confirmar y, si algo impide el cambio, se explica el motivo.
 - **Cambiar método de pago:** débito automático con tarjeta, incluso una tarjeta guardada, o pago manual por transferencia. El cambio aplica al terminar el periodo que ya pagaste.
 - **Cancelar suscripción:** conservas el acceso hasta el final del periodo pagado.
-P: **Avisos.** Si tu suscripción no tiene método de pago, Cileo te pide elegirlo, y también es necesario para cambiar de plan. Si pagas por transferencia, antes de que termine el periodo se te recuerda pagar tu orden para no perder el acceso. Si no eres administrador, el aviso te pide contactarlo. Si la suscripción queda inactiva, el acceso se limita hasta regularizarla.
+P: **Pago por transferencia (SPEI).** Si eliges pagar por transferencia, tu cuenta tiene una **CLABE de pago fija**: transfieres siempre a la misma CLABE, periodo tras periodo. Cileo genera tu **orden de pago** de forma automática **5 días antes de que termine el periodo** (la pantalla de Suscripción te dice la fecha exacta) y te muestra solo dos datos, el **monto a transferir** y la **CLABE interbancaria**, con botones para copiarlos. La acreditación puede tardar algunos minutos; cuando se acredita, verás **El pago del periodo actual ya fue abonado** con la fecha real en que pagaste, y la tabla de pagos muestra esa misma **Fecha de pago**. Mientras tu periodo siga vigente no corresponde generar una orden nueva.
+P: **Avisos.** Si tu suscripción no tiene método de pago, Cileo te pide elegirlo, y también es necesario para cambiar de plan. Si pagas por transferencia, antes de que termine el periodo se te recuerda pagar tu orden para no perder el acceso. Si al abrir la orden aparece que no se pudo obtener tu CLABE de pago en ese momento, inténtalo de nuevo en unos minutos y, si persiste, escribe a soporte. Si no eres administrador, el aviso te pide contactarlo. Si la suscripción queda inactiva, el acceso se limita hasta regularizarla.
 
 SECCION: soporte
 KICKER: 15 · Tu cuenta
@@ -384,6 +458,8 @@ TERMINO: Dashboard -> Dashboard | Pantalla de inicio con los indicadores clave: 
 TERMINO: Cuenta | El espacio de trabajo de tu organización dentro de Cileo, donde viven tus inmuebles, contratos y usuarios.
 TERMINO: Suscripción -> Planes | El plan contratado que habilita el uso de Cileo (Básico, En crecimiento, Profesional o Corporativa), definido por el número de **contratos activos**.
 TERMINO: Prueba (30 días) -> Planes | Periodo de evaluación sin costo, disponible una sola vez por cuenta y solo en los planes En crecimiento y Profesional.
+TERMINO: Orden de pago (suscripción) -> Administrar suscripción | Pago pendiente de tu suscripción cuando pagas por transferencia. Cileo la genera sola 5 días antes de que termine el periodo y muestra el monto y la CLABE de pago fija de tu cuenta.
+TERMINO: CLABE de pago -> Administrar suscripción | CLABE interbancaria fija asignada a tu cuenta para pagar la suscripción por transferencia (SPEI). No cambia de un periodo a otro.
 GCAT: Personas y accesos
 TERMINO: Usuario -> Usuarios | Persona con acceso a Cileo dentro de tu cuenta. Se administra desde Administración y luego Usuarios.
 TERMINO: Rol -> Usuarios | Nivel de permisos de un usuario. Define qué puede ver y hacer; por ejemplo, quién solo consulta y quién puede editar o administrar.
@@ -397,6 +473,7 @@ TERMINO: Localidad o unidad | Espacio rentable dentro de un inmueble. En los ind
 TERMINO: Ocupado -> Dashboard | Inmueble o unidad con al menos un contrato activo en el periodo consultado.
 TERMINO: Vacante -> Dashboard | Inmueble o unidad sin contrato activo, que podría ofrecerse en renta.
 TERMINO: Ocupación | Proporción de unidades ocupadas frente al total del portafolio. Es uno de los indicadores principales del Dashboard.
+TERMINO: Planilla de gastos -> Inmuebles | Porcentaje de los gastos del inmueble que corresponde a cada localidad. Se captura desde el menú del inmueble; la suma no puede exceder 100%.
 GCAT: Contratos
 TERMINO: Contrato -> Contratos | Acuerdo de arrendamiento entre un propietario y un inquilino sobre un inmueble, con su renta, vigencia y condiciones.
 TERMINO: Renta | Monto periódico que el inquilino paga por el inmueble según el contrato.
@@ -409,8 +486,9 @@ TERMINO: Sufijo del concepto -> Alta de contrato | Texto opcional que se agrega 
 TERMINO: Borrador de contrato -> Alta de contrato | Contrato guardado a medias, que se activa después con Confirmar contrato. Puede guardarse aunque el propietario aún no tenga datos fiscales.
 TERMINO: Contrato por vencer -> Dashboard | Contrato cuya fecha de término se aproxima, para dar seguimiento a su renovación.
 TERMINO: Renovación -> Dashboard | Extensión o recontratación de un arrendamiento que está por terminar.
+TERMINO: Extender contrato -> Contratos | Prolongar la vigencia de un contrato desde su detalle, con nuevo plazo y fecha de terminación. La extensión empieza el día siguiente al término actual, aunque ya haya pasado.
 TERMINO: Mantenimiento | Concepto asociado al contrato para cubrir gastos de conservación del inmueble, que puede cobrarse junto con la renta.
-TERMINO: Vista (de tabla) -> Tabla y vistas | Combinación guardada de columnas, orden y filas por página en las tablas de contratos, cobros, complementos y notas de crédito. Se administra desde el botón de preferencias de la tabla. Cada usuario tiene las suyas.
+TERMINO: Vista (de tabla) -> Tabla y vistas | Combinación guardada de columnas, orden y filas por página. Existe en las tablas de contratos, cobros, complementos, notas de crédito, inmuebles, contactos y las de Administración. Se administra desde el botón de preferencias de la tabla. Cada usuario tiene las suyas.
 GCAT: Cobranza
 TERMINO: Cobranza -> Cobranza | Sección donde se generan, controlan y dan seguimiento los cobros de renta y los conceptos asociados.
 TERMINO: Cobro | Cargo generado a un inquilino por un periodo o concepto (renta, mantenimiento y demás). Es la unidad de trabajo de la cobranza.
@@ -422,6 +500,7 @@ TERMINO: Pago parcial | Abono que cubre solo una parte del monto de un cobro; el
 TERMINO: Saldo pendiente | Monto que aún falta por cobrar de uno o varios cobros.
 TERMINO: Cartera vencida o morosidad -> Dashboard | Suma de los cobros vencidos no pagados. Refleja el nivel de riesgo de la cartera.
 TERMINO: Saldo a favor | Cantidad a favor del inquilino, por ejemplo cuando una nota de crédito supera la deuda actual. Queda disponible para cobros futuros.
+TERMINO: Pago a varios cobros -> Pago a varios cobros | Un pago registrado una sola vez con Registrar pago y repartido entre varios cobros del mismo inquilino y la misma moneda.
 TERMINO: Conciliación | Proceso de confirmar que los pagos recibidos corresponden con los cobros registrados, actualizando su estatus.
 TERMINO: Recordatorio de pago -> Cobranza | Aviso que se envía al inquilino sobre un cobro próximo o vencido; según el caso incluye el borrador o la factura.
 TERMINO: Línea de tiempo | Historial cronológico de cobros, pagos y movimientos de un inquilino o contrato.
@@ -433,6 +512,9 @@ TERMINO: Timbrado | Proceso por el cual una factura obtiene validez fiscal ofici
 TERMINO: PUE | Pago en una sola exhibición. La factura se liquida de una vez y no lleva complemento de pago.
 TERMINO: PPD | Pago en parcialidades o diferido. Cada pago recibido se ampara con un complemento de pago.
 TERMINO: Complemento de pago -> Complementos de pago | CFDI que ampara los pagos de una factura PPD.
+TERMINO: Pago sustituto -> Sustituir un pago | Pago cuyo complemento nuevo reemplaza a uno o varios complementos de pago ya timbrados (tipo de relación 04). Se aplica cuando el SAT acepta la cancelación de los originales.
+TERMINO: Operaciones (panel) -> Timbrar y enviar en bloque | Panel de la esquina inferior derecha donde se procesan, cobro por cobro, las acciones en bloque (timbrar, enviar, descargar) con su resultado.
+TERMINO: Complemento único -> Pago a varios cobros | Un solo complemento de pago que relaciona varios cobros PPD timbrados del mismo inquilino, pagados con un mismo depósito.
 TERMINO: Nota de crédito | Comprobante que reduce o corrige el monto de una factura ya emitida. Si supera la deuda actual, el excedente se convierte en saldo a favor del inquilino.
 TERMINO: Sustitución de CFDI -> Sustituir una factura | Emitir una factura nueva que reemplaza a una anterior con errores, relacionándolas entre sí.
 TERMINO: Motivo de cancelación -> Cancelaciones | Razón que el SAT exige al cancelar: 01 con errores con relación, 02 con errores sin relación, o 03 no se llevó a cabo la operación.
@@ -491,7 +573,11 @@ PREGUNTA: ¿Puedo agregar notas o comentarios a un contrato? | Sí. Cada contrat
 PREGUNTA: ¿Cómo sé cuáles inmuebles están ocupados o vacantes? | En el Dashboard, con los indicadores de ocupados (con contrato activo) y vacantes (sin contrato activo), según el periodo y los filtros que elijas.
 PREGUNTA: ¿Puedo elegir qué columnas ver en la tabla de contratos? | Sí. El botón de preferencias (ícono de ajustes, Preferencias: vistas y columnas) abre las pestañas Columnas y Vistas: eliges y reordenas columnas, y guardas la combinación como una Vista propia. Ver [Tabla y vistas](#contratos-tabla).
 PREGUNTA: ¿Dónde quedaron los botones Columnas y Vista? | Ahora están juntos en el botón de preferencias (ícono de ajustes) de la tabla, en las pestañas Vistas y Columnas. Tus vistas guardadas siguen ahí.
+PREGUNTA: ¿Cómo registro un incremento por INPC? | Desde el menú del contrato, Histórico de incrementos, o al confirmar un cobro pendiente por incremento. Eliges el INPC inicial y el INPC final por mes y Cileo calcula la variación. Ver [Incrementos e INPC](#incrementos).
+PREGUNTA: ¿Puedo guardar vistas en las tablas de inmuebles o de contactos? | Sí. Inmuebles, Contactos y las tablas de Administración tienen el botón de preferencias para elegir columnas, incluidas las de localidades o personas de contacto, y guardarlas como una vista.
 PREGUNTA: ¿Cómo sé qué contratos están por vencer? | El Dashboard muestra los contratos por vencer, para que des seguimiento a su renovación.
+PREGUNTA: ¿Puedo extender un contrato que ya venció? | Sí. En el detalle del contrato usa Extender contrato: la extensión empieza el día siguiente a la fecha de terminación actual, aunque esa fecha ya haya pasado, así no queda un hueco. Eliges el nuevo plazo, la fecha de terminación y, si cambia, la renta.
+PREGUNTA: ¿Qué es la Planilla de gastos de un inmueble? | Es donde asignas a cada localidad el porcentaje de los gastos del inmueble que le corresponde. Está en el menú del inmueble; la suma no puede exceder 100% y Distribuir por superficie calcula los porcentajes según la superficie de cada localidad.
 FCAT: Cobranza y pagos
 PREGUNTA: ¿Cómo genero un cobro? | Cobranza y luego Nuevo cobro, o desde el contrato. Eliges el contrato, agregas los conceptos con sus impuestos y lo generas. El contrato debe tener definida una cuenta de depósito.
 PREGUNTA: Antes de crear cobros me pide una cuenta de depósito, ¿por qué? | Porque cada contrato necesita la cuenta donde se reciben los pagos. Se configura en Administración y luego Cuentas, y se elige en el contrato.
@@ -500,13 +586,21 @@ PREGUNTA: ¿Puedo registrar un pago parcial? | Sí, salvo que el cobro ya tenga 
 PREGUNTA: ¿Por qué un cobro aparece Pendiente de confirmación? | Porque necesita que confirmes algo antes de enviarlo: el tipo de cambio en cobros en dólares, la cuenta de depósito, un incremento por INPC o por variación, o un tipo de renta mixto. Su acción es Confirmar y enviar. Antes se llamaba Bloqueado por confirmación.
 PREGUNTA: ¿Qué significa que un cobro esté vencido? | Que pasó su fecha de pago y conserva saldo pendiente. No es una pestaña: se refleja en la cartera vencida y en la morosidad.
 PREGUNTA: ¿Cómo envío un recordatorio de pago? | Usa Enviar recordatorio desde el cobro. Según el caso, incluye el envío del borrador o de la factura.
-PREGUNTA: ¿Puedo enviar un cobro sin esperar al envío automático? | Sí, con la acción Enviar cobro, que se habilita el día de su fecha de envío.
+PREGUNTA: ¿Puedo enviar un cobro sin esperar al envío automático? | Sí, con la acción Enviar cobro, que se habilita a partir de su fecha de envío y sigue disponible después.
+PREGUNTA: ¿Puedo volver a enviar un cobro vencido? | Sí. Enviar cobro sigue disponible después de la fecha de envío, así que puedes mandar un cobro que ya venció o que no se envió en su día. Si no se puede enviar, revisa su estado y su fecha de envío.
 PREGUNTA: ¿Qué pasa si facturo en dólares y me pagan en pesos? | Al registrar el pago capturas el tipo de cambio, que puedes editar, y el complemento de pago se emite con esa equivalencia.
 PREGUNTA: ¿Qué es un saldo a favor? | Una cantidad a favor del inquilino, por ejemplo cuando una nota de crédito supera la deuda actual. Queda disponible para cobros futuros.
 PREGUNTA: ¿Qué significan los estatus de un cobro? | Pendiente de envío, Pendiente de confirmación, Enviado, Parcialmente pagado, Pagado, Retroactivo, Cancelado, Cancelación pendiente y Cancelación no aprobada. Los tienes explicados en [Cobranza](#cobranza).
 PREGUNTA: ¿Puedo ver el historial de pagos de un inquilino? | Sí. Cada inquilino y cada contrato tienen una línea de tiempo con sus cobros, pagos y movimientos.
-PREGUNTA: ¿Puedo ordenar la tabla de cobros o ver la serie y el folio de la factura? | Sí. La tabla tiene columnas Serie y Folio de la factura principal, se ordena desde el encabezado (inquilino, inmueble, propietario, fechas, serie o folio) y puedes guardar tus columnas como una vista. Ver [Tabla de cobros y vistas](#cobranza-tabla).
-PREGUNTA: ¿Cómo descargo mis cobros o los CFDIs? | En Cobranza, con el menú Descargar: CSV con todas las columnas o CFDIs (XML y PDF en un .zip, agrupados por inquilino, contrato y mes). Solo se descargan las filas visibles, así que amplía las filas por página si quieres todo.
+PREGUNTA: ¿Puedo ordenar la tabla de cobros o ver la serie y el folio de la factura? | Sí. La tabla tiene la columna Serie · Folio de la factura principal, se ordena desde el encabezado (inquilino, inmueble, propietario, fechas o serie y folio) y puedes guardar tus columnas como una vista. Ver [Tabla de cobros y vistas](#cobranza-tabla).
+PREGUNTA: ¿Puedo buscar un cobro por el folio de su factura? | Sí. El buscador de Cobranza encuentra cobros por el folio de la factura.
+PREGUNTA: Un inquilino pagó varios cobros con un solo depósito, ¿cómo lo registro? | En Cobranza usa Registrar pago: capturas el pago una vez, agregas los cobros (mismo inquilino y misma moneda, hasta 50) y repartes el importe. Si son facturas PPD timbradas puedes generar un complemento único. Ver [Registrar un pago a varios cobros](#pago-varios-cobros).
+PREGUNTA: ¿Cómo descargo mis cobros o los CFDIs? | En Cobranza, con el menú Descargar: CSV con todas las columnas o CFDIs (XML y PDF en un .zip). En los CFDIs eliges cómo agrupar las carpetas: la carpeta principal por inquilino o por propietario, y dentro por contrato y periodo, solo por contrato, o todo junto. Solo se descargan las filas visibles, hasta 100 por página: si tienes más, descarga página por página o acota con filtros.
+PREGUNTA: ¿Puedo descargar los CFDIs agrupados por propietario? | Sí. En el menú Descargar, al elegir CFDIs, selecciona Propietario como carpeta principal y luego si quieres subcarpetas por contrato y periodo, solo por contrato o ninguna. Los cobros con varios propietarios quedan en la carpeta del representante común.
+PREGUNTA: ¿Por qué ya no aparece la opción Todos en filas por página? | Las tablas de Contratos y Cobranza muestran hasta 100 filas por página (10, 20, 50 o 100). Para ver o descargar más, cambia de página o acota la tabla con filtros.
+PREGUNTA: ¿Puedo timbrar o enviar varios cobros a la vez? | Sí. Selecciona los cobros con las casillas de la tabla y usa Timbrar borradores, Enviar (borradores o facturas) o Descargar. El avance y el resultado de cada cobro se ven en el panel Operaciones. Ver [Timbrar y enviar en bloque](#operaciones-masivas).
+PREGUNTA: ¿Por qué no se timbró un borrador en el timbrado en bloque? | El panel Operaciones dice el motivo. Lo más común: el cobro está cancelado o en cancelación, ya tiene factura timbrada, o el borrador es PUE y el cobro todavía no está pagado; en ese caso registra primero el pago.
+PREGUNTA: ¿Por qué Pendiente de envío solo muestra este mes y el siguiente? | Esa pestaña abre con los cobros cuya fecha de envío cae en el mes actual y el siguiente. Puedes cambiar las fechas en el panel de filtros; Restablecer filtros regresa a ese periodo.
 FCAT: Facturación, cancelaciones y notas de crédito
 PREGUNTA: ¿Qué necesito para facturar? | Tener capturados tus datos fiscales (RFC, régimen y certificados) en Administración y luego Datos Fiscales. Sin certificados no se pueden timbrar facturas.
 PREGUNTA: ¿Puedo guardar mis datos fiscales sin los certificados (CSD)? | Sí, y completarlos después. Para timbrar facturas sí se necesitan.
@@ -517,12 +611,16 @@ PREGUNTA: ¿Puedo enviar copia de las facturas por correo? | Sí. En Datos Fisca
 PREGUNTA: ¿Qué es un complemento de pago? | El CFDI que ampara cada pago de una factura emitida como PPD. Las facturas PUE no llevan complemento. Ver [Complementos de pago](#complementos).
 PREGUNTA: ¿Qué es una nota de crédito? | Un comprobante que reduce o corrige una factura ya emitida. Si el monto supera la deuda actual, el excedente se vuelve saldo a favor del inquilino.
 PREGUNTA: ¿Cómo cancelo un pago que registré por error? | Desde el menú del pago, Cancelar pago. Solo se puede cancelar el más reciente. Si tiene complemento timbrado, la cancelación se solicita al SAT, que puede aceptarla o rechazarla. Si la factura es PUE y el pago no tiene complemento, lo que procede es cancelar la factura: escribe a soporte. No aplica a cobros retroactivos. Ver [Cancelaciones](#cancelaciones).
-PREGUNTA: No me deja cancelar un cobro, ¿por qué? | Si tiene complementos de pago activos, cancélalos uno por uno primero. Tampoco se puede si tiene una nota de crédito asociada, ni si sustituyó a un cobro ya cancelado. Si el cobro está sustituido, solo se cancela con el motivo 01.
+PREGUNTA: No me deja cancelar un cobro, ¿por qué? | Si tiene complementos de pago activos, cancélalos uno por uno primero. Si tiene una nota de crédito activa, cancela primero la nota. Tampoco se puede si sustituyó a un cobro ya cancelado. Si el cobro está sustituido, solo se cancela con el motivo 01.
+PREGUNTA: ¿Cómo cancelo una nota de crédito? | Desde su menú o desde el visor del cobro, con Cancelar nota de crédito y su motivo. Se solicita al SAT: mientras responde usa Comprobar cancelación, y si la rechaza, Reintentar cancelación. Si la nota se aplicó como pago, cancela primero ese pago. Ver [Notas de crédito](#notas-credito).
+PREGUNTA: ¿Puedo sustituir una nota de crédito con errores? | Sí. Al generar la nueva activa Sustitución de las notas de crédito previas y elige la anterior; la sustituida se cancela sola ante el SAT con el motivo 01. Valida el caso con tu contador.
 PREGUNTA: ¿Cómo sustituyo una factura con errores? | Genera la factura del cobro nuevo con la opción Sustitución de los CFDI previos activada y elige las facturas a sustituir; después cancela la anterior con el motivo 01. Ver [Sustituir una factura](#sustitucion). Valida el caso con tu contador.
+PREGUNTA: Registré mal un pago y su complemento ya está timbrado, ¿cómo lo corrijo? | Usa Sustituir pago en el menú del pago y captura el pago correcto: se emite un complemento nuevo y se solicita al SAT la cancelación del anterior. Si no es el último pago del cobro, solo puedes corregir el método de pago, las cuentas y la referencia. Ver [Sustituir un pago](#sustitucion-pago). Valida el caso con tu contador.
+PREGUNTA: ¿Puedo sustituir varios complementos de pago con uno solo? | Sí. Al agregar el pago activa Sustitución de pagos previos y elige los complementos, desde el más reciente. Después cancela cada original con Cancelar pago, uno a la vez; el pago sustituto se aplica cuando el SAT acepta todas las cancelaciones.
 PREGUNTA: El SAT rechazó una cancelación, ¿qué hago? | En el menú del pago, o del cobro cuando queda en Cancelación no aprobada, tienes Reintentar cancelación, que la vuelve a solicitar, y Revertir cancelación, que regresa el pago o el cobro a un estado activo. Si no ves la opción, escribe a soporte.
 FCAT: PLD y cumplimiento
 PREGUNTA: ¿Qué es PLD y por qué aparece en Cileo? | PLD es Prevención de Lavado de Dinero. El arrendamiento es una actividad vulnerable bajo la Ley Antilavado, con obligaciones de identificación y avisos, y Cileo integra ese cumplimiento en tu operación.
-PREGUNTA: ¿Cuál es el flujo de cumplimiento PLD? | Identificar, es decir cargar los datos y documentos de la operación; generar y descargar el XML; subir el comprobante; y la tarea queda como Completado. También puede mostrarse Vencido o Cancelado.
+PREGUNTA: ¿Cuál es el flujo de cumplimiento PLD? | Identificar, es decir cargar los datos y documentos de la operación; generar y descargar el XML; subir el comprobante (el acuse, en un solo PDF); y la tarea queda como Completado. También puede mostrarse Vencido o Cancelado.
 PREGUNTA: ¿Con Cileo ya cumplo con PLD? | No por sí solo. Cileo te ayuda a gestionar las tareas y su documentación, pero no confirma la presentación ante la autoridad ni garantiza el cumplimiento. Valida tus obligaciones con tu asesor.
 PREGUNTA: No veo la sección PLD, ¿por qué? | El módulo no está incluido en el plan Básico y además depende de tu rol. Si deberías verlo y no aparece, escribe a soporte.
 PREGUNTA: ¿Cómo sé si tengo pendientes de PLD? | El Dashboard muestra la tasa de cumplimiento PLD, los contratos con PLD vencido, los próximos a vencer y los inquilinos con documentos faltantes.
@@ -531,7 +629,8 @@ PREGUNTA: ¿Puedo descargar los documentos y comprobantes de PLD? | Sí. Cada ta
 FCAT: Reportes y Dashboard
 PREGUNTA: ¿Qué muestra el Dashboard? | Los indicadores clave de tu operación: ingresos del periodo, cobranza contra esperado, morosidad, días de atraso, ocupación, contratos por vencer y cumplimiento PLD, entre otros.
 PREGUNTA: ¿Qué es la morosidad? | La proporción del saldo pendiente frente a lo facturado; refleja el nivel de cartera vencida de tu operación.
-PREGUNTA: ¿Qué reportes puedo obtener? | Estado de cuenta, Cobranza y morosidad, Estatus de contratos y Fiscales de propietario.
+PREGUNTA: ¿Qué reportes puedo obtener? | Estado de cuenta, Cobranza y morosidad, Estatus de contratos y Fiscales de propietario. El de Cobranza y morosidad incluye los Movimientos del período: cada cobro emitido y cada pago recibido.
+PREGUNTA: ¿Puedo imprimir los reportes gastando menos tinta? | Sí. Al generar el reporte activa Ahorro de tinta: el PDF sale con menos color y sin fondos decorativos.
 PREGUNTA: ¿Puedo exportar la información de cobranza? | Sí. Desde Cobranza puedes Descargar CSV, que incluye los totales fiscales, y Descargar CFDIs.
 FCAT: Contactos, usuarios y cuenta
 PREGUNTA: ¿Cómo agrego un inquilino o un propietario? | Entra a Contactos y usa Nuevo inquilino o Nuevo propietario, según corresponda.
@@ -547,5 +646,7 @@ PREGUNTA: ¿Hay prueba sin costo? | Sí, de 30 días, una sola vez por cuenta y 
 PREGUNTA: ¿El módulo PLD está en todos los planes? | No. Está incluido en En crecimiento, Profesional y Corporativa, pero no en Básico.
 PREGUNTA: ¿El timbrado de las facturas se cobra aparte? | No. Va incluido en el precio del plan y no se cobra por timbre. Lo que aplica es el límite de facturas por mes de tu plan: hasta 50 en Básico, 250 en En crecimiento y 500 en Profesional. Ese límite no se puede rebasar, así que si necesitas facturar más, hay que cambiar de plan. Ver [Planes y precios](#planes).
 PREGUNTA: ¿Cómo cambio de plan o de método de pago? | Si en tu cuenta aparece Suscripción y dentro Administrar suscripción, desde ahí puedes cambiar de plan, cambiar el método de pago o cancelar. Si no aparece, pídeselo a tu administrador o escribe a soporte. Ver [Administrar suscripción](#suscripcion).
+PREGUNTA: ¿Cómo pago mi suscripción por transferencia? | Tu cuenta tiene una CLABE de pago fija. Cileo genera la orden de pago sola 5 días antes de que termine tu periodo y te muestra el monto y la CLABE para transferir (SPEI). La acreditación tarda unos minutos y la fecha real del pago queda registrada. Ver [Administrar suscripción](#suscripcion).
+PREGUNTA: ¿Por qué no puedo generar una nueva orden de pago? | Porque todavía tienes acceso vigente en tu periodo actual: la orden se genera sola 5 días antes del vencimiento. Si tu suscripción se cobra a una tarjeta, no hay orden por pagar. Si el aviso dice que no se pudo obtener tu CLABE de pago, inténtalo en unos minutos o escribe a soporte.
 PREGUNTA: ¿Qué pasa si no pago a tiempo? | Si la suscripción queda inactiva, el acceso se limita hasta regularizarla. Si pagas por transferencia, antes del fin del periodo se te recuerda pagar tu orden.
 PREGUNTA: ¿Cómo contacto a soporte? | Por correo a soporte@cileo.io, por WhatsApp al +52 56 6297 6298, o pidiendo en el chat hablar con una persona. Ver [Soporte y contacto](#soporte).
