@@ -28,11 +28,12 @@
       <div class="g-label">Operación</div>
       <a href="#dashboard" data-t="dashboard panorama kpis indicadores">Dashboard</a>
       <a href="#inmuebles" data-t="inmuebles propiedades localidades vistas columnas imagen foto">Inmuebles</a>
-      <a href="#contratos" data-t="contratos arrendamiento extender prórroga vigencia nombre comercial">Contratos</a>
+      <a href="#contratos" data-t="contratos arrendamiento extender prórroga vigencia nombre comercial por vencer 180 120 días">Contratos</a>
       <a href="#incrementos" class="sub" data-t="incremento renta mantenimiento inpc variación histórico">Incrementos e INPC</a>
       <a href="#alta-contrato" class="sub" data-t="alta contrato asistente pasos nuevo borrador">Alta de contrato</a>
+      <a href="#concepto-factura" class="sub" data-t="concepto fijo personalizado plantilla variables periodo inmueble localidades prediales dirección tipo de cambio prefijo sufijo">Concepto de la factura</a>
       <a href="#contratos-tabla" class="sub" data-t="tabla columnas vistas guardadas búsqueda preferencias ordenar descargar csv">Tabla y vistas</a>
-      <a href="#contratos-documentos" class="sub" data-t="documentos adjuntar pdf contrato firmado">Documentos del contrato</a>
+      <a href="#contratos-documentos" class="sub" data-t="documentos adjuntar pdf contrato firmado ver documentos tabla">Documentos del contrato</a>
       <a href="#cobranza" data-t="cobranza cobros cartera estatus">Cobranza</a>
       <a href="#cobranza-tabla" class="sub" data-t="tabla cobros columnas vistas ordenar serie folio buscar descargar csv cfdi zip carpetas propietario filas por página 100">Tabla de cobros y vistas</a>
       <a href="#cobranza-acciones" class="sub" data-t="acciones pago nota de crédito recordatorio cancelar compartir borrador enviar cobro vencido detalle">Acciones de un cobro</a>
@@ -44,7 +45,7 @@
       <div class="g-label">Facturación</div>
       <a href="#facturacion" data-t="facturación cfdi factura timbrado borrador xml">Facturación (CFDI)</a>
       <a href="#complementos" class="sub" data-t="complemento de pago ppd pue parcialidades ver complemento único">Complementos de pago</a>
-      <a href="#cancelaciones" class="sub" data-t="cancelar cancelación motivo sat rechazo">Cancelaciones y SAT</a>
+      <a href="#cancelaciones" class="sub" data-t="cancelar cancelación motivo sat rechazo marcar como vigente revertir">Cancelaciones y SAT</a>
       <a href="#notas-credito" class="sub" data-t="nota de crédito cancelar sustituir canceladas">Notas de crédito</a>
       <a href="#sustitucion" class="sub" data-t="sustitución sustituir cfdi relacionado">Sustituir una factura</a>
       <a href="#sustitucion-pago" class="sub" data-t="sustituir pago complemento de pago sustituto corregir pago relación 04">Sustituir un pago</a>
@@ -52,13 +53,13 @@
     <div class="sb-group">
       <div class="g-label">Cumplimiento y análisis</div>
       <a href="#pld" data-t="pld lavado dinero cumplimiento uma antilavado analizar contratos avisos cancelar reporte instrumento monetario">PLD / Cumplimiento</a>
-      <a href="#reportes" data-t="reportes estado de cuenta morosidad fiscales pdf ahorro de tinta movimientos del período">Reportes</a>
+      <a href="#reportes" data-t="reportes estado de cuenta morosidad fiscales pdf ahorro de tinta movimientos del período stacking plan rent roll ocupación fecha de corte">Reportes</a>
     </div>
     <div class="sb-group">
       <div class="g-label">Directorio y administración</div>
       <a href="#contactos" data-t="contactos inquilinos propietarios vistas columnas">Contactos</a>
       <a href="#usuarios" data-t="usuarios roles permisos administrador acceso vistas">Usuarios y permisos</a>
-      <a href="#datos-fiscales" data-t="datos fiscales rfc régimen csd certificados">Datos Fiscales</a>
+      <a href="#datos-fiscales" data-t="datos fiscales rfc régimen csd certificados folio serie de borradores asignar folio al timbrar">Datos Fiscales</a>
       <a href="#cuentas" data-t="cuentas bancarias depósito cotitulares">Cuentas</a>
       <a href="#impuestos" data-t="impuestos iva retenciones reglas claves sat">Impuestos</a>
       <a href="#carga-masiva" data-t="migración carga masiva plantilla excel importar">Migración y carga masiva</a>
@@ -86,7 +87,7 @@
   <h1>Manual Cileo</h1>
   <p class="lede">Guía de uso de Cileo: inmuebles, contratos, cobranza, facturación (CFDI) y PLD. Cada sección explica, en pocos pasos, qué hace cada pantalla y cómo se usa.</p>
   <div class="meta"><span class="tag">Capturas reales</span><span class="tag">Datos ficticios</span><span class="tag">app.cileo.io</span></div>
-  <p class="cap">Actualizado: 16 de noviembre de 2026</p>
+  <p class="cap">Actualizado: 23 de noviembre de 2026</p>
   <section id="intro" class="top">
     <p class="kicker">Empezar aquí</p>
     <h2>Introducción</h2>
@@ -179,9 +180,20 @@
       <li>En el paso <b>Renta</b> puedes capturar el <b>Nombre comercial (opcional)</b> del contrato.</li>
       <li><b>Plazo:</b> determinado o indefinido (sin fecha de fin). Los dos generan cobros con normalidad.</li>
       <li><b>Periodicidad de la renta:</b> Mensual, Bimestral, Trimestral, Cuatrimestral, Semestral o Anual.</li>
-      <li><b>Sufijo del concepto</b> (opcional, en renta y en mantenimiento): texto que se agrega al final del concepto del cobro y de la factura. El concepto se arma con el prefijo, el periodo de renta, las localidades y el sufijo. Es el lugar para incluir, por ejemplo, la dirección del inmueble o una o varias cuentas prediales.</li>
+      <li><b>Concepto de la factura:</b> en el paso <b>Monto e impuestos</b> eliges cómo se arma el concepto de la renta: <b>Concepto personalizado</b> (la opción que viene marcada en contratos nuevos) o <b>Concepto fijo</b>. Ver <a href="#concepto-factura">Concepto de la factura</a>.</li>
       <li><b>Mantenimiento</b> es un paso opcional, con su propio concepto y periodicidad.</li>
       <li><b>Borrador:</b> puedes guardar el contrato incompleto y, cuando esté listo, usar <b>Confirmar contrato</b> para activarlo. Un borrador se puede guardar aunque el propietario todavía no tenga datos fiscales.</li>
+    </ul>
+    <h3 class="sub" id="concepto-factura">Concepto de la factura (fijo o personalizado)</h3>
+    <p>En el paso <b>Monto e impuestos</b> del asistente, arriba de los conceptos agregados, eliges el modo del concepto de la renta. Lo que definas ahí es el texto que llevan los cobros y las facturas de ese contrato, también los retroactivos.</p>
+    <ul>
+      <li><b>Concepto personalizado:</b> escribes el concepto completo en <b>Concepto de la factura</b> y, con un clic, insertas las <b>variables disponibles</b>: [Periodo], [Inmueble], [Localidades], [Accesorios], [Dirección], [Prediales], [Contrato] y [Tipo_de_cambio]. Cileo las sustituye con los datos del contrato en cada cobro. Es la opción que viene marcada al crear un contrato nuevo, con una plantilla inicial que puedes editar o regresar a como estaba con <b>Restablecer</b>.</li>
+      <li><b>Las mayúsculas de la variable definen el formato:</b> [periodo] da "marzo 2026", [PERIODO] da "MARZO 2026" y [Periodo] da "Marzo 2026".</li>
+      <li>Mientras escribes ves la <b>vista previa</b> del concepto con los datos del contrato (o con datos de ejemplo si aún faltan). La plantilla admite hasta 1000 caracteres; si escribes una variable que no existe, Cileo te lo indica antes de guardar.</li>
+      <li>En contratos en dólares, usa la variable [Tipo_de_cambio] para que la leyenda del tipo de cambio se incluya sola; no la escribas a mano.</li>
+      <li>Evita la palabra "mantenimiento" en el concepto de la renta: Cileo la usa para distinguir las cuotas de mantenimiento y podría clasificar mal la factura en PLD.</li>
+      <li><b>Concepto fijo:</b> el concepto se arma solo con el <b>Prefijo del concepto</b>, el periodo de renta, las localidades y el <b>Sufijo del concepto</b> (opcional), que es el lugar para agregar, por ejemplo, la dirección del inmueble o una o varias cuentas prediales. Los contratos que ya existían conservan este modo hasta que lo cambies al editarlos.</li>
+      <li>El concepto del <b>mantenimiento</b> se sigue capturando en su propio paso, con su prefijo y su sufijo.</li>
     </ul>
     <h3 class="sub" id="contratos-tabla">Tabla de contratos y vistas</h3>
     <p>La tabla muestra Contrato, Inmueble, Localidades, Propietario, Inquilino, Nombre comercial, fechas, Próximo incremento, Renta actual y Moneda, con paginación y búsqueda (también por localidad). Al hacer clic en el encabezado de una columna, la tabla se ordena por ella.</p>
@@ -192,10 +204,12 @@
       <li>Las vistas son de cada usuario: lo que guardes no cambia lo que ven tus compañeros.</li>
       <li>Con el menú <b>Descargar</b> obtienes el CSV con todas las columnas. Solo se descargan las filas visibles. La tabla muestra hasta <b>100 filas por página</b> (10, 20, 50 o 100; ya no existe la opción Todos): si tienes más, descarga página por página o acota la tabla con filtros.</li>
       <li>Al buscar, los contadores de las pestañas siguen mostrando los totales generales.</li>
+      <li>La pestaña <b>Por vencer</b> cuenta los contratos que terminan en los próximos <b>180 días</b> y, dentro de ella, filtras por <b>180, 120, 60, 30 o 15 días</b>. Al pasar el cursor por el aviso de la pestaña ves cuántos vencen en 15 días.</li>
+      <li>La columna <b>Documentos</b> tiene el botón <b>Ver documentos</b>, que abre los documentos del contrato sin entrar a su detalle; si el contrato no tiene documentos, el botón aparece desactivado.</li>
     </ul>
     <h3 class="sub" id="contratos-documentos">Documentos del contrato</h3>
     <p>Al crear o editar un contrato puedes <b>adjuntar documentos</b>: archivos PDF, JPG, PNG, DOC o DOCX de hasta 20 MB cada uno, con nombre y fechas de emisión y vencimiento opcionales. Es donde se guarda, por ejemplo, el contrato firmado.</p>
-    <p>Desde el detalle del contrato tienes <b>Ver documentos</b>, con vista previa y descarga, y <b>Editar documentos</b>.</p>
+    <p>Desde el detalle del contrato tienes <b>Ver documentos</b>, con vista previa y descarga, y <b>Editar documentos</b>. También puedes abrirlos desde la tabla de contratos, en la columna <b>Documentos</b>.</p>
     <h3 class="sub" id="incrementos">Incrementos e INPC</h3>
     <p>Desde el menú de un contrato en la tabla, <b>Histórico de incrementos</b> muestra los incrementos de renta o de mantenimiento aplicados y permite agregar uno nuevo. También se agrega al confirmar un cobro que quedó <b>Pendiente de confirmación</b> por un incremento.</p>
     <ul>
@@ -312,6 +326,7 @@
     <p>En Cobranza, el selector por tipo de comprobante te deja ver los <b>Complementos</b> con sus propias columnas. Si el pago llega en una moneda distinta a la de la factura, el complemento se emite con la equivalencia que capturaste al registrar el pago.</p>
     <p>Las facturas <b>PUE</b> (pago en una sola exhibición) no llevan complemento: se liquidan en una sola exhibición.</p>
     <p>En el menú de cada pago, <b>Ver complemento de pago</b> abre el complemento para consultarlo o descargarlo. Para pagar varios cobros con un solo complemento, ver <a href="#pago-varios-cobros">Registrar un pago a varios cobros</a>.</p>
+    <p><b>Si el complemento no se timbra al momento.</b> Si al registrar un pago su complemento no se puede timbrar en ese momento, el pago queda registrado igual y Cileo vuelve a intentar el timbrado del complemento por su cuenta. Mientras el complemento sigue pendiente, ese pago no se puede cancelar. Si pasa tiempo y el complemento no aparece, escribe a soporte.</p>
     <h3 class="sub" id="cancelaciones">Cancelaciones y respuestas del SAT</h3>
     <p><b>Cancelar un pago.</b> Desde el menú del pago, <b>Cancelar pago</b>. Si el pago tiene complemento timbrado, se envía al SAT la solicitud de cancelación y el pago queda en proceso de cancelación. Iniciar el trámite no garantiza la cancelación: el SAT puede aceptarla o rechazarla, y el estatus se ve en Cileo. Reglas:</p>
     <ul>
@@ -324,7 +339,7 @@
     </ul>
     <p><b>Cancelar un cobro.</b> La acción <b>Cancelar cobro</b> pide un motivo: 01 Comprobante emitido con errores con relación, 02 Comprobante emitido con errores sin relación, o 03 No se llevó a cabo la operación. El motivo 01 solo procede si ya hay un cobro timbrado que lo sustituye. Si el cobro tiene factura timbrada, se solicita la cancelación al SAT y el cobro queda en Cancelación pendiente hasta su respuesta; la aceptación no está garantizada.</p>
     <p>No se puede cancelar un cobro que tenga complementos de pago activos (hay que cancelarlos uno por uno primero) ni uno con una nota de crédito activa: cancela primero la nota (ver <a href="#notas-credito">Notas de crédito</a>). Las notas de crédito canceladas ya no cuentan.</p>
-    <p><b>Si el SAT rechaza una cancelación.</b> En el menú del pago, o del cobro cuando queda en Cancelación no aprobada, aparecen <b>Reintentar cancelación</b>, que vuelve a solicitarla al SAT, y <b>Revertir cancelación</b>, que regresa el pago o el cobro a un estado activo con una confirmación. Si no ves la acción, escribe a soporte.</p>
+    <p><b>Si el SAT rechaza una cancelación.</b> En el menú del pago, o del cobro cuando queda en Cancelación no aprobada, aparecen <b>Reintentar cancelación</b>, que vuelve a solicitarla al SAT, y una acción para dejarlo activo: en el pago se llama <b>Marcar como vigente</b> (antes Revertir cancelación) y en el cobro, <b>Revertir cancelación</b>. Las dos piden confirmación. Si no ves la acción, escribe a soporte.</p>
     <h3 class="sub" id="notas-credito">Notas de crédito: cancelar y sustituir</h3>
     <p>Las notas de crédito de un cobro se ven en el selector <b>Notas de crédito</b> de Cobranza y en el visor del cobro (Ver CFDIs), agrupadas con su factura. Cada una muestra su estado: <b>Activa</b>, <b>Cancelación pendiente</b>, <b>Cancelación no aprobada</b> o <b>Cancelada</b>. Las canceladas se ocultan; actívalas con <b>Mostrar canceladas</b>.</p>
     <p><b>Cancelar una nota de crédito.</b> Desde su menú, o desde el visor del cobro, usa <b>Cancelar nota de crédito</b> y elige el motivo. Se solicita la cancelación al SAT, que puede aceptarla o rechazarla:</p>
@@ -388,6 +403,7 @@
       <li><b>Cobranza y morosidad:</b> incluye la sección <b>Movimientos del período</b>, con cada cobro emitido y cada pago recibido en el periodo (fecha, inmueble, inquilino, contrato y monto).</li>
       <li><b>Estatus de contratos.</b></li>
       <li><b>Fiscales de propietario.</b></li>
+      <li><b>Stacking plan y rent roll:</b> por inmueble y a una <b>fecha de corte</b>, el plano de ocupación por nivel (stacking plan) y la relación de rentas por contrato (rent roll), con localidades, ocupación, superficie y renta mensual en MXN. Se genera desde su pestaña en Reportes con <b>Generar reporte</b>: eliges el inmueble, la fecha de corte (de entrada, hoy), el formato del PDF (con fondos de color, o solo líneas y texto) y si incluye la fotografía del inmueble en la portada. El PDF se descarga al terminar y queda en la tabla de esa pestaña, de donde también se puede eliminar.</li>
     </ul>
     <p>Los reportes se generan en PDF con vista previa. Al generarlos puedes activar <b>Ahorro de tinta</b>, que genera el PDF con menos color y sin fondos decorativos, pensado para imprimir.</p>
   </section>
@@ -424,6 +440,7 @@
       <li><b>Facturación y certificados:</b> al activar Completar facturación y certificados capturas los archivos .cer y .key, la contraseña del CSD, la opción Enviar copia de facturas por correo y los correos adicionales.</li>
     </ul>
     <p>La dirección y los certificados son opcionales al guardar, pero <b>sin certificados no se pueden timbrar facturas</b>. Después de guardar el CSD, el interruptor de facturación y certificados queda fijo.</p>
+    <p><b>Asignar folio al timbrar.</b> En el bloque de facturación puedes activar <b>Asignar folio al timbrar</b>: los borradores de factura usan una numeración provisional (serie FB) y el folio definitivo se asigna en el momento de timbrar, así los folios quedan en el orden en que se timbran las facturas. La tabla de Datos Fiscales muestra en la columna <b>Serie de borradores</b> si está <b>Activa</b> o <b>Inactiva</b> para cada emisor.</p>
     <p class="callout">Unos datos fiscales en uso por contratos activos no pueden eliminarse mientras sigan asociados. Si necesitas corregir un dato y no puedes editarlo, escribe a soporte.</p>
   </section>
   <section id="cuentas">
@@ -546,7 +563,8 @@
       <dt>Cuenta de depósito <span class="ref">&rarr; Cuentas</span></dt><dd>Cuenta bancaria asociada al contrato donde se reciben los pagos. Debe estar definida para poder generar cobros.</dd>
       <dt>Vigencia</dt><dd>Periodo durante el cual el contrato está activo, con su fecha de inicio y de término.</dd>
       <dt>Plazo</dt><dd>Determinado, con fecha de fin, o indefinido, sin ella. Los dos generan cobros con normalidad.</dd>
-      <dt>Sufijo del concepto <span class="ref">&rarr; Alta de contrato</span></dt><dd>Texto opcional que se agrega al final del concepto del cobro y de la factura; sirve, por ejemplo, para incluir la dirección del inmueble o las cuentas prediales.</dd>
+      <dt>Concepto personalizado <span class="ref">&rarr; Concepto de la factura</span></dt><dd>Modo del concepto de la renta en el que escribes el texto completo con variables, como [Periodo] o [Localidades], que Cileo llena con los datos del contrato en cada cobro. Viene marcado en los contratos nuevos.</dd>
+      <dt>Sufijo del concepto <span class="ref">&rarr; Concepto de la factura</span></dt><dd>En el modo de concepto fijo, texto opcional que se agrega al final del concepto del cobro y de la factura; sirve, por ejemplo, para incluir la dirección del inmueble o las cuentas prediales.</dd>
       <dt>Borrador de contrato <span class="ref">&rarr; Alta de contrato</span></dt><dd>Contrato guardado a medias, que se activa después con Confirmar contrato. Puede guardarse aunque el propietario aún no tenga datos fiscales.</dd>
       <dt>Contrato por vencer <span class="ref">&rarr; Dashboard</span></dt><dd>Contrato cuya fecha de término se aproxima, para dar seguimiento a su renovación.</dd>
       <dt>Renovación <span class="ref">&rarr; Dashboard</span></dt><dd>Extensión o recontratación de un arrendamiento que está por terminar.</dd>
@@ -642,7 +660,9 @@
     <details><summary>¿Puedo guardar vistas en las tablas de inmuebles o de contactos?</summary><div class="ans">Sí. Inmuebles, Contactos y las tablas de Administración tienen el botón de preferencias para elegir columnas, incluidas las de localidades o personas de contacto, y guardarlas como una vista.</div></details>
     <details><summary>¿Puedo agregar una foto a un inmueble?</summary><div class="ans">Sí. En el menú del inmueble usa Subir imagen de la propiedad (JPG o PNG de hasta 5 MB). La ves con Ver imagen en la columna Imagen y desde ahí puedes eliminarla.</div></details>
     <details><summary>¿Dónde capturo el nombre comercial de un contrato?</summary><div class="ans">En el paso Renta del asistente de contrato, o al editarlo, en Nombre comercial (opcional). Después aparece en el detalle del contrato y del cobro y como columna en las tablas de Contratos y Cobranza.</div></details>
-    <details><summary>¿Cómo sé qué contratos están por vencer?</summary><div class="ans">El Dashboard muestra los contratos por vencer, para que des seguimiento a su renovación.</div></details>
+    <details><summary>¿Cómo sé qué contratos están por vencer?</summary><div class="ans">El Dashboard muestra los contratos por vencer. En Contratos, la pestaña Por vencer cuenta los que terminan en los próximos 180 días y ahí filtras por 180, 120, 60, 30 o 15 días, para dar seguimiento a su renovación.</div></details>
+    <details><summary>¿Puedo escribir el concepto de la factura a mi manera?</summary><div class="ans">Sí. En el paso Monto e impuestos del contrato elige Concepto personalizado y escribe el texto con las variables disponibles ([Periodo], [Inmueble], [Localidades], [Accesorios], [Dirección], [Prediales], [Contrato] y [Tipo_de_cambio]); Cileo las llena en cada cobro y te muestra la vista previa. Las mayúsculas de la variable definen el formato. Es el modo que viene marcado en contratos nuevos.</div></details>
+    <details><summary>¿Puedo ver los documentos de un contrato sin abrirlo?</summary><div class="ans">Sí. En la tabla de contratos, la columna Documentos tiene el botón Ver documentos.</div></details>
     <details><summary>¿Puedo extender un contrato que ya venció?</summary><div class="ans">Sí. En el detalle del contrato usa Extender contrato: la extensión empieza el día siguiente a la fecha de terminación actual, aunque esa fecha ya haya pasado, así no queda un hueco. Eliges el nuevo plazo, la fecha de terminación y, si cambia, la renta.</div></details>
     <div class="fcat">Cobranza y pagos</div>
     <details><summary>¿Cómo genero un cobro?</summary><div class="ans">Cobranza y luego Nuevo cobro, o desde el contrato. Eliges el contrato, agregas los conceptos con sus impuestos y lo generas. El contrato debe tener definida una cuenta de depósito.</div></details>
@@ -684,7 +704,9 @@
     <details><summary>¿Cómo sustituyo una factura con errores?</summary><div class="ans">Genera la factura del cobro nuevo con la opción Sustitución de los CFDI previos activada y elige las facturas a sustituir; después cancela la anterior con el motivo 01. Ver <a href="#sustitucion">Sustituir una factura</a>. Valida el caso con tu contador.</div></details>
     <details><summary>Registré mal un pago y su complemento ya está timbrado, ¿cómo lo corrijo?</summary><div class="ans">Usa Sustituir pago en el menú del pago y captura el pago correcto: se emite un complemento nuevo y se solicita al SAT la cancelación del anterior. Si no es el último pago del cobro, solo puedes corregir el método de pago, las cuentas y la referencia. Ver <a href="#sustitucion-pago">Sustituir un pago</a>. Valida el caso con tu contador.</div></details>
     <details><summary>¿Puedo sustituir varios complementos de pago con uno solo?</summary><div class="ans">Sí. Al agregar el pago activa Sustitución de pagos previos y elige los complementos, desde el más reciente. Después cancela cada original con Cancelar pago, uno a la vez; el pago sustituto se aplica cuando el SAT acepta todas las cancelaciones.</div></details>
-    <details><summary>El SAT rechazó una cancelación, ¿qué hago?</summary><div class="ans">En el menú del pago, o del cobro cuando queda en Cancelación no aprobada, tienes Reintentar cancelación, que la vuelve a solicitar, y Revertir cancelación, que regresa el pago o el cobro a un estado activo. Si no ves la opción, escribe a soporte.</div></details>
+    <details><summary>El SAT rechazó una cancelación, ¿qué hago?</summary><div class="ans">En el menú del pago, o del cobro cuando queda en Cancelación no aprobada, tienes Reintentar cancelación, que la vuelve a solicitar, y la acción para dejarlo activo: Marcar como vigente en el pago, o Revertir cancelación en el cobro. Si no ves la opción, escribe a soporte.</div></details>
+    <details><summary>¿Puedo hacer que los folios queden en el orden en que timbro?</summary><div class="ans">Sí. En Datos Fiscales, en el bloque de facturación, activa Asignar folio al timbrar: los borradores usan una numeración provisional (serie FB) y el folio definitivo se asigna al timbrar.</div></details>
+    <details><summary>¿Qué pasa si el complemento de un pago no se timbra?</summary><div class="ans">El pago queda registrado y Cileo vuelve a intentar el timbrado del complemento por su cuenta; mientras siga pendiente, ese pago no se puede cancelar. Si no aparece después de un rato, escribe a soporte.</div></details>
     <div class="fcat">PLD y cumplimiento</div>
     <details><summary>¿Qué es PLD y por qué aparece en Cileo?</summary><div class="ans">PLD es Prevención de Lavado de Dinero. El arrendamiento es una actividad vulnerable bajo la Ley Antilavado, con obligaciones de identificación y avisos, y Cileo integra ese cumplimiento en tu operación.</div></details>
     <details><summary>¿Cuál es el flujo de cumplimiento PLD?</summary><div class="ans">Identificar, es decir cargar los datos y documentos de la operación; generar y descargar el XML; subir el comprobante (el acuse, en un solo PDF); y la tarea queda como Completado. También puede mostrarse Vencido o Cancelado.</div></details>
@@ -698,7 +720,8 @@
     <div class="fcat">Reportes y Dashboard</div>
     <details><summary>¿Qué muestra el Dashboard?</summary><div class="ans">Los indicadores clave de tu operación: ingresos del periodo, cobranza contra esperado, morosidad, días de atraso, ocupación, contratos por vencer y cumplimiento PLD, entre otros.</div></details>
     <details><summary>¿Qué es la morosidad?</summary><div class="ans">La proporción del saldo pendiente frente a lo facturado; refleja el nivel de cartera vencida de tu operación.</div></details>
-    <details><summary>¿Qué reportes puedo obtener?</summary><div class="ans">Estado de cuenta, Cobranza y morosidad, Estatus de contratos y Fiscales de propietario. El de Cobranza y morosidad incluye los Movimientos del período: cada cobro emitido y cada pago recibido.</div></details>
+    <details><summary>¿Qué reportes puedo obtener?</summary><div class="ans">Estado de cuenta, Cobranza y morosidad, Estatus de contratos, Fiscales de propietario y Stacking plan y rent roll. El de Cobranza y morosidad incluye los Movimientos del período: cada cobro emitido y cada pago recibido.</div></details>
+    <details><summary>¿Qué es el reporte Stacking plan y rent roll?</summary><div class="ans">Un PDF por inmueble, a una fecha de corte, con el plano de ocupación por nivel y la relación de rentas por contrato: localidades, ocupación, superficie y renta mensual en MXN. Se genera en Reportes, en su pestaña, con Generar reporte.</div></details>
     <details><summary>¿Puedo imprimir los reportes gastando menos tinta?</summary><div class="ans">Sí. Al generar el reporte activa Ahorro de tinta: el PDF sale con menos color y sin fondos decorativos.</div></details>
     <details><summary>¿Puedo exportar la información de cobranza?</summary><div class="ans">Sí. Desde Cobranza puedes Descargar CSV, que incluye los totales fiscales, y Descargar CFDIs.</div></details>
     <div class="fcat">Contactos, usuarios y cuenta</div>
